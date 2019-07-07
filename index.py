@@ -1,4 +1,4 @@
-#!"C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.7\Python 3.7 (64-bit).lnk"
+#!"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"
 
 from import_modules import *
 
