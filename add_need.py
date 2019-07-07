@@ -42,7 +42,7 @@ def add_need():
     </textarea><br>
     <input type='submit' value='Submit Form'>
 </form>
-<h4>Thank you for believing in your community<h/4><br>
+<h4>Thank you for believing in your community. We will contact you when we find a match.<h/4><br>
 
 ''')
 
