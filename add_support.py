@@ -16,7 +16,7 @@ def add_support():
 
     #display in browser
     print('''
-<h3>Support a neighbor.</h3>
+<h3>Support your communnity.</h3>
 <p>Please fill out the form below to inform us about the resource you would like to provide, so we can match it with someone who needs exactly that. We’d appreciate it if you can let us know when we can pick it up too.</p>
 <table>
 <form method=POST >
