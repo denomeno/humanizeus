@@ -7,6 +7,7 @@ cnx = mysql.connector.connect(user='root', password='',
                                 host='localhost',
                                 database='homeless_project')
 
+
 class Database_requests:
 
     #----------------------------
