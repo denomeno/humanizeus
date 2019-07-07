@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!C:\Users\Boray Toktay\Documents\Folder.py\Folder.py\venv\Scripts\python.exe
 # -*- coding: UTF-8 -*-
 
 
