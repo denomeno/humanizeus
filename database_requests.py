@@ -127,6 +127,8 @@ ON `entity_types`.`type_id` = `entities`.`type_id`;""")
         return myc.fetchall()
 
 
+
+
     def get_entity_id_from_email(email):
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
@@ -178,3 +180,6 @@ VALUES (%s,
 """, (entity_id, item_name, description, quantity_requested))
 
         cnx.commit()
+
+    def insert_into_entities_provide_items(): #TO BE IMPLEMENTED
+        to_be_implemented = True
