@@ -1,4 +1,4 @@
-#!C:\Users\Boray Toktay\AppData\Local\Programs\Python\Python37-32\python.exe
+#!/usr/local/bin/python3
 
 from import_modules import *
 
