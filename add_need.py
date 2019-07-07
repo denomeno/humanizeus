@@ -1,4 +1,4 @@
-#!C:\Users\Boray Toktay\AppData\Local\Programs\Python\Python37-32\python.exe
+#!"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"
 
 from import_modules import *
 

@@ -1,4 +1,4 @@
-# Humanize-Us
+#!"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"
 import time
 
 
