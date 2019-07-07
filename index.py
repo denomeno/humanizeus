@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"
 
 from import_modules import *
 
@@ -67,6 +67,7 @@ def print_menu():
    <li><a href='/humanizeus/humanizeus/add_support.py'><span>Add Support</span></a></li>
    <li><a href='/humanizeus/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
    <li class='last'><a href='/humanizeus/humanizeus/map.py'><span>Map</span></a></li>
+   <li><a href='/humanizeus/humanizeus/contact_us.py'><span>Contact Us</span></a></li>
 </ul>
 </div>
 
