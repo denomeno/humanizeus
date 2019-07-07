@@ -178,3 +178,6 @@ VALUES (%s,
 """, (entity_id, item_name, description, quantity_requested))
 
         cnx.commit()
+
+    def insert_into_entities_provide_items(): #TO BE IMPLEMENTED
+        to_be_implemented = True

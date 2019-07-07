@@ -26,10 +26,12 @@ def view_existing_organizations_data():
 
     #get the following data:
     #1. what organization need
-    #2. what organizations donate
+    #2. what organizations provde
 
     organization_needs = Database_requests.get_organizations_need_items()
+    #ie. look at `view_add_organizations()` function for a similar implementation
 
+    organizations_provide = 1 #to be be replaced 
 
 
 
