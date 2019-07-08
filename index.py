@@ -63,11 +63,11 @@ def print_menu():
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='/humanizeus/humanizeus/index.py'><span>Home</span></a></li>
-   <li><a href='/humanizeus/humanizeus/add_need.py'><span>Add Need</span></a></li>
-   <li><a href='/humanizeus/humanizeus/add_support.py'><span>Add Support</span></a></li>
-   <li><a href='/humanizeus/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
-   <li class='last'><a href='/humanizeus/humanizeus/map.py'><span>Map</span></a></li>
-   <li><a href='/humanizeus/humanizeus/contact_us.py'><span>Contact Us</span></a></li>
+   <li><a href='/humanizeus/add_need.py'><span>Add Need</span></a></li>
+   <li><a href='/humanizeus/add_support.py'><span>Add Support</span></a></li>
+   <li><a href='/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
+   <li class='last'><a href='/humanizeus/map.py'><span>Map</span></a></li>
+   <li><a href='/humanizeus/contact_us.py'><span>Contact Us</span></a></li>
 </ul>
 </div>
 
