@@ -1,4 +1,4 @@
-#!C:\Users\Boray Toktay\Documents\Folder.py\Folder.py\venv\Scripts\python.exe
+#!"C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe"
 # -*- coding: UTF-8 -*-
 
 
