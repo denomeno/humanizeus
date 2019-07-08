@@ -1,4 +1,4 @@
-#!C:\Users\Boray Toktay\AppData\Local\Programs\Python\Python37-32\python.exe
+#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
 
 from import_modules import *
 
@@ -101,6 +101,5 @@ if __name__ == "__main__":
     add_need()
     print_bottom_of_page()
 
-#print_top_of_page('MiniFacebook')
 
 #entities_need_items = Database_requests.get_entitites_need_items()
