@@ -60,17 +60,17 @@ def view_add_organizations():
         Resources Provided at your Organization:<br>
         ''')
 
-        for item in items: #dyamically generate options
+    for item in items: #dyamically generate options
             print('''<option value="%s">%s</option>''' %(item['name'], item['name']))
 
-        print('''
+    print('''
         Resources your Organization Needs at the moment:<br>
         ''')
 
-        for item in items: #dyamically generate options
+    for item in items: #dyamically generate options
             print('''<option value="%s">%s</option>''' %(item['name'], item['name']))
 
-        print('''
+    print('''
             <input type='submit' value='Submit Form'>
         </form>
         <h4>Thank you for joining the community!<h/4>
