@@ -5,18 +5,15 @@ from import_modules import *
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
 
 #####################################################################################
-#THIS SECTION WILL HANDLE DATA INPUT FROM THE FORMST INTO THE DATABASE
-
-
+#THIS SECTION WILL HANDLE DATA INPUT FROM THE FORMS INTO THE DATABASE
 
 #####################################################################################
 def add_need():
 
-
     #pull all needed data
     items = Database_requests.get_all_items() #list of dictionaries of all item types
 
-
+    #display in browser
     print('''
 <h3>We are here to support you.</h3>
 <p>Tell us your needs, and we will match you with a neighbor who might have exactly what you need right now.</p>
@@ -45,7 +42,7 @@ def add_need():
     </textarea><br>
     <input type='submit' value='Submit Form'>
 </form>
-<h4>Thank you for believing in your community<h/4><br>
+<h4>Thank you for believing in your community. We will contact you when we find a match.<h/4><br>
 
 ''')
 

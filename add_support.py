@@ -5,6 +5,9 @@ from import_modules import *
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
 
 #####################################################################################
+#THIS SECTION WILL HANDLE DATA INPUT FROM THE FORMS INTO THE DATABASE
+
+#####################################################################################
 def add_support():
 
     #pull all needed data
@@ -13,32 +16,40 @@ def add_support():
 
     #display in browser
     print('''
-<h3>Support a neighbor.</h3>
+<h3>Support your communnity.</h3>
 <p>Please fill out the form below to inform us about the resource you would like to provide, so we can match it with someone who needs exactly that. We’d appreciate it if you can let us know when we can pick it up too.</p>
-<table>
 <form method=POST >
-    <input name="email" type="email" label="Name">
-    <input name="suppliername" type="text">
-    <input name="address" type="text">
-    <select name="resourcelist">''')
+    Email:<br>
+    <input name="email" type="email"><br>
+    Name:<br>
+    <input name="entity_name" type="text"><br>
+    Address:<br>
+    <input name="address" type="text"><br>
+    Please select the item you are donating:<br>
+    ''')
 
     for item in items: #dyamically generate options
-        print('''<option value="%s">%s</option>''' %(item['name'], item['name']))
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
     print('''
-    </select>
+    Please inform us about your donation(s) a little more:<br>
     <textarea name="message" rows="10" cols="30">
-    Describe the item a little more.
-    </textarea>
-    <input name="time" type="text">
+    </textarea><br>
+    Let us know when we can pick it up.<br>
+    <input name="time" type="text"><br>
     <input type='submit' value='Submit Form'>
 </form>
-</table>
-<h4>Thank you for believing in your community<h/4>
+<h4>Thank you for supporting your community. We will contact you when we find a match.<h/4>
 
 ''')
 
-    #submit buttin - make post Database_requests
+    #submit button - make post Database_requests
     #at top of page - if post request, enter to database
 
 #####################################################################################
@@ -55,6 +66,44 @@ if __name__ == "__main__":
      form = cgi.FieldStorage()
      print_form_data(form)
 
+
+    #--------------------------------
+    #run controller functions
+    if form:
+        email = form['email'].value
+        entity_name = form['entity_name'].value
+        address = form['address'].value
+        message = form['message'].value
+
+        needed_item_names = form['needed_item_names'] #list of needed items names
+
+        type = "Donor"
+
+        #RETRIEVE QUANTITY OF EACH ITEM
+
+
+        #1. enter entity to system
+
+        Database_requests.insert_into_entities(email, entity_name, address, type)
+
+        #2. get the entity_id from the email
+
+        entity_id = Database_requests.get_entity_id_from_email(email)
+        entity_id = entity_id[0]['entity_id']
+
+
+        for item in needed_item_names:
+
+            #3 match entity with item in entity_need_items
+            item_name = item.value
+
+            quantity_requested = form['quantity_requested: %s' %(item_name)].value
+
+            #quantity_supplied = 1 #CHANGE WHEN ENTERED FROM THE FORM
+
+            Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied)
+
+            #4-NEED TO ADD TIME AVAILABLE FOR PICKUP
 
      #------------------
      add_support()

@@ -14,7 +14,7 @@ def contact_form():
     <input name="name" type="text"><br>
     What is on your mind?:<br>
     <input name="words" type="text"><br>
-    <h4>Thank you<h4>
+    <h4>Thank you!<h4>
     ''')
 
 #####################################################################################
