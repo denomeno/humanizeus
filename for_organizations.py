@@ -59,14 +59,16 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-            print('''<option value="%s">%s</option>''' %(item['name'], item['name']))
+        print('''<input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+
 
     print('''
         Resources your Organization Needs at the moment:<br>
         ''')
 
     for item in items: #dyamically generate options
-            print('''<option value="%s">%s</option>''' %(item['name'], item['name']))
+        print('''<input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+
 
     print('''
             <input type='submit' value='Submit Form'>
