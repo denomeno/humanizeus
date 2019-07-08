@@ -61,6 +61,36 @@ def display_map():
     <iframe src="map_main.html" height="500" width="700"></iframe>
 ''')
 
+#####################################################################################
+
+def generate_organizations_list():
+
+    #pull all data
+    all_entities = Database_requests.get_all_entities()
+
+    #1. create list
+
+    for organization in all_entities:
+
+        #filter for organization
+        if organization['entity_type'] == "Organization":
+
+
+
+        print('''
+        <table>
+        Organization Name:
+        Address:
+        Phone:
+        Resources Provided:
+        Resources Needed:
+        </table>
+        '''())
+
+        '<strong>%s</strong>' %(organization["entity_name"]
+
+
+#####################################################################################
 
 
 #####################################################################################
