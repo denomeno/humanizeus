@@ -91,7 +91,7 @@ if __name__ == "__main__":
     #FORM IS SUBMITTED OR NOT
 
     view_existing_organizations_login()
-
+    view_add_organizations()
 
     #--------------------------------
     #IF A FORM IS FILLED AND SUBMITTED, DO THE ACTIONS FOR THE FORM
