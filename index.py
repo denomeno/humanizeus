@@ -63,10 +63,11 @@ def print_menu():
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='/humanizeus/index.py'><span>Home</span></a></li>
+   <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
+   <li class='last'><a href='/humanizeus/map.py'><span>Map</span></a></li>
    <li><a href='/humanizeus/add_need.py'><span>Add Need</span></a></li>
    <li><a href='/humanizeus/add_support.py'><span>Add Support</span></a></li>
    <li><a href='/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
-   <li class='last'><a href='/humanizeus/map.py'><span>Map</span></a></li>
    <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
 </ul>
 </div>
@@ -80,7 +81,7 @@ def print_bottom_of_page():
      print('''
  <hr>
  This page was generated at %s.<br>
- Return to the <a href="/humanizeus/humanizeus/index.py">main page</a>.
+ Return to the <a href="/humanizeus/index.py">main page</a>.
  </body>
  </html>
  ''' % time.ctime())
