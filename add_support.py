@@ -18,7 +18,7 @@ def add_support():
     print('''
 <h3>Support your communnity.</h3>
 <p>Please fill out the form below to inform us about the resource you would like to provide, so we can match it with someone who needs exactly that. We’d appreciate it if you can let us know when we can pick it up too.</p>
-<form method=POST >
+<form method=POST>
     Email:<br>
     <input name="email" type="email"><br>
     Name:<br>
