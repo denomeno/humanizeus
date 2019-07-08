@@ -44,10 +44,10 @@ def add_support():
     Let us know when we can pick it up.<br>
     <input name="time" type="text"><br>
     <input type='submit' value='Submit Form'>
-</form>
-<h4>Thank you for supporting your community. We will contact you when we find a match.<h/4>
+    </form>
+    <h4>Thank you for supporting your community. We will contact you when we find a match.<h/4>
 
-''')
+    ''')
 
     #submit button - make post Database_requests
     #at top of page - if post request, enter to database
@@ -57,18 +57,15 @@ def add_support():
 if __name__ == "__main__":
 
 
-
-     #print_headers()
-     print_top_of_page()
-     print_menu()
-
-     #----------------
-     form = cgi.FieldStorage()
-     print_form_data(form)
-
+    print_top_of_page()
+    print_menu()
+    #----------------
+    form = cgi.FieldStorage()
+    print_form_data(form)
 
     #--------------------------------
     #run controller functions
+
     if form:
         email = form['email'].value
         entity_name = form['entity_name'].value
@@ -106,5 +103,5 @@ if __name__ == "__main__":
             #4-NEED TO ADD TIME AVAILABLE FOR PICKUP
 
      #------------------
-     add_support()
-     print_bottom_of_page()
+    add_support()
+    print_bottom_of_page()
