@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 # Humanize-Us
+=======
+#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
+
+>>>>>>> Stashed changes
 import time
 import mysql.connector
 
