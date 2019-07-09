@@ -7,6 +7,44 @@ from import_modules import *
 #####################################################################################
 #THIS SECTION WILL HANDLE DATA INPUT FROM THE FORMS INTO THE DATABASE
 
+def upload_add_need_form_to_database(form):
+    #this functions gets data from the form, enter into database
+    if form:
+        email = form['email'].value
+        entity_name = form['entity_name'].value
+        address = form['address'].value
+        message = form['message'].value
+
+        needed_item_names = form['needed_item_names'] #list of needed items names
+
+        type = "In Need"
+
+        #RETRIEVE QUANTITY OF EACH ITEM
+
+
+        #1. enter entity to system
+
+        Database_requests.insert_into_entities(email, entity_name, address, type)
+
+        #2. get the entity_id from the email
+
+        entity_id = Database_requests.get_entity_id_from_email(email)
+        entity_id = entity_id[0]['entity_id']
+
+
+        for item in needed_item_names:
+
+            #3 match entity with item in entite_need_items
+            item_name = item.value
+
+            quantity_requested = form['quantity_requested: %s' %(item_name)].value
+
+            #quantity_requested = 1 #CHANGE WHEN ENTERED FROM THE FORM
+
+            Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_requested)
+
+
+
 #####################################################################################
 def add_need():
 
@@ -62,41 +100,9 @@ if __name__ == "__main__":
 
     #--------------------------------
     #run controller functions
-    if form:
-        email = form['email'].value
-        entity_name = form['entity_name'].value
-        address = form['address'].value
-        message = form['message'].value
+    upload_add_need_form_to_database(form)
 
-        needed_item_names = form['needed_item_names'] #list of needed items names
-
-        type = "In Need"
-
-        #RETRIEVE QUANTITY OF EACH ITEM
-
-
-        #1. enter entity to system
-
-        Database_requests.insert_into_entities(email, entity_name, address, type)
-
-        #2. get the entity_id from the email
-
-        entity_id = Database_requests.get_entity_id_from_email(email)
-        entity_id = entity_id[0]['entity_id']
-
-
-        for item in needed_item_names:
-
-            #3 match entity with item in entite_need_items
-            item_name = item.value
-
-            quantity_requested = form['quantity_requested: %s' %(item_name)].value
-
-            #quantity_requested = 1 #CHANGE WHEN ENTERED FROM THE FORM
-
-            Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_requested)
-
-        #---------------------------------
+    #---------------------------------
 
     add_need()
     print_bottom_of_page()

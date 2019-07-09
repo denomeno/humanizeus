@@ -61,11 +61,11 @@ def display_map():
     <iframe src="map_main.html" height="500" width="700"></iframe>
 ''')
 
+
 def display_list_of_organizations():
 
     #pull all data
     all_entities = Database_requests.get_all_entities()
-
 
 
     #generate the table lines

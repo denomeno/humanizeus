@@ -94,6 +94,34 @@ WHERE `entity_types`.`description` = 'Organization'
 """)
         return myc.fetchall()
 
+def get_organizations_supply_items():
+    myc = cnx.cursor(dictionary = True)
+    myc.execute("""
+SELECT
+    `entities_supply_items`.`entities_supply_items_id`,
+    `entities`.`name` AS `entity_name`,
+    `items`.`name` AS `item_name`,
+    `entity_types`.`description`,
+    `entities`.`latitude`,
+    `entities`.`longitude`,
+    `entities_supply_items`.`time_in_1`,
+    `entities_supply_items`.`time_out_1`
+
+
+FROM `entities_supply_items`
+
+JOIN `items`
+ON `entities_supply_items`.`item_id`=`items`.`item_id`
+
+JOIN `entities`
+ON `entities_supply_items`.`entity_id` = `entities`.`entity_id`
+
+JOIN `entity_types`
+ON  `entity_types`.`type_id` = `entities`.`type_id`
+
+WHERE `entity_types`.`description` = 'Organization'
+""")
+    return myc.fetchall()
 
 
     def get_all_items():
@@ -139,6 +167,45 @@ SELECT
 FROM `entities`
 WHERE `entities`.`email` = %s;""", (email, ))
         return myc.fetchall()
+
+
+def get_all_matches():
+    myc = cnx.cursor(dictionary = True)
+    myc.execute("""
+
+SELECT
+
+    `matches`.`match_id`,
+    `items`.`item_id`,
+    `items`.`name`,
+    `need_entities`.`entity_id` AS `in_need_entity_id`,
+    `need_entities`.`name` AS `in_need_name`,
+    `supply_entities`.`entity_id` AS `supply_entity_id`,
+    `supply_entities`.`name` AS `supply_name`
+
+
+FROM `matches`
+
+JOIN `entities_need_items`
+ON `entities_need_items`.`entities_need_items_id` = `matches`.`entities_need_items_id`
+
+JOIN `entities_supply_items`
+ON `entities_supply_items`.`entities_supply_items_id` = `matches`.`entities_supply_items_id`
+
+JOIN `entities` AS `need_entities`
+ON `need_entities`.`entity_id` = `entities_need_items`.`entity_id`
+
+JOIN `entities` AS `supply_entities`
+ON `supply_entities`.`entity_id` = `entities_supply_items`.`entity_id`
+
+JOIN `items`
+ON `entities_need_items`.`item_id` = `items`.`item_id`
+
+;""")
+
+
+    return myc.fetchall()
+
 
 
     #############################################################

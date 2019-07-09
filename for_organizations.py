@@ -31,9 +31,9 @@ def view_existing_organizations_data():
     organization_needs = Database_requests.get_organizations_need_items()
     #ie. look at `view_add_organizations()` function for a similar implementation
 
-    organizations_provide = 1 #to be be replaced
+    organizations_supply = Database_requests.get_organizations_supply_items()
 
-
+    
 
 
 #####################################################################################
