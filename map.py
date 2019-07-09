@@ -39,11 +39,15 @@ def generate_map():
     for in_need in persons_in_need:
 
         #populate organzations
-        marker = folium.Marker(location=[in_need['latitude'], in_need["longitude"]], #can also be folium.CircleMarker
-                       popup ='<strong>%s</strong>' %(in_need["entity_name"]),
-                       tooltip = in_need["entity_name"] )
 
-        marker.add_to(map)
+        #add to map only if they have longitude and latitude
+        if in_need['latitude'] != None and in_need['longitude'] != None:
+
+            marker = folium.Marker(location=[in_need['latitude'], in_need["longitude"]], #can also be folium.CircleMarker
+                           popup ='<strong>%s</strong>' %(in_need["entity_name"]),
+                           tooltip = in_need["entity_name"] )
+
+            marker.add_to(map)
 
     #3. save map
 
@@ -58,7 +62,7 @@ def generate_map():
 def display_map():
 
     print('''
-    <iframe src="map_main.html" height="500" width="700"></iframe>
+    <iframe src="humanizeus/map_main.html" height="500" width="700"></iframe>
 ''')
 
 
