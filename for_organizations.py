@@ -173,17 +173,20 @@ if __name__ == "__main__":
         else:
             view_join_community_form()
 
-        #---------------------------------
-        #3. enter data about supplied and needed items
-        for item in needed_item_names:
-            item_name = item.value
-            quantity_requested = form['quantity_requested: %s' %(item_name)].value
-            Database_requests.insert_into_entities_need_items(entity_id, item_name, quantity_requested)
+            #2.a. enter entity to system
+            Database_requests.insert_into_entities(email, entity_name, address, type)
 
-        for item in supplied_item_names:
-            item_name = item.value
-            quantity_requested = form['quantity_supplied: %s' %(item_name)].value
-            Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_supplied)
+            #---------------------------------
+            #3. enter data about supplied and needed items
+            for item in needed_item_names:
+                item_name = item.value
+                quantity_requested = form['quantity_requested: %s' %(item_name)].value
+                Database_requests.insert_into_entities_need_items(entity_id, item_name, quantity_requested)
+
+            for item in supplied_item_names:
+                item_name = item.value
+                quantity_requested = form['quantity_supplied: %s' %(item_name)].value
+                Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_supplied)
 
 
     print_bottom_of_page()
