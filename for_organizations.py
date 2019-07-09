@@ -22,18 +22,45 @@ def view_existing_organizations_login():
 def view_existing_organizations_data():
     #THIS FUNCTION SHOULD:
     #1. PULL THE NEEDED DATA FROM DATABASE
-    #2. DISPLAY: A. ORGANIZATIONS NEEDS, B. ORGANIZATIONS SUPPLY
 
-    #get the following data:
-    #1. what organization need
-    #2. what organizations provde
+    organizations_supply = Database_requests.get_organizations_supply_items()
+    organizations_need = Database_requests.get_organizations_need_items()
 
-    organization_needs = Database_requests.get_organizations_need_items()
-    #ie. look at `view_add_organizations()` function for a similar implementation
+    #2. DISPLAY:
+
+    #A. ORGANIZATIONS SUPPLY
+    print('''
+    <h4>Here is the information we have on your organization. You can update it as you wish.<h4>
+    Resources Provided at your Organization:<br>
+    ''')
+
+    for item in items: #dyamically generate options
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+
+
+    #B. ORGANIZATIONS SUPPLY
+    print('''
+    Resources Needed at your Organization:<br>
+    ''')
+
+    for item in items: #dyamically generate options
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
     organizations_supply = Database_requests.get_organizations_supply_items()
 
-    
+
 
 
 #####################################################################################
