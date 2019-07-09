@@ -34,16 +34,29 @@ def view_existing_organizations_data():
     organizations_supply = Database_requests.get_organizations_supply_items()
 
 
-    #B. ORGANIZATIONS SUPPLY
+    #B. ORGANIZATIONS NEED
     print('''
     Resources Needed at your Organization:<br>
     ''')
-    for organization in organizations_supply
-        if organization['email'] == [0]
-
-
 
     #TODO - Boray - needs database update functions
+
+    #1.specify which organization's need list you're getting
+    #for organization in organizations_need:
+    #    organization_need = [0]['email']
+
+    #2.show filled in form of items needed selected before
+    for item in items: #dyamically generate options
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+
+    #3.make update button to update database file
+        Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
 
 
 
