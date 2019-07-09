@@ -61,13 +61,13 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<select name="quantity_requested: %s">
+        print('''<select name="quantity_supplied: %s">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                <input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''
@@ -124,6 +124,7 @@ if __name__ == "__main__":
         #phone = form['phone'].value                #need to add to database
 
         needed_item_names = form['needed_item_names'] #list of needed items names
+        supplied_item_names = form['supplied_item_names'] #list of supplied items names
 
         type = "Organization"
 
@@ -132,6 +133,11 @@ if __name__ == "__main__":
         if entity_id[0]['entity_id']: #if it exists, display need list
             view_existing_organizations_data()
 
+            #1.a. if exists, view update option
+
+            #1.b. insert updated item data information into database
+
+
         #---------------------------------
         #2. IF NO FORM IS SUBMITTED, DO DEFAULT VIEW
 
@@ -139,11 +145,16 @@ if __name__ == "__main__":
             view_join_community_form()
 
         #---------------------------------
-        #3 match entity with item in entity_need_items
+        #3. enter data about supplied and needed items
         for item in needed_item_names:
             item_name = item.value
             quantity_requested = form['quantity_requested: %s' %(item_name)].value
             Database_requests.insert_into_entities_need_items(entity_id, item_name, quantity_requested)
+
+        for item in supplied_item_names:
+            item_name = item.value
+            quantity_requested = form['quantity_supplied: %s' %(item_name)].value
+            Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_supplied)
 
 
     print_bottom_of_page()
