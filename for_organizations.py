@@ -25,6 +25,7 @@ def view_existing_organizations_data():
 
     organizations_supply = Database_requests.get_organizations_supply_items()
     organizations_need = Database_requests.get_organizations_need_items()
+    items = Database_requests.get_all_items()
 
     #2. DISPLAY:
 
@@ -47,6 +48,8 @@ def view_existing_organizations_data():
     print('''
     Resources Needed at your Organization:<br>
     ''')
+    for organization in organizations_supply
+        if organization['email'] == [0]
 
     for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
