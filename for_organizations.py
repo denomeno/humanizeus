@@ -138,6 +138,7 @@ if __name__ == "__main__":
 
     view_existing_organizations_login()
     view_add_organizations()
+    view_existing_organizations_data()
 
     #--------------------------------
     #IF A FORM IS FILLED AND SUBMITTED, DO THE ACTIONS FOR THE FORM
