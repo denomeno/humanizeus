@@ -61,7 +61,13 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
     print('''
@@ -69,7 +75,13 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
     print('''
@@ -107,6 +119,12 @@ if __name__ == "__main__":
     #run controller functions
     if form:
         email = form['email'].value
+        entity_name = form['entity_name'].value
+        address = form['address'].value
+        #phone = form['phone'].value                #need to add to database
+
+        needed_item_names = form['needed_item_names'] #list of needed items names
+
         type = "Organization"
 
         #1. check if email exists in database
@@ -114,15 +132,21 @@ if __name__ == "__main__":
         if entity_id[0]['entity_id']: #if it exists, display need list
             view_existing_organizations_data()
 
-        #else:
-            #view_join_community_form()
+        #---------------------------------
+        #2. IF NO FORM IS SUBMITTED, DO DEFAULT VIEW
 
-    #---------------------------------
-    #IF NO FORM IS SUBMITTED, DO DEFAULT VIEW
+        else:
+            view_join_community_form()
+
+        #---------------------------------
+        #3 match entity with item in entity_need_items
+        for item in needed_item_names:
+            item_name = item.value
+            quantity_requested = form['quantity_requested: %s' %(item_name)].value
+            Database_requests.insert_into_entities_need_items(entity_id, item_name, quantity_requested)
 
 
     print_bottom_of_page()
 
-#print_top_of_page('MiniFacebook')
 
 #entities_need_items = Database_requests.get_entitites_need_items()
