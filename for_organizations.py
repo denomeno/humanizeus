@@ -24,9 +24,9 @@ def view_existing_organizations_data():
     #1. PULL THE NEEDED DATA FROM DATABASE
     #2. DISPLAY: A. ORGANIZATIONS NEEDS, B. ORGANIZATIONS SUPPLY
 
-    #get the following data:
-    #1. what organization need
-    #2. what organizations provde
+    organizations_supply = Database_requests.get_organizations_supply_items()
+    organizations_need = Database_requests.get_organizations_need_items()
+    items = Database_requests.get_all_items()
 
     organization_needs = Database_requests.get_organizations_need_items()
     #ie. look at `view_add_organizations()` function for a similar implementation
@@ -34,6 +34,12 @@ def view_existing_organizations_data():
     organizations_supply = Database_requests.get_organizations_supply_items()
 
 
+    #B. ORGANIZATIONS SUPPLY
+    print('''
+    Resources Needed at your Organization:<br>
+    ''')
+    for organization in organizations_supply
+        if organization['email'] == [0]
 
 
 
