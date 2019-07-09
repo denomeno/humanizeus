@@ -39,7 +39,7 @@ def upload_add_support_form_to_database(form):
             #3 match entity with item in entity_need_items
             item_name = item.value
 
-            quantity_supplied = form['quantity_supplied: %s' %(item_name)].value
+            quantity_supplied = form['quantity_requested: %s' %(item_name)].value
 
             #quantity_supplied = 1 #CHANGE WHEN ENTERED FROM THE FORM
 
@@ -70,7 +70,7 @@ def add_support():
     ''')
 
     for item in items: #dyamically generate options
-        print('''<select name="quantity_supplied: %s">
+        print('''<select name="quantity_requested: %s">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>

@@ -248,5 +248,22 @@ VALUES (%s,
 
         cnx.commit()
 
-    def insert_into_entities_provide_items(): #TO BE IMPLEMENTED
-        to_be_implemented = True
+
+    def insert_into_entities_supply_items(entity_id, item_name, description, quantity_requested):
+        myc = cnx.cursor()
+        myc.execute("""
+INSERT INTO `homeless_project`.`entities_supply_items`
+
+(`entity_id`, `item_id`, `description`, `quantity_requested`)
+
+VALUES (%s,
+
+        (SELECT
+                `items`.`item_id`
+            FROM `items`
+            WHERE `items`.`name` = %s),
+
+        %s,
+        %s);
+
+""", (entity_id, item_name, description, quantity_requested))
