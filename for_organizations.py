@@ -39,7 +39,6 @@ def view_existing_organizations_data():
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option value="4">4</option>
                     </select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
