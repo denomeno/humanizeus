@@ -67,7 +67,7 @@ def view_add_organizations():
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''
@@ -81,7 +81,7 @@ def view_add_organizations():
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''
