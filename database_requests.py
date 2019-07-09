@@ -267,3 +267,5 @@ VALUES (%s,
         %s);
 
 """, (entity_id, item_name, description, quantity_requested))
+
+        cnx.commit()
