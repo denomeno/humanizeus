@@ -44,13 +44,16 @@ def view_existing_organizations_data():
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
-    #B. ORGANIZATIONS SUPPLY
+    #B. ORGANIZATIONS NEED
     print('''
     Resources Needed at your Organization:<br>
     ''')
-    for organization in organizations_supply
-        if organization['email'] == [0]
 
+    #1.specify which organization's need list you're getting
+    #for organization in organizations_need:
+    #    organization_need = [0]['email']
+
+    #2.show filled in form of items needed selected before
     for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
                       <option value="1">1</option>
@@ -60,7 +63,8 @@ def view_existing_organizations_data():
                     </select>
                 <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
-
+    #3.make update button to update database file
+        Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
 
 
 
