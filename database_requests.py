@@ -100,6 +100,7 @@ WHERE `entity_types`.`description` = 'Organization'
     SELECT
         `entities_supply_items`.`entities_supply_items_id`,
         `entities`.`name` AS `entity_name`,
+        `entities`.`email`, 
         `items`.`name` AS `item_name`,
         `entity_types`.`description`,
         `entities`.`latitude`,

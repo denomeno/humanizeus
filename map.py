@@ -66,6 +66,7 @@ def display_map():
 ''')
 
 
+
 def display_list_of_organizations():
 
     #pull all data
@@ -83,6 +84,9 @@ def display_list_of_organizations():
             print("html goes here")
 
 
+        print("html for bottom of table")
+
+
 #####################################################################################
 #CONTROLLER FUNCTIONS
 
@@ -92,9 +96,12 @@ if __name__ == "__main__":
      print_top_of_page()
      print_menu()
      #-----------
-
+     #only for map
      generate_map()
      display_map()
+
+     #only for organizations list/table
+     display_list_of_organizations()
 
      #-----------
      print_bottom_of_page()
