@@ -85,7 +85,7 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<select name="quantity_supplied: %s">
+        print('''<select name="quantity_requested: %s">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -180,8 +180,8 @@ if __name__ == "__main__":
 
             for item in supplied_item_names:
                 item_name = item.value
-                quantity_requested = form['quantity_supplied: %s' %(item_name)].value
-                Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_supplied)
+                quantity_requested = form['quantity_requested: %s' %(item_name)].value
+                Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_requested)
 
 
     print_bottom_of_page()
