@@ -37,8 +37,8 @@ def view_existing_organizations_data(email):
     #1.show filled in form of items needed selected before
     for need_item in organizations_need: #dyamically generate options
         print('''<form method=POST >
-                 <select name="quantity_requested: %s" selected ="%s">
-                      <option value="1">1</option>
+                 <select name="quantity_requested: %s">
+                      <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -47,7 +47,7 @@ def view_existing_organizations_data(email):
                 <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>
                 <input type='submit' value='Update Needs'>
                 </form>
-                ''' %(need_item['item_name'], need_item['quantity_requested'], need_item['item_name'], need_item['item_name']))
+                ''' %(need_item['item_name'], need_item['item_name'], need_item['item_name']))
 
 
     #3.make update button to update database file
@@ -130,8 +130,9 @@ if __name__ == "__main__":
     #INSERT GENERAL VIEW ITEMS, THAT APPEAR REGARDLESS IF THE
     #FORM IS SUBMITTED OR NOT
 
-    view_existing_organizations_login()
-    view_add_organizations()
+    if not form: 
+        view_existing_organizations_login()
+        view_add_organizations()
 
     #--------------------------------
     #IF A FORM IS FILLED AND SUBMITTED, DO THE ACTIONS FOR THE FORM
