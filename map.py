@@ -28,7 +28,7 @@ def generate_map():
         #assign variables to check if inputs exist
         latitude = organization['latitude']
         longitude = organization["longitude"]
-        name = organization["entity_name"]
+        name = organization["name"]
 
         #if they dont exist, skip adding the marker
         if latitude == "" or longitude == "" or name == "":
