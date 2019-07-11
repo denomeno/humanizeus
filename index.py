@@ -139,5 +139,3 @@ if __name__ == "__main__":
      print_top_of_page()
      print_menu()
      print_bottom_of_page()
-
-     hello

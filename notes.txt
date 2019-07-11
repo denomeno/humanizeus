@@ -1,0 +1,9 @@
+AWS Database Credentials
+
+Accesspoint: humanize-us.c1xrcwz9rqrf.us-east-2.rds.amazonaws.com
+
+Port: 3306
+
+Username: humanizeusmaster
+
+Pass: humanproject

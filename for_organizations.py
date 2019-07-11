@@ -11,61 +11,83 @@ def view_existing_organizations_login():
     print('''
     Existing member?<br>
     <form method=POST >
-        <input name="email" type="email">
-        <input type='submit' value='Submit'>
+        <input name="login_email" type="email">
+        <input type='submit' value='Login'>
     </form>
     ''')
 
 
 #####################################################################################
 
-def view_existing_organizations_data():
+def view_existing_organizations_data(email):
     #THIS FUNCTION SHOULD:
     #1. PULL THE NEEDED DATA FROM DATABASE
+    #2. DISPLAY: A. ORGANIZATIONS NEEDS, B. ORGANIZATIONS SUPPLY
 
-    organizations_supply = Database_requests.get_organizations_supply_items()
-    organizations_need = Database_requests.get_organizations_need_items()
+    organizations_supply = Database_requests.get_organizations_supply_items(email)
+    organizations_need = Database_requests.get_organizations_need_items(email)
     items = Database_requests.get_all_items()
 
-    #2. DISPLAY:
 
-    #A. ORGANIZATIONS SUPPLY
+    #A. ORGANIZATIONS NEED
     print('''
-    <h4>Here is the information we have on your organization. You can update it as you wish.<h4>
-    Resources Provided at your Organization:<br>
+    <b>Resources Needed at your Organization:</b><br>
     ''')
 
-    for item in items: #dyamically generate options
+    #1.show filled in form of items needed selected before
+    print('''<form method=POST >''')
+    for need_item in organizations_need: #dyamically generate options
+
         print('''<select name="quantity_requested: %s">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
+                 ''' %(need_item['item_name']))
+
+        for i in range(1,5): #display the selection boxes
+            if int(need_item['quantity_requested']) == i: #display the selected box if box number matches with requested quantity
+                print('''<option value="%s" selected>%s</option>
+                        ''' %(i, i))
+            else:
+                print('''<option value="%s">%s</option>
+                        ''' %(i, i))
+
+        print('''
                     </select>
-                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
+                ''' %(need_item['item_name'],need_item['item_name']))
+    print('''<input type='submit' value='Update Needs'>
+             </form>''')
 
 
-    #B. ORGANIZATIONS NEED
+    #B. ORGANIZATIONS SUPPLY
     print('''
-    Resources Needed at your Organization:<br>
+    <br>
+    <br>
+    <br>
     ''')
 
-    #1.specify which organization's need list you're getting
-    #for organization in organizations_need:
-    #    organization_need = [0]['email']
+    print('''
+    <b>Resources Provided by your Organization:</b><br>
+    ''')
+    print('''<form method=POST >''')
+    for supply_item in organizations_supply:
 
-    #2.show filled in form of items needed selected before
-    for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                 ''' %(supply_item['item_name']))
+
+        for i in range(1,5): #display the selection boxes
+            if int(supply_item['quantity_requested']) == i: #display the selected box if box number matches with requested quantity
+                print('''<option value="%s" selected>%s</option>
+                        ''' %(i, i))
+            else:
+                print('''<option value="%s">%s</option>
+                        ''' %(i, i))
+
+        print('''
                     </select>
-                <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
 
-    #3.make update button to update database file
-        Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
-
+                ''' %(supply_item['item_name'], supply_item['item_name']))
+    print('''<input type='submit' value='Update Provided'>
+             </form>''')
 
 
 #####################################################################################
@@ -82,7 +104,7 @@ def view_add_organizations():
     <table>
     <form method=POST ><br>
         Email (will be used for login later, so you can update your resources):<br>
-        <input name="email" type="email"><br>
+        <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
         <input name="suppliername" type="text"><br>
         Address:<br>
@@ -93,7 +115,7 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<select name="quantity_supplied: %s">
+        print('''<select name="quantity_requested: %s">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -142,29 +164,39 @@ if __name__ == "__main__":
     #INSERT GENERAL VIEW ITEMS, THAT APPEAR REGARDLESS IF THE
     #FORM IS SUBMITTED OR NOT
 
+
     view_existing_organizations_login()
-    view_add_organizations()
-    view_existing_organizations_data()
+
+    if not form: #view only if no form is submitted - at the very beginning
+        view_add_organizations()
 
     #--------------------------------
     #IF A FORM IS FILLED AND SUBMITTED, DO THE ACTIONS FOR THE FORM
 
-    #run controller functions
+    #decide which form to run
     if form:
-        email = form['email'].value
-        entity_name = form['entity_name'].value
-        address = form['address'].value
-        #phone = form['phone'].value                #need to add to database
+        if form['login_email'].value: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
 
-        needed_item_names = form['needed_item_names'] #list of needed items names
-        supplied_item_names = form['supplied_item_names'] #list of supplied items names
+            #run function for existing organizations
+            email = form['login_email'].value
 
-        type = "Organization"
+            #1. check if email exists in database
+            entity_id = Database_requests.get_entity_id_from_email(email)
+            if entity_id[0]['entity_id']: #if it exists, display need list
+                view_existing_organizations_data(email)
 
-        #1. check if email exists in database
-        entity_id = Database_requests.get_entity_id_from_email(email)
-        if entity_id[0]['entity_id']: #if it exists, display need list
-            view_existing_organizations_data()
+
+        elif form['new_organization_email'].value: #IF NEW ORGZANITION FORM IS FILLED
+
+            email = form['email'].value
+            entity_name = form['entity_name'].value
+            address = form['address'].value
+            phone = form['phone'].value
+
+            needed_item_names = form['needed_item_names'] #list of needed items names
+            supplied_item_names = form['supplied_item_names'] #list of supplied items names
+
+            type = "Organization"
 
             #1.a. if exists, view update option
 
@@ -189,8 +221,8 @@ if __name__ == "__main__":
 
             for item in supplied_item_names:
                 item_name = item.value
-                quantity_requested = form['quantity_supplied: %s' %(item_name)].value
-                Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_supplied)
+                quantity_requested = form['quantity_requested: %s' %(item_name)].value
+                Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_requested)
 
 
     print_bottom_of_page()

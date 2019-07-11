@@ -11,7 +11,7 @@ def generate_map():
 
     #pull all data
     all_entities = Database_requests.get_all_entities()
-    persons_in_need = Database_requests.get_entitites_need_items()
+    persons_in_need = Database_requests.get_entities_need_items()
 
     #generate map
     #1. create map
@@ -25,13 +25,22 @@ def generate_map():
 
     for organization in all_entities:
 
+        #assign variables to check if inputs exist
+        latitude = organization['latitude']
+        longitude = organization["longitude"]
+        name = organization["name"]
+
+        #if they dont exist, skip adding the marker
+        if latitude == "" or longitude == "" or name == "":
+            continue
+
         #filter for organization
         if organization['entity_type'] == "Organization":
 
             #populate organzations
-            marker = folium.Marker(location=[organization['latitude'], organization["longitude"]], #can also be folium.CircleMarker
-                           popup ='<strong>%s</strong>' %(organization["name"]),
-                           tooltip = organization["name"] )
+            marker = folium.Marker(location=[latitude, longitude], #can also be folium.CircleMarker
+                           popup ='<strong>%s</strong>' %(name),
+                           tooltip = name)
 
             marker.add_to(map)
 
@@ -39,11 +48,24 @@ def generate_map():
     for in_need in persons_in_need:
 
         #populate organzations
-        marker = folium.Marker(location=[in_need['latitude'], in_need["longitude"]], #can also be folium.CircleMarker
-                       popup ='<strong>%s</strong>' %(in_need["entity_name"]),
-                       tooltip = in_need["entity_name"] )
 
-        marker.add_to(map)
+        #assign variables to check if inputs exist
+        latitude = in_need['latitude']
+        longitude = in_need["longitude"]
+        name = in_need["entity_name"]
+
+        #if they dont exist, skip adding the marker
+        if latitude == "" or longitude == "" or name == "":
+            continue
+
+        #add to map only if they have longitude and latitude
+        if in_need['latitude'] != None and in_need['longitude'] != None:
+
+            marker = folium.CircleMarker(location=[latitude, longitude], #can also be folium.CircleMarker
+                           popup ='<strong>%s</strong>' %(name), radius = 10,
+                           tooltip = name)
+
+            marker.add_to(map)
 
     #3. save map
 
@@ -58,35 +80,31 @@ def generate_map():
 def display_map():
 
     print('''
-    <iframe src="map_main.html" height="500" width="700"></iframe>
-    ''')
+    <iframe src="map_main.html" height="500" width="700">
+    <p>Your browser does not support iframes.</p>
+    </iframe>
+''')
 
-#####################################################################################
 
-def display_organizations_list():
 
-    print('''List of organizations.''')
+def display_list_of_organizations():
 
-    #1. create list
+    #pull all data
     all_entities = Database_requests.get_all_entities()
+
+
+    #generate the table lines
     for organization in all_entities:
 
-            #filter for organization
-            if organization['entity_type'] == "Organization":
+        print("top of tmml table")
 
-                print('''
-            <table>
-            Organization Name: <strong>%s</strong>
-            Address: %s
-            Phone: 000-000-000
-            Resources Provided: %s
-            Resources Needed: %s
-            </table>
-            ''' % ((organization["entity_name"]),
-                    (organization["address"])
-                    (organization["entities_supply_items"])
-                    (organization["entities_need_items"]))
+        #filter for organization
+        if organization['entity_type'] == "Organization":
 
+            print("html goes here")
+
+
+        print("html for bottom of table")
 
 
 #####################################################################################
@@ -94,12 +112,16 @@ def display_organizations_list():
 
 if __name__ == "__main__":
 
-    print_top_of_page()
-    print_menu()
-    #-----------
+     #print_headers()
+     print_top_of_page()
+     print_menu()
+     #-----------
+     #only for map
+     generate_map()
+     display_map()
 
-    generate_map()
-    display_organizations_list()
+     #only for organizations list/table
+     display_list_of_organizations()
 
      #-----------
-    print_bottom_of_page()
+     print_bottom_of_page()
