@@ -98,7 +98,7 @@ AND `entities`.`email` = %s
 """, (email, ))
         return myc.fetchall()
 
-    def get_organizations_supply_items():
+    def get_organizations_supply_items(email):
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
     SELECT
