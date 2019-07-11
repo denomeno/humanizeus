@@ -145,7 +145,7 @@ FROM `items`;""")
 SELECT
 
     `entities`.`entity_id`,
-    `entities`.`name`,
+    IFNULL(`entities`.`name`, 'N/A') AS `name`,
     `entities`.`address`,
     `entity_types`.`description` AS `entity_type`,
     `entities`.`latitude`,
