@@ -73,12 +73,12 @@ def view_existing_organizations_data(email):
                  ''' %(supply_item['item_name']))
 
         for i in range(1,5): #display the selection boxes
-            if supply_item['quantity_requested'] == i: #display the selected box if box number matches with requested quantity
+            if int(supply_item['quantity_requested']) == i: #display the selected box if box number matches with requested quantity
                 print('''<option value="%s" selected>%s</option>
                         ''' %(i, i))
             else:
-                print('''<option value="%s" selected>%s</option>
-                        '''%(i, i))
+                print('''<option value="%s">%s</option>
+                        ''' %(i, i))
 
         print('''
                     </select>
