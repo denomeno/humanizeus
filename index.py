@@ -72,8 +72,35 @@ def print_menu():
    <script src="script.js"></script>
    <title>CSS MenuMaker</title>
 </head>
-<body>
 
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+
+<body>
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='/humanizeus/index.py'><span>Home</span></a></li>
@@ -85,6 +112,7 @@ def print_menu():
    <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
 </ul>
 </div>
+</body
 
 ''')
 
