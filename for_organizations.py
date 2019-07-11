@@ -36,23 +36,26 @@ def view_existing_organizations_data(email):
 
     #1.show filled in form of items needed selected before
     for need_item in organizations_need: #dyamically generate options
+
         print('''<form method=POST >
                  <select name="quantity_requested: %s">
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                 ''' %(need_item['item_name']))
+
+        for i in range(1,5): #display the selection boxes
+            if int(need_item['quantity_requested']) == i: #display the selected box if box number matches with requested quantity
+                print('''<option value="%s" selected>%s</option>
+                        ''' %(i, i))
+            else:
+                print('''<option value="%s">%s</option>
+                        ''' %(i, i))
+
+        print('''
                     </select>
-                <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>
+                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
                 <input type='submit' value='Update Needs'>
                 </form>
-                ''' %(need_item['item_name'], need_item['item_name'], need_item['item_name']))
+                ''' %(need_item['item_name'],need_item['item_name']))
 
-
-
-    #3.make update button to update database file
-    #Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
 
 
     #B. ORGANIZATIONS SUPPLY
@@ -83,10 +86,10 @@ def view_existing_organizations_data(email):
         print('''
                     </select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                <input type='submit' value='Update Needs'>
+                <input type='submit' value='Update Provided'>
                 </form>
                 ''' %(supply_item['item_name'], supply_item['item_name']))
-                
+
 
 
 #####################################################################################
