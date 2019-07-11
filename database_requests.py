@@ -24,16 +24,18 @@ class Database_requests:
 
     #---------------1-GET FUNCTIONS------------------------------
 
-    def get_entitites_need_items():#enetity_type = entity_type
+    def get_entities_need_items():#enetity_type = entity_type
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
 SELECT
-    `entities`.`name` AS `entity_name`,
-    `entities`.`latitude`,
-    `entities`.`longitude`,
+
+    `entities`.`entitt_id`,
+    IFNULL(`entities`.`name`, '') AS `entity_name`,
+    IFNULL(`entities`.`latitude`, '') AS `latitude`,
+    IFNULL(`entities`.`longitude`, '') AS `longitude`,
     `items`.`name` AS `item_name`,
-    `entities_need_items`.`time_in_1`,
-    `entities_need_items`.`time_out_1`
+    IFNULL(`entities_need_items`.`time_in_1`, '') AS `time_in_1`,
+    IFNULL(`entities_need_items`.`time_out_1`, '') AS `time_out_1`
 
 FROM `entities_need_items`
 
@@ -145,11 +147,11 @@ FROM `items`;""")
 SELECT
 
     `entities`.`entity_id`,
-    IFNULL(`entities`.`name`, 'N/A') AS `name`,
-    `entities`.`address`,
-    `entity_types`.`description` AS `entity_type`,
-    `entities`.`latitude`,
-    `entities`.`longitude`
+    IFNULL(`entities`.`name`, '') AS `name`,
+    IFNULL(`entities`.`address`,  '') AS `address`,
+    IFNULL(`entity_types`.`description`,  '') AS `entity_type`,
+    IFNULL(`entities`.`latitude`, '') AS  `latitude`,
+    IFNULL(`entities`.`longitude`,  '') AS  `longitude`
 
 
 FROM `entities`

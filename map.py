@@ -25,13 +25,22 @@ def generate_map():
 
     for organization in all_entities:
 
+        #assign variables to check if inputs exist
+        latitude = organization['latitude']
+        longitude = organization["longitude"]
+        name = organization["name"]
+
+        #if they dont exist, skip adding the marker
+        if latitude == "" or longitude == "" or name == "":
+            continue
+
         #filter for organization
         if organization['entity_type'] == "Organization":
 
             #populate organzations
-            marker = folium.Marker(location=[organization['latitude'], organization["longitude"]], #can also be folium.CircleMarker
-                           popup ='<strong>%s</strong>' %(organization["name"]),
-                           tooltip = organization["name"] )
+            marker = folium.Marker(location=[latitude, longitude], #can also be folium.CircleMarker
+                           popup ='<strong>%s</strong>' %(name),
+                           tooltip = name)
 
             marker.add_to(map)
 
@@ -40,11 +49,20 @@ def generate_map():
 
         #populate organzations
 
+        #assign variables to check if inputs exist
+        latitude = in_need['latitude']
+        longitude = in_need["longitude"]
+        name = in_need["name"]
+
+        #if they dont exist, skip adding the marker
+        if latitude == "" or longitude == "" or name == "":
+            continue
+
         #add to map only if they have longitude and latitude
         if in_need['latitude'] != None and in_need['longitude'] != None:
 
             marker = folium.CircleMarker(location=[in_need['latitude'], in_need["longitude"]], #can also be folium.CircleMarker
-                           popup ='<strong>%s</strong>' %(in_need["entity_name"]), radius = 10, 
+                           popup ='<strong>%s</strong>' %(in_need["entity_name"]), radius = 10,
                            tooltip = in_need["entity_name"] )
 
             marker.add_to(map)
@@ -69,7 +87,8 @@ def display_map():
 
 def display_list_of_organizations():
 
-    print('''List of organizations.''')
+    #pull all data
+    all_entities = Database_requests.get_all_entities()
 
 
     #generate the table lines
@@ -80,18 +99,7 @@ def display_list_of_organizations():
         #filter for organization
         if organization['entity_type'] == "Organization":
 
-            print('''
-            <table>
-            Organization Name: <strong>%s</strong>
-            Address: %s
-            Phone: 000-000-000
-            Resources Provided: %s
-            Resources Needed: %s
-            </table>
-            ''' % ((organization["entity_name"]),
-                    (organization["address"])
-                    (organization["entities_supply_items"])
-                    (organization["entities_need_items"])))
+            print("html goes here")
 
 
         print("html for bottom of table")
@@ -114,4 +122,4 @@ if __name__ == "__main__":
      display_list_of_organizations()
 
      #-----------
-    print_bottom_of_page()
+     print_bottom_of_page()
