@@ -32,13 +32,13 @@ def print_headers():
  print()
 
 #####################################################################################
-def print_top_of_page(title):
+def print_top_of_page():
       '''Print the top of the HTML page.'''
 
       print("""
       <html>
       <head>
-      <title>%s</title>
+      <title>HumanizeUs</title>
       <style>
 
       h1 {
@@ -48,13 +48,14 @@ def print_top_of_page(title):
 
       body {
       background-color: white;
-      text-align: center;
       }
 
       </style>
       </head>
       <body>
-      """ % title)
+      """)
+
+      #text-align: center;
 
 #####################################################################################
 def print_menu():
