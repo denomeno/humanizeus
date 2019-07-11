@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-#!C:\Users\Boray Toktay\AppData\Local\Programs\Python\Python37-32\python.exe
-=======
 #!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
->>>>>>> Stashed changes
 
 from import_modules import *
 
@@ -63,38 +59,34 @@ def display_map():
 
     print('''
     <iframe src="map_main.html" height="500" width="700"></iframe>
-''')
+    ''')
 
 #####################################################################################
 
-def generate_organizations_list():
+def display_organizations_list():
 
-    #pull all data
-    all_entities = Database_requests.get_all_entities()
+    print('''List of organizations.''')
 
     #1. create list
-
+    all_entities = Database_requests.get_all_entities()
     for organization in all_entities:
 
-        #filter for organization
-        if organization['entity_type'] == "Organization":
+            #filter for organization
+            if organization['entity_type'] == "Organization":
 
+                print('''
+            <table>
+            Organization Name: <strong>%s</strong>
+            Address: %s
+            Phone: 000-000-000
+            Resources Provided: %s
+            Resources Needed: %s
+            </table>
+            ''' % ((organization["entity_name"]),
+                    (organization["address"])
+                    (organization["entities_supply_items"])
+                    (organization["entities_need_items"]))
 
-
-        print('''
-        <table>
-        Organization Name:
-        Address:
-        Phone:
-        Resources Provided:
-        Resources Needed:
-        </table>
-        '''())
-
-        '<strong>%s</strong>' %(organization["entity_name"]
-
-
-#####################################################################################
 
 
 #####################################################################################
@@ -102,13 +94,12 @@ def generate_organizations_list():
 
 if __name__ == "__main__":
 
-     #print_headers()
-     print_top_of_page()
-     print_menu()
-     #-----------
+    print_top_of_page()
+    print_menu()
+    #-----------
 
-     generate_map()
-     display_map()
+    generate_map()
+    display_organizations_list()
 
      #-----------
-     print_bottom_of_page()
+    print_bottom_of_page()
