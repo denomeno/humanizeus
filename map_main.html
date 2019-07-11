@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2707fe22cafe4d85b2683a95c8d9033c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_2707fe22cafe4d85b2683a95c8d9033c" ></div>
+        
+</body>
+<script>    
+    
+            var map_2707fe22cafe4d85b2683a95c8d9033c = L.map(
+                "map_2707fe22cafe4d85b2683a95c8d9033c",
+                {
+                    center: [42.34372, -71.074181],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_76d219cbe16a4e8bab68bc1335c23805 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_2707fe22cafe4d85b2683a95c8d9033c);
+        
+    
+            var marker_aa0f052fd1f64e738479bcd496d3603f = L.marker(
+                [42.352127, -71.074181],
+                {}
+            ).addTo(map_2707fe22cafe4d85b2683a95c8d9033c);
+        
+    
+        var popup_cfa80d9110d6434f99d9128b30439b4e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8609af2ae35c43039b25875c190ca985 = $(`<div id="html_8609af2ae35c43039b25875c190ca985" style="width: 100.0%; height: 100.0%;"><strong>Women's Lunch Place</strong></div>`)[0];
+            popup_cfa80d9110d6434f99d9128b30439b4e.setContent(html_8609af2ae35c43039b25875c190ca985);
+        
+
+        marker_aa0f052fd1f64e738479bcd496d3603f.bindPopup(popup_cfa80d9110d6434f99d9128b30439b4e)
+        ;
+
+        
+    
+    
+            marker_aa0f052fd1f64e738479bcd496d3603f.bindTooltip(
+                `<div>
+                     Women's Lunch Place
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ba9195ad3b4c4c59aa302a37e82a6419 = L.marker(
+                [42.327107, -71.067641],
+                {}
+            ).addTo(map_2707fe22cafe4d85b2683a95c8d9033c);
+        
+    
+        var popup_238542e8cfa54379922035bb85e3212b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_250b5caf86d24e49a0dee806c06505a6 = $(`<div id="html_250b5caf86d24e49a0dee806c06505a6" style="width: 100.0%; height: 100.0%;"><strong>The American Red Cross  Food Pantry</strong></div>`)[0];
+            popup_238542e8cfa54379922035bb85e3212b.setContent(html_250b5caf86d24e49a0dee806c06505a6);
+        
+
+        marker_ba9195ad3b4c4c59aa302a37e82a6419.bindPopup(popup_238542e8cfa54379922035bb85e3212b)
+        ;
+
+        
+    
+    
+            marker_ba9195ad3b4c4c59aa302a37e82a6419.bindTooltip(
+                `<div>
+                     The American Red Cross  Food Pantry
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
