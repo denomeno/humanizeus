@@ -112,7 +112,8 @@ li a:hover {
    <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
 </ul>
 </div>
-</body
+</body>
+<br>
 
 ''')
 
