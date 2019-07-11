@@ -69,8 +69,7 @@ def display_map():
 
 def display_list_of_organizations():
 
-    #pull all data
-    all_entities = Database_requests.get_all_entities()
+    print('''List of organizations.''')
 
 
     #generate the table lines
@@ -81,7 +80,18 @@ def display_list_of_organizations():
         #filter for organization
         if organization['entity_type'] == "Organization":
 
-            print("html goes here")
+            print('''
+            <table>
+            Organization Name: <strong>%s</strong>
+            Address: %s
+            Phone: 000-000-000
+            Resources Provided: %s
+            Resources Needed: %s
+            </table>
+            ''' % ((organization["entity_name"]),
+                    (organization["address"])
+                    (organization["entities_supply_items"])
+                    (organization["entities_need_items"])))
 
 
         print("html for bottom of table")
@@ -104,4 +114,4 @@ if __name__ == "__main__":
      display_list_of_organizations()
 
      #-----------
-     print_bottom_of_page()
+    print_bottom_of_page()
