@@ -52,10 +52,9 @@ def view_existing_organizations_data(email):
         print('''
                     </select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                <input type='submit' value='Update Needs'>
-
                 ''' %(need_item['item_name'],need_item['item_name']))
-        print('''</form>''')
+        print('''<input type='submit' value='Update Needs'>
+                 </form>''')
 
 
     #B. ORGANIZATIONS SUPPLY
@@ -85,9 +84,10 @@ def view_existing_organizations_data(email):
         print('''
                     </select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                <input type='submit' value='Update Provided'>
+
                 ''' %(supply_item['item_name'], supply_item['item_name']))
-    print('''</form>''')
+    print('''<input type='submit' value='Update Provided'>
+             </form>''')
 
 
 #####################################################################################
