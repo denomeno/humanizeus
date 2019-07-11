@@ -86,7 +86,7 @@ def view_existing_organizations_data(email):
                 <input type='submit' value='Update Needs'>
                 </form>
                 ''' %(supply_item['item_name'], supply_item['item_name']))
-                ''')
+                
 
 
 #####################################################################################
@@ -174,7 +174,8 @@ if __name__ == "__main__":
 
     #decide which form to run
     if form:
-        if form['login_email'].value: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLED
+        if form['login_email'].value: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+
             #run function for existing organizations
             email = form['login_email'].value
 
