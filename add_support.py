@@ -17,6 +17,8 @@ def upload_add_support_form_to_database(form):
         address = form['address'].value
         message = form['message'].value
 
+        time_in_1 = form['time'].value
+
         supply_item_names = form['supply_item_names'] #list of needed items names
 
         type = "Donor"
@@ -43,7 +45,7 @@ def upload_add_support_form_to_database(form):
 
             #quantity_supplied = 1 #CHANGE WHEN ENTERED FROM THE FORM
 
-            Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied)
+            Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied, time)
 
             #4-NEED TO ADD TIME AVAILABLE FOR PICKUP
 
@@ -71,6 +73,7 @@ def add_support():
 
     for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
+                      <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>

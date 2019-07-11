@@ -11,7 +11,7 @@ def view_existing_organizations_login():
     print('''
     Existing member?<br>
     <form method=POST >
-        <input name="email" type="email">
+        <input name="login_email" type="email">
         <input type='submit' value='Submit'>
     </form>
     ''')
@@ -19,44 +19,40 @@ def view_existing_organizations_login():
 
 #####################################################################################
 
-def view_existing_organizations_data():
+def view_existing_organizations_data(email):
     #THIS FUNCTION SHOULD:
     #1. PULL THE NEEDED DATA FROM DATABASE
     #2. DISPLAY: A. ORGANIZATIONS NEEDS, B. ORGANIZATIONS SUPPLY
 
-    organizations_supply = Database_requests.get_organizations_supply_items()
-    organizations_need = Database_requests.get_organizations_need_items()
+    organizations_supply = Database_requests.get_organizations_supply_items(email)
+    organizations_need = Database_requests.get_organizations_need_items(email)
     items = Database_requests.get_all_items()
 
-    organization_needs = Database_requests.get_organizations_need_items()
-    #ie. look at `view_add_organizations()` function for a similar implementation
 
-    organizations_supply = Database_requests.get_organizations_supply_items()
-
-
-    #B. ORGANIZATIONS NEED
+    #A. ORGANIZATIONS NEED
     print('''
     Resources Needed at your Organization:<br>
     ''')
 
-    #TODO - Boray - needs database update functions
-
-    #1.specify which organization's need list you're getting
-    #for organization in organizations_need:
-    #    organization_need = [0]['email']
-
-    #2.show filled in form of items needed selected before
-    for item in items: #dyamically generate options
-        print('''<select name="quantity_requested: %s">
+    #1.show filled in form of items needed selected before
+    for need_item in organizations_need: #dyamically generate options
+        print('''<form method=POST >
+                 <select name="quantity_requested: %s" selected ="%s">
+                      <option value="1">1</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                <output type="checkbox" name="organizations_need_item_names" value="%s"> %s <br>
+                <input type='submit' value='Update Needs'>
+                </form>
+                ''' %(need_item['item_name'], need_item['quantity_requested'], need_item['item_name'], need_item['item_name']))
+
 
     #3.make update button to update database file
-        Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
+    #Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
+
 
 
 
@@ -74,7 +70,7 @@ def view_add_organizations():
     <table>
     <form method=POST ><br>
         Email (will be used for login later, so you can update your resources):<br>
-        <input name="email" type="email"><br>
+        <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
         <input name="suppliername" type="text"><br>
         Address:<br>
@@ -140,22 +136,29 @@ if __name__ == "__main__":
     #--------------------------------
     #IF A FORM IS FILLED AND SUBMITTED, DO THE ACTIONS FOR THE FORM
 
-    #run controller functions
+    #decide which form to run
     if form:
-        email = form['email'].value
-        entity_name = form['entity_name'].value
-        address = form['address'].value
-        #phone = form['phone'].value                #need to add to database
+        if form['login_email'].value: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLED
+            #run function for existing organizations
+            email = form['login_email'].value
 
-        needed_item_names = form['needed_item_names'] #list of needed items names
-        supplied_item_names = form['supplied_item_names'] #list of supplied items names
+            #1. check if email exists in database
+            entity_id = Database_requests.get_entity_id_from_email(email)
+            if entity_id[0]['entity_id']: #if it exists, display need list
+                view_existing_organizations_data(email)
 
-        type = "Organization"
 
-        #1. check if email exists in database
-        entity_id = Database_requests.get_entity_id_from_email(email)
-        if entity_id[0]['entity_id']: #if it exists, display need list
-            view_existing_organizations_data()
+        elif form['new_organization_email'].value: #IF NEW ORGZANITION FORM IS FILLED
+
+            email = form['email'].value
+            entity_name = form['entity_name'].value
+            address = form['address'].value
+            phone = form['phone'].value
+
+            needed_item_names = form['needed_item_names'] #list of needed items names
+            supplied_item_names = form['supplied_item_names'] #list of supplied items names
+
+            type = "Organization"
 
             #1.a. if exists, view update option
 

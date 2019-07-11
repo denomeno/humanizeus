@@ -67,7 +67,7 @@ ON `entities_supply_items`.`item_id`=`items`.`item_id`""")
         return myc.fetchall()
 
 
-    def get_organizations_need_items():
+    def get_organizations_need_items(email):
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
 SELECT
@@ -94,7 +94,8 @@ JOIN `entity_types`
 ON  `entity_types`.`type_id` = `entities`.`type_id`
 
 WHERE `entity_types`.`description` = 'Organization'
-""")
+AND `entities`.`email` = %s
+""", (email, ))
         return myc.fetchall()
 
     def get_organizations_supply_items():
@@ -125,7 +126,8 @@ WHERE `entity_types`.`description` = 'Organization'
     ON  `entity_types`.`type_id` = `entities`.`type_id`
 
     WHERE `entity_types`.`description` = 'Organization'
-    """)
+    AND `entities`.`email` = %s
+    """, (email, ))
         return myc.fetchall()
 
 
@@ -254,7 +256,7 @@ VALUES (%s,
         cnx.commit()
 
 
-    def insert_into_entities_supply_items(entity_id, item_name, description, quantity_requested):
+    def insert_into_entities_supply_items(entity_id, item_name, description, quantity_requested, time_in_1):
         myc = cnx.cursor()
         myc.execute("""
 INSERT INTO `homeless_project`.`entities_supply_items`
@@ -269,8 +271,9 @@ VALUES (%s,
             WHERE `items`.`name` = %s),
 
         %s,
+        %s,
         %s);
 
-""", (entity_id, item_name, description, quantity_requested))
+""", (entity_id, item_name, description, quantity_requested, time_in_1))
 
         cnx.commit()
