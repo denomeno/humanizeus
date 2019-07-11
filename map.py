@@ -109,7 +109,7 @@ def display_list_of_organizations():
             Resources Provided: %s
             Resources Needed: %s
             </table>
-            ''' % ((organization["entity_name"]),
+            ''' % ((organization["name"]),
                     (organization["address"])
                     (organization["entities_supply_items"])
                     (organization["entities_need_items"])))
