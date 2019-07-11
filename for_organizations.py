@@ -31,7 +31,7 @@ def view_existing_organizations_data(email):
 
     #A. ORGANIZATIONS NEED
     print('''
-    Resources Needed at your Organization:<br>
+    <b>Resources Needed at your Organization:</b><br>
     ''')
 
     #1.show filled in form of items needed selected before
@@ -60,28 +60,33 @@ def view_existing_organizations_data(email):
     <br>
     <br>
     <br>
-    <br>
     ''')
 
     print('''
-    Resources Provided your Organization:<br>
+    <b>Resources Provided by your Organization:</b><br>
     ''')
 
     for supply_item in organizations_supply:
 
         print('''<form method=POST >
                  <select name="quantity_requested: %s">
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                 ''' %(supply_item['item_name']))
+
+        for i in range(1,5): #display the selection boxes
+            if supply_item['quantity_requested'] == i: #display the selected box if box number matches with requested quantity
+                print('''<option value="%s" selected>%s</option>
+                        ''' %(i, i))
+            else:
+                print('''<option value="%s" selected>%s</option>
+                        '''%(i, i))
+
+        print('''
                     </select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
                 <input type='submit' value='Update Needs'>
                 </form>
-                ''' %(supply_item['item_name'], supply_item['item_name'], supply_item['item_name']))
-
+                ''' %(supply_item['item_name'], supply_item['item_name']))
+                ''')
 
 
 #####################################################################################
