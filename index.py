@@ -35,27 +35,26 @@ def print_headers():
 def print_top_of_page(title):
       '''Print the top of the HTML page.'''
 
-    print("""
-<html>
-<head>
-<title>%s</title>
-<style>
+      print("""
+      <html>
+      <head>
+      <title>%s</title>
+      <style>
 
-h1 {
-        color: blue
-        font-family: "Garamound";
-}
+      h1 {
+      color: red
+      font-family: "Garamound";
+      }
 
-body {
-        background-color: white;
-        text-align: center;
-}
+      body {
+      background-color: white;
+      text-align: center;
+      }
 
-</style>
-</head>
-
-<body>
-""" % title)
+      </style>
+      </head>
+      <body>
+      """ % title)
 
 #####################################################################################
 def print_menu():
