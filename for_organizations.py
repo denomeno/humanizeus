@@ -12,7 +12,7 @@ def view_existing_organizations_login():
     Existing member?<br>
     <form method=POST >
         <input name="login_email" type="email">
-        <input type='submit' value='Submit'>
+        <input type='submit' value='Login'>
     </form>
     ''')
 
@@ -50,9 +50,37 @@ def view_existing_organizations_data(email):
                 ''' %(need_item['item_name'], need_item['item_name'], need_item['item_name']))
 
 
+
     #3.make update button to update database file
     #Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_needed)
 
+
+    #B. ORGANIZATIONS SUPPLY
+    print('''
+    <br>
+    <br>
+    <br>
+    <br>
+    ''')
+
+    print('''
+    Resources Provided your Organization:<br>
+    ''')
+
+    for supply_item in organizations_supply:
+
+        print('''<form method=POST >
+                 <select name="quantity_requested: %s">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
+                <input type='submit' value='Update Needs'>
+                </form>
+                ''' %(supply_item['item_name'], supply_item['item_name'], supply_item['item_name']))
 
 
 
@@ -130,8 +158,10 @@ if __name__ == "__main__":
     #INSERT GENERAL VIEW ITEMS, THAT APPEAR REGARDLESS IF THE
     #FORM IS SUBMITTED OR NOT
 
-    if not form: 
-        view_existing_organizations_login()
+
+    view_existing_organizations_login()
+
+    if not form: #view only if no form is submitted - at the very beginning
         view_add_organizations()
 
     #--------------------------------
