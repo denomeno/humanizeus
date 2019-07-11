@@ -39,6 +39,8 @@ def print_top_of_page():
       <html>
       <head>
       <title>HumanizeUs</title>
+      <h1>HumanizeUs</h1>
+      <h3>A Neighborly Exchange</h3>
       <style>
 
       h1 {
