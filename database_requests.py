@@ -29,7 +29,7 @@ class Database_requests:
         myc.execute("""
 SELECT
 
-    `entities`.`entitt_id`,
+    `entities`.`entity_id`,
     IFNULL(`entities`.`name`, '') AS `entity_name`,
     IFNULL(`entities`.`latitude`, '') AS `latitude`,
     IFNULL(`entities`.`longitude`, '') AS `longitude`,
