@@ -52,7 +52,7 @@ def generate_map():
         #assign variables to check if inputs exist
         latitude = in_need['latitude']
         longitude = in_need["longitude"]
-        name = in_need["name"]
+        name = in_need["entity_name"]
 
         #if they dont exist, skip adding the marker
         if latitude == "" or longitude == "" or name == "":
@@ -62,8 +62,8 @@ def generate_map():
         if in_need['latitude'] != None and in_need['longitude'] != None:
 
             marker = folium.CircleMarker(location=[latitude, longitude], #can also be folium.CircleMarker
-                           popup ='<strong>%s</strong>' %(in_need["entity_name"]), radius = 10,
-                           tooltip = in_need["entity_name"] )
+                           popup ='<strong>%s</strong>' %(name), radius = 10,
+                           tooltip = name)
 
             marker.add_to(map)
 
