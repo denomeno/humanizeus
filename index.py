@@ -3,7 +3,6 @@
 from import_modules import *
 
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
-
 #####################################################################################
 #GENERRIC HEADER FUNCTIONS - USED IN ALL PAGES
 #####################################################################################
@@ -28,24 +27,37 @@ def print_form_data(form):
     print('</table><hr>')
 
 #####################################################################################
-
-
 def print_headers():
  print("Content-type:text/html\r\n\r\n")
  print()
 
-
-def print_top_of_page():
+#####################################################################################
+def print_top_of_page(title):
       '''Print the top of the HTML page.'''
 
-      print("""
-  <html>
-  <head>
-  <title>HumanizeUs</title>
-  </head>
+    print("""
+<html>
+<head>
+<title>%s</title>
+<style>
 
-  <body>
-  """ )
+h1 {
+        color: blue
+        font-family: "Garamound";
+}
+
+body {
+        background-color: white;
+        text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+""" % title)
+
+#####################################################################################
 def print_menu():
 
     print('''
@@ -93,7 +105,7 @@ def print_bottom_of_page():
 if __name__ == "__main__":
 
      #print_headers()
-     print_top_of_page()
+     print_top_of_page('HumanizeUs')
      print_menu()
      print_bottom_of_page()
 
