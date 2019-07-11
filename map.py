@@ -80,7 +80,7 @@ def generate_map():
 def display_map():
 
     print('''
-    <iframe src="//humanizeus/map_main.html" height="500" width="700"></iframe>
+    <iframe src="map_main.html" height="500" width="700"></iframe>
 ''')
 
 
