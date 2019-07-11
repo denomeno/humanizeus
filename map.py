@@ -11,7 +11,7 @@ def generate_map():
 
     #pull all data
     all_entities = Database_requests.get_all_entities()
-    persons_in_need = Database_requests.get_entitites_need_items()
+    persons_in_need = Database_requests.get_entities_need_items()
 
     #generate map
     #1. create map
@@ -28,7 +28,7 @@ def generate_map():
         #assign variables to check if inputs exist
         latitude = organization['latitude']
         longitude = organization["longitude"]
-        name = organization["name"]
+        name = organization["entity_name"]
 
         #if they dont exist, skip adding the marker
         if latitude == "" or longitude == "" or name == "":
@@ -61,7 +61,7 @@ def generate_map():
         #add to map only if they have longitude and latitude
         if in_need['latitude'] != None and in_need['longitude'] != None:
 
-            marker = folium.CircleMarker(location=[in_need['latitude'], in_need["longitude"]], #can also be folium.CircleMarker
+            marker = folium.CircleMarker(location=[latitude, longitude], #can also be folium.CircleMarker
                            popup ='<strong>%s</strong>' %(in_need["entity_name"]), radius = 10,
                            tooltip = in_need["entity_name"] )
 
