@@ -154,10 +154,10 @@ def view_list_of_all_matches():
     for match in matches:
 
         match_id = match['match_id']
-        item_name = item['item_name']
-        in_need_name = need['in_need_name']
-        supply_name = supply['supply_name']
-        fulfillment_status = status['fulfillment_status']
+        item_name = match['item_name']
+        in_need_name = match['in_need_name']
+        supply_name = match['supply_name']
+        fulfillment_status = match['fulfillment_status']
 
         #print each line for table
         print("""
