@@ -11,6 +11,7 @@ def view_existing_organizations_login():
     print('''
     Existing member?<br>
     <form method=POST >
+        <input type="hidden" name="form_name" value="existingMemberLogin"/>
         <input name="login_email" type="email">
         <input type='submit' value='Login'>
     </form>
@@ -133,6 +134,7 @@ def view_add_organizations():
     <h3>Join the communnity.</h3>
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
     <form method=POST ><br>
+        <input type="hidden" name="form_name" value="newOrganization"/>
         <u>Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
@@ -203,7 +205,7 @@ if __name__ == "__main__":
 
     #decide which form to run
     if form:
-        if form['login_email']: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+        if form['form_name'].value == 'existingMemberLogin': #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
 
             #run function for existing organizations
             email = form['login_email'].value
