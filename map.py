@@ -88,12 +88,14 @@ def display_map():
 
 
 #####################################################################################
-def get_list_of_organizations():
+def display_list_of_organizations():
     """Middleware function to get all organization from the entities table.
     Returns a list of tuples of (organization_id, name, address)."""
 
     #pull all data
     all_entities = Database_requests.get_all_entities()
+    entities_need_items = Database_requests.get_entities_need_items()
+    entities_supply_items = Database_requests.get_entities_supply_items()
 
     ## create an HTML table for output:
     print("""
@@ -118,12 +120,26 @@ def get_list_of_organizations():
         if organization['entity_type'] == "Organization":
 
             #get variables needed for table
-            name = organization['name']
-            address = organization["address"]
-            supply = organization["entities_supply_items"]
-            need = organization["entities_need_items"]
+            if organization['name']:
+                name = organization['name']
+            elif not organization['name']:
+                name = "N/A"
 
-            display_list_of_organizations(name, address, supply, need)
+            if organization["address"]:
+                address = organization["address"]
+            elif not organization["address"]:
+                address = "N/A"
+
+            supply = ""
+            for item in entities_supply_items:
+                if item['entity_name'] == organization['name']:
+                    supply = supply + item['item_name'] + "<br>"
+
+
+            #need = organization["entities_need_items"]
+            need = "trial"
+
+            display_list_row(name, address, supply, need)
 
     print("""
     </table>
@@ -132,7 +148,7 @@ def get_list_of_organizations():
 
 #####################################################################################
 
-def display_list_of_organizations(name, address, supply, need):
+def display_list_row(name, address, supply, need):
 
     # each iteration of this loop creates on record of output:
     #(name, address, supply, need) = organization
@@ -144,7 +160,7 @@ def display_list_of_organizations(name, address, supply, need):
     <td>%s</a></td>
     <td>%s</a></td>
   </tr>
-    """ % (name, address, supply,need))
+    """ % (name, address, supply, need))
 
 
 
