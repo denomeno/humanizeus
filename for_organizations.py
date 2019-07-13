@@ -44,7 +44,7 @@ def view_existing_organizations_data(email):
         #form displays all items that can be chosen
         for need_item in organizations_need: #dyamically generate options
 
-            entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
+            entities_need_items_id = need_item['entities_need_items_id'] #unique if of organization_supply_items match
 
             if item['name'] == need_item['item_name']:
 
