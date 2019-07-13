@@ -137,20 +137,17 @@ def display_list_of_organizations():
                 phone = "N/A"
 
             supply = ""
-            for item in entities_supply_items:
-                if item['entity_name'] == organization['name']:
-                    quantity_requested = item['quantity_requested']
-                    quantity_fulfilled = item['quantity_supplied']
-                    quantity = quantity_requested - quantity_fulfilled
-                    supply = supply + int(quantity) + item['item_name'] + "<br>"
+            for item in entities_supply_items: #iterate supplied items list,
+                if item['entity_name'] == organization['name']: #for matching organization names, add the supplied item name
+                    supply = supply + item['item_name'] + "<br>"
 
             need = ""
             for item in entities_need_items:
                 if item['entity_name'] == organization['name']:
                     quantity_requested = item['quantity_requested']
-                    quantity_fulfilled = item['quantity_supplied']
-                    quantity = quantity_requested - quantity_fulfilled
-                    need = need + int(quantity) + item['item_name'] + "<br>"
+                    quantity_fulfilled = item['quantity_fulfilled']
+                    quantity = int(quantity_requested - quantity_fulfilled)
+                    need = need + str(quantity) + " - " + item['item_name'] + "<br>"
 
             display_list_row(name, address, phone, supply, need)
 
