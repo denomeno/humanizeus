@@ -18,6 +18,7 @@ def generate_map():
 
     #create map object
     map = folium.Map(location=[42.34372, -71.074181],
+                        Popup = max_width=450,
                         zoom_start=13,
                         tiles='Stamen Terrain')
 
@@ -39,7 +40,7 @@ def generate_map():
         #filter for organization
         if organization['entity_type'] == "Organization":
 
-            popup = folium.Popup(max_width=450)
+            popup =
                     '''<b>Name:</b> %s<br>
                     <b>Address:</b> %s<br>
                     <b>Phone:</b> %s<br>
