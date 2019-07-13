@@ -11,6 +11,7 @@ def view_existing_organizations_login():
     print('''
     Existing member?<br>
     <form method=POST >
+        <input type="hidden" name="form_name" value="existingMemberLogin"/>
         <input name="login_email" type="email">
         <input type='submit' value='Login'>
     </form>
@@ -188,7 +189,7 @@ if __name__ == "__main__":
 
     #decide which form to run
     if form:
-        if form['login_email']: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+        if form['form_name'].value == "existingMemberLogin": #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
 
             #run function for existing organizations
             email = form['login_email'].value
