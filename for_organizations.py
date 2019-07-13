@@ -18,7 +18,6 @@ def view_existing_organizations_login():
 
 
 #####################################################################################
-
 def view_existing_organizations_data(email):
     #THIS FUNCTION SHOULD:
     #1. PULL THE NEEDED DATA FROM DATABASE
@@ -48,7 +47,7 @@ def view_existing_organizations_data(email):
 
                 quantity_requested = need_item['quantity_requested']
                 quantity_fulfilled = need_item['quantity_fulfilled']
-                quantity = int(quantity_requested - quantity_fulfilled)
+                quantity = int(quantity_requested-quantity_fulfilled)
 
 
         print('''<select name="quantity: %s">
@@ -148,7 +147,8 @@ def view_add_organizations():
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
-                    </select> <br>''' %(item['name']))
+                    </select>
+                <input type="text" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
     #decide which form to run
     if form:
-        if form['login_email'].value: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+        if form['login_email']: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
 
             #run function for existing organizations
             email = form['login_email'].value
@@ -199,7 +199,7 @@ if __name__ == "__main__":
                 view_existing_organizations_data(email)
 
 
-        elif form['new_organization_email'].value: #IF NEW ORGZANITION FORM IS FILLED
+        elif form['new_organization_email']: #IF NEW ORGZANITION FORM IS FILLED
 
             email = form['email'].value
             entity_name = form['entity_name'].value
