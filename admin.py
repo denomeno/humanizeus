@@ -117,6 +117,66 @@ li a:hover {
 
 ''')
 
+#####################################################################################
+
+def view_admin_login():
+    #display in browser
+    print('''
+    HumanizeUs member?<br>
+    <form method=POST >
+        <input name="login_email" type="email">
+        <input type='submit' value='Login'>
+    </form>
+    ''')
+
+#####################################################################################
+def view_list_of_all_matches():
+    #THIS FUNCTION SHOULD:
+    #1. PULL THE NEEDED DATA FROM DATABASE
+    #2. DISPLAY LIST OF ALL: A. MATCHES B. NEEDS C. SUPPLIES
+
+    matches = Database_requests.get_all_matches()
+
+    print("""
+    <h3> All Matches</h3>
+    <p>
+
+    <table border=1>
+      <tr>
+        <th><font size=+1"><b>Match Id</b></font></th>
+        <th><font size=+1"><b>Item Name</b></font></th>
+        <th><font size=+1"><b>In Need Name</b></font></th>
+        <th><font size=+1"><b>Supplier Name</b></font></th>
+        <th><font size=+1"><b>Status</b></font></th>
+      </tr>
+    """)
+
+    for match in matches:
+
+        match_id = match['match_id']
+        item_name = item['item_name']
+        in_need_name = need['in_need_name']
+        supply_name = supply['supply_name']
+
+        #print each line for table
+        print("""
+      <tr>
+        <td>%s</td>
+        <td>%s</td>
+        <td>%s</td>
+        <td>%s</td>
+        <td>yes or no</td>
+      </tr>
+        """ % (match_id,item_name, in_need_name, supply_name))
+
+    #print('''''') end of table
+    print("""
+    </table>
+    """)
+
+
+
+#####################################################################################
 
 def print_bottom_of_page():
      '''Print the bottom of the HTML page.'''
@@ -139,4 +199,11 @@ if __name__ == "__main__":
      #print_headers()
      print_top_of_page()
      print_menu()
+     #-----------
+
+     #-----------
+     view_admin_login()
+     view_list_of_all_matches()
+     #-----------
+
      print_bottom_of_page()
