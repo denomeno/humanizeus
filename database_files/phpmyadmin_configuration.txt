@@ -1,5 +1,5 @@
 
-To connect to humanizeus AWS database: 
+To connect to humanizeus AWS database:
 
 Copy paste the below block to phpmyadmin>config.inc.php
 
