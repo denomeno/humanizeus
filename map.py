@@ -33,7 +33,7 @@ def generate_map():
         phone = organization["phone"]
 
         #if they dont exist, skip adding the marker
-        if latitude == "" or longitude == "" or name == "" or address == "" or phone == "":
+        if latitude == "" or longitude == "" or name == "":
             continue
 
         #filter for organization
