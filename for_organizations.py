@@ -125,7 +125,7 @@ def view_add_organizations():
     #display in browser
     print('''
     <h3>Join the communnity.</h3>
-    <h5>Please add some necessary details about your organization so we can place you on our map for members to see. </h5>
+    <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
     <form method=POST ><br>
     <table border=1>
       <tr>
@@ -137,6 +137,7 @@ def view_add_organizations():
         <input name="address" type="text"><br>
         Phone:<br>
         <input name="phone" type="text"><br>
+        <hr>
         Resources Provided at your Organization:<br>
         ''')
 
@@ -144,7 +145,7 @@ def view_add_organizations():
         print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
-    print('''
+    print('''<hr>
         Resources your Organization Needs at the moment:<br>
         ''')
 
