@@ -102,19 +102,22 @@ def display_list_of_organizations():
         if organization['entity_type'] == "Organization":
 
             print('''
-            <table>
-            Organization Name: <strong>%s</strong>
-            Address: %s
-            Phone: 000-000-000
-            Resources Provided:
-            Resources Needed:
-            </table>
+            <table border=1>
+                <tr>
+                    <th>Organization Name: <strong>%s</strong></th>
+                    <th>Address: %s</th>
+                    <th>Phone: 000-000-000</th>
+                    <th>Resources Provided:</th>
+                    <th>Resources Needed:</th>
+                </tr>
             ''' % ((organization["name"]),
                     (organization["address"])))
 
                     #(organization["entities_supply_items"])
                     #(organization["entities_need_items"])))
-        print("html for bottom of table")
+
+
+            #print("html for bottom of table")
 
 
 #####################################################################################
