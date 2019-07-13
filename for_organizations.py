@@ -112,7 +112,7 @@ def view_add_organizations():
         Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
-        <input name="suppliername" type="text">
+        <input name="suppliername" type="text"><br>
         Address:<br>
         <input name="address" type="text"><br>
         Phone:<br>
@@ -128,7 +128,7 @@ def view_add_organizations():
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                <input name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''<hr>
