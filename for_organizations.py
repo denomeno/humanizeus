@@ -11,7 +11,6 @@ def view_existing_organizations_login():
     print('''
     Existing member?<br>
     <form method=POST >
-        <input type="hidden" name="form_name" value="existingMemberLogin"/>
         <input name="login_email" type="email">
         <input type='submit' value='Login'>
     </form>
@@ -80,7 +79,10 @@ def view_existing_organizations_data(email):
     ''')
 
     print('''
-    <b>Resources Provided by your Organization:</b><br>
+    <b>Resources Provided at your Organization:</b><br>
+    <p>
+    <table border=1>
+      <tr>
     ''')
     print('''<form method=POST >''')
 
@@ -97,15 +99,19 @@ def view_existing_organizations_data(email):
         if item_supplied is True:
 
             print('''
-                <input type="checkbox" value=%s checked >%s<br>
+                <th><input type="checkbox" value=%s checked >%s</th><br>
             '''%(item['name'],item['name']))
 
         elif item_supplied is False:
             print('''
-                <input type="checkbox" value=%s>%s<br>
-            '''%(item['name'],item['name']))
+                <th><input type="checkbox" value=%s>%s</th><br>
+                '''%(item['name'],item['name']))
 
-    print('''<input type='submit' value='Update Provided'>
+    print('''
+        </tr>
+    </table>
+    ''')
+    print('''<input type='submit' value='Update Provided Item List'>
              </form>''')
 
 
@@ -189,7 +195,7 @@ if __name__ == "__main__":
 
     #decide which form to run
     if form:
-        if form['form_name'].value == "existingMemberLogin": #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+        if form['login_email']: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
 
             #run function for existing organizations
             email = form['login_email'].value
