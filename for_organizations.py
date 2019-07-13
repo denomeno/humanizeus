@@ -272,8 +272,12 @@ if __name__ == "__main__":
                     #if value error is present: this means there is no existing entry in entities_need_items for that organization and that item pair
                     #thus: insert new entry
 
+                    entity_id = form['entity_id'].value
+
                      #get quantity
-                     quantity_requested = form['quantity: %s' %(item['name'])].value
+                    quantity_requested = form['quantity: %s' %(item['name'])].value
+
+                    Database_requests.insert_into_entities_need_items()
 
 
 
