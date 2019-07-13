@@ -123,13 +123,13 @@ def display_list_of_organizations():
     """)
 
     #filter for organization
-    #if organization['entity_type'] == "Organization":
+    if organization['entity_type'] == "Organization":
 
     #generate the table lines
-    for organization in all_entities:
+    #for organization in all_entities:
 
         # each iteration of this loop creates on record of output:
-        (name, address, supply, need) = organization
+        #(name, address, supply, need) = organization
 
         print("""
       <tr>
