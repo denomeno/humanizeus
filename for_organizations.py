@@ -111,10 +111,10 @@ def view_add_organizations():
     <form method=POST ><br>
     <table border=1>
       <tr>
-        <th>Email (will be used for login later, so you can update your resources):<br></th>
+        Email (will be used for login later, so you can update your resources):<br>
         <td><input name="new_organization_email" type="email"><br></td>
         <th>Organization Name:<br></th>
-        <td><input name="suppliername" type="text"><br></td>
+        <input name="suppliername" type="text"><br>
         <th>Address:<br></th>
         <td><input name="address" type="text"><br></td>
         <th>Phone:<br></th>
