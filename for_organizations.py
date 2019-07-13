@@ -37,14 +37,25 @@ def view_existing_organizations_data(email):
     #1.show filled in form of items needed selected before
     print('''<form method=POST >''')
 
-    #this form should also diplay all other items
-    for need_item in organizations_need: #dyamically generate options
+    for item in items:
 
-        print('''<select name="quantity_requested: %s">
+        quantity = 0 #variable to store how many of each item an organization supplies
+
+        #form displays all items that can be chosen
+        for need_item in organizations_need: #dyamically generate options
+
+            if item['name'] == neeed_item['item_name']:
+
+                quantity_requested = neeed_item['quantity_requested']
+                quantity_supplied = neeed_item['quantity_supplied']
+                quantity = int(quantity_requested-quantity_supplied)
+
+
+        print('''<select name="quantity: %s">
                  ''' %(need_item['item_name']))
 
-        for i in range(1,5): #display the selection boxes
-            if int(need_item['quantity_requested']) == i: #display the selected box if box number matches with requested quantity
+        for i in range(0,5): #display the selection boxes
+            if quantity == i: #display the selected box if box number matches with requested quantity
                 print('''<option value="%s" selected>%s</option>
                         ''' %(i, i))
             else:
@@ -87,7 +98,7 @@ def view_existing_organizations_data(email):
                 <input type="checkbox" value=%s checked >%s<br>
             '''%(item['name'],item['name']))
 
-        elif item_supplied is False: 
+        elif item_supplied is False:
             print('''
                 <input type="checkbox" value=%s>%s<br>
             '''%(item['name'],item['name']))
