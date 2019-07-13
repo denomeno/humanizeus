@@ -142,7 +142,7 @@ def display_list_of_organizations():
                     quantity_requested = item['quantity_requested']
                     quantity_fulfilled = item['quantity_supplied']
                     quantity = quantity_requested - quantity_fulfilled
-                    supply = supply + quantity + item['item_name'] + "<br>"
+                    supply = supply + int(quantity) + item['item_name'] + "<br>"
 
             need = ""
             for item in entities_need_items:
@@ -150,7 +150,7 @@ def display_list_of_organizations():
                     quantity_requested = item['quantity_requested']
                     quantity_fulfilled = item['quantity_supplied']
                     quantity = quantity_requested - quantity_fulfilled
-                    need = need + quantity + item['item_name'] + "<br>"
+                    need = need + int(quantity) + item['item_name'] + "<br>"
 
             display_list_row(name, address, phone, supply, need)
 
