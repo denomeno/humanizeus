@@ -203,6 +203,9 @@ if __name__ == "__main__":
     print_menu()
     #-----------
 
+    form = cgi.FieldStorage()
+    print_form_data(form)
+
     #-----------
     view_admin_login()
 
@@ -218,7 +221,7 @@ if __name__ == "__main__":
             if len(admin_exists) > 0:
 
                 view_list_of_all_matches()
-            
+
 
     #-----------
 
