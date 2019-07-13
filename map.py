@@ -147,7 +147,7 @@ def display_list_of_organizations():
                     quantity_requested = item['quantity_requested']
                     quantity_fulfilled = item['quantity_fulfilled']
                     quantity = int(quantity_requested - quantity_fulfilled)
-                    need = need + str(quantity) + "-" + item['item_name'] + "<br>"
+                    need = need + str(quantity) + " - " + item['item_name'] + "<br>"
 
             display_list_row(name, address, phone, supply, need)
 
