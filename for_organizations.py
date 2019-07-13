@@ -47,7 +47,7 @@ def view_existing_organizations_data(email):
 
                 quantity_requested = need_item['quantity_requested']
                 quantity_fulfilled = need_item['quantity_fulfilled']
-                quantity = int(quantity_requested-quantity_fulfilled)
+                quantity = int(quantity_requested - quantity_fulfilled)
 
 
         print('''<select name="quantity: %s">
@@ -147,8 +147,7 @@ def view_add_organizations():
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
-                    </select>
-                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                    </select> <br>''' %(item['name']))
 
 
     print('''
