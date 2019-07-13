@@ -277,8 +277,10 @@ if __name__ == "__main__":
                      #get quantity
                     quantity_requested = form['quantity: %s' %(item['name'])].value
 
+                    description = "Updated"
+
                     #insert into database 
-                    Database_requests.insert_into_entities_need_items(entity_id, item['name'], description = "Updated", quantity_requested)
+                    Database_requests.insert_into_entities_need_items(entity_id, item['name'], description,  quantity_requested)
 
 
 
