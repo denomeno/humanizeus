@@ -88,7 +88,7 @@ def display_map():
 
 
 #####################################################################################
-def get_list_of_organizations():
+def display_list_of_organizations():
     """Middleware function to get all organization from the entities table.
     Returns a list of tuples of (organization_id, name, address)."""
 
@@ -139,7 +139,7 @@ def get_list_of_organizations():
             #need = organization["entities_need_items"]
             need = "trial"
 
-            display_list_of_organizations(name, address, supply, need)
+            display_list_row(name, address, supply, need)
 
     print("""
     </table>
@@ -148,7 +148,7 @@ def get_list_of_organizations():
 
 #####################################################################################
 
-def display_list_of_organizations(name, address, supply, need):
+def display_list_row(name, address, supply, need):
 
     # each iteration of this loop creates on record of output:
     #(name, address, supply, need) = organization
