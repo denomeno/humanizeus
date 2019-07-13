@@ -43,6 +43,8 @@ SELECT
     IFNULL(`entities`.`latitude`, '') AS `latitude`,
     IFNULL(`entities`.`longitude`, '') AS `longitude`,
     `items`.`name` AS `item_name`,
+    `entities_need_items`.`quantity_requested`,
+    `entities_need_items`.`quantity_fulfilled`,
     IFNULL(`entities_need_items`.`time_in_1`, '') AS `time_in_1`,
     IFNULL(`entities_need_items`.`time_out_1`, '') AS `time_out_1`
 
@@ -63,6 +65,10 @@ SELECT
 
     `entities`.`name` AS `entity_name`,
     `items`.`name` AS `item_name`,
+    IFNULL(`entities`.`latitude`, '') AS `latitude`,
+    IFNULL(`entities`.`longitude`, '') AS `longitude`,
+    `entities_supply_items`.`quantity_requested`,
+    `entities_supply_items`.`quantity_fulfilled`,
     `entities_supply_items`.`time_in_1`,
     `entities_supply_items`.`time_out_1`
 
@@ -160,7 +166,7 @@ SELECT
     `entities`.`entity_id`,
     IFNULL(`entities`.`name`, '') AS `name`,
     IFNULL(`entities`.`address`,  '') AS `address`,
-    IFNULL(`entities`.`phone`, '') AS `phone`, 
+    IFNULL(`entities`.`phone`, '') AS `phone`,
     IFNULL(`entity_types`.`description`,  '') AS `entity_type`,
     IFNULL(`entities`.`latitude`, '') AS  `latitude`,
     IFNULL(`entities`.`longitude`,  '') AS  `longitude`
