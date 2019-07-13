@@ -52,7 +52,7 @@ def view_existing_organizations_data(email):
 
 
         print('''<select name="quantity: %s">
-                 ''' %(item['item_name']))
+                 ''' %(item['name']))
 
         for i in range(0,5): #display the selection boxes
             if quantity == i: #display the selected box if box number matches with requested quantity
@@ -64,7 +64,7 @@ def view_existing_organizations_data(email):
 
         print('''</select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                ''' %(item['item_name'],item['item_name']))
+                ''' %(item['name'],item['name']))
 
 
 
