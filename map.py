@@ -95,19 +95,6 @@ def get_list_of_organizations():
     #pull all data
     all_entities = Database_requests.get_all_entities()
 
-    for organization in all_entities:
-
-        #get variables needed for table
-        name = organization['name']
-        address = organization["address"]
-        supply = organization["entities_supply_items"]
-        need = organization["entities_need_items"]
-
-
-#####################################################################################
-
-def display_list_of_organizations():
-
     ## create an HTML table for output:
     print("""
     <h2> All Organizations</h2>
@@ -122,30 +109,45 @@ def display_list_of_organizations():
       </tr>
     """)
 
-    #filter for organization
-    if organization['entity_type'] == "Organization":
-
     #generate the table lines
     #for organization in all_entities:
 
-        # each iteration of this loop creates on record of output:
-        #(name, address, supply, need) = organization
+    for organization in all_entities:
 
-        print("""
-      <tr>
-        <td>%s</a></td>
-        <td>%s</a></td>
-        <td>%s</a></td>
-        <td>%s</a></td>
-      </tr>
-        """ % (name, address,
-                entities_supply_items,
-                entities_need_items))
+        #filter for organization
+        if organization['entity_type'] == "Organization":
 
+            #get variables needed for table
+            name = organization['name']
+            address = organization["address"]
+            supply = organization["entities_supply_items"]
+            need = organization["entities_need_items"]
+
+            display_list_of_organizations(name, address, supply, need)
 
     print("""
     </table>
     """)
+
+
+#####################################################################################
+
+def display_list_of_organizations(name, address, supply, need):
+
+    # each iteration of this loop creates on record of output:
+    #(name, address, supply, need) = organization
+
+    print("""
+  <tr>
+    <td>%s</a></td>
+    <td>%s</a></td>
+    <td>%s</a></td>
+    <td>%s</a></td>
+  </tr>
+    """ % (name, address, supply,need))
+
+
+
 
 
 
