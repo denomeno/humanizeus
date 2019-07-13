@@ -146,20 +146,16 @@ def view_add_organizations():
         Resources Provided at your Organization:<br>
         ''')
 
+    #list of items provided
     for item in items: #dyamically generate options
-        print('''<select name="quantity_requested: %s">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </select>
-                <input name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+        print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
-    print('''<hr>
+    print('''
         Resources your Organization Needs at the moment:<br>
         ''')
 
+    #list of items needed
     for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
                       <option value="0">0</option>
@@ -168,7 +164,7 @@ def view_add_organizations():
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <input name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                 %s <br>''' %(item['name'], item['name']))
 
 
     print('''
