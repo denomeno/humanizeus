@@ -29,9 +29,11 @@ def generate_map():
         latitude = organization['latitude']
         longitude = organization["longitude"]
         name = organization["name"]
+        address = organization["address"]
+        phone = organization["phone"]
 
         #if they dont exist, skip adding the marker
-        if latitude == "" or longitude == "" or name == "":
+        if latitude == "" or longitude == "" or name == "" or address == "" or phone == "":
             continue
 
         #filter for organization
@@ -81,6 +83,7 @@ def display_map():
 
     print('''
     <iframe src="map_main.html" height="500" width="700">
+    <hr>
     <p>Your browser does not support iframes.</p>
     </iframe>
 ''')
