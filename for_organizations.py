@@ -137,7 +137,7 @@ def view_add_organizations():
         Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
-        <input name="suppliername" type="text">
+        <input name="suppliername" type="text"><br>
         Address:<br>
         <input name="address" type="text"><br>
         Phone:<br>
@@ -147,7 +147,13 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <input name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''<hr>
@@ -248,7 +254,7 @@ if __name__ == "__main__":
             all_items = Database_requests.get_all_items()
 
             for item in all_items:
-                trial = 1 
+                trial = 1
                 #get the fiels with the item name
 
                 #if number is not zero, create a new entry
