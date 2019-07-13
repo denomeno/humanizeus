@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2019 at 02:46 AM
+-- Generation Time: Jul 13, 2019 at 03:35 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.6
 
@@ -90,16 +90,11 @@ CREATE TABLE `entities` (
 --
 
 INSERT INTO `entities` (`entity_id`, `email`, `name`, `address`, `phone`, `website`, `latitude`, `longitude`, `type_id`) VALUES
-(1, 'hallikdeniz@gmail.com', 'Deniz', '1157 Commonwealth Ave', '8572729210', '', '', '', 1),
 (2, 'fred@fred.com', 'Fred', '112 Southampton Street', '', '', '42.332315', '-71.0713258', 2),
 (3, 'women@lunch.com', 'Women\'s Lunch Place', '70 Newburry', '', '', '42.352127', '-71.074181', 3),
 (4, 'american@redcross.com', 'The American Red Cross  Food Pantry', '', '', '', '42.327107', '-71.067641', 3),
-(5, 'boraytoktay@gmail.com', 'Boray', '132 Thomson Street', '', '', '', '', 2),
-(16, 'fuck@gmail.com', 'Boray', 'dfbasd', '', '', '', '', 2),
-(17, 'trial@gmail.com', 'Trial', 'Trial', '', '', '', '', 2),
-(18, 'tolga@trial.com', 'Tolage', 'Deneme', '', '', '', '', 2),
-(19, 'boray@tolga.com', 'trial', 'trial', '', '', '', '', 2),
-(20, 'hallik@bu.edu', 'Deniz', '1157', '', '', '', '', 2);
+(23, 'boraytoktay@gmail.com', 'Boray', '132 Thompson', '', '', '', '', 1),
+(24, 'new@trial.com', 'New', 'Trial', '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -125,12 +120,9 @@ CREATE TABLE `entities_need_items` (
 --
 
 INSERT INTO `entities_need_items` (`entities_need_items_id`, `entity_id`, `item_id`, `quantity_requested`, `quantity_fulfilled`, `description`, `continuous_need_status`, `show_on_map_status`, `time_in_1`, `time_out_1`) VALUES
-(1, 5, 1, 2, 0, '    Please', '', '', '', ''),
-(2, 5, 3, 3, 0, '    Please', '', '', '', ''),
-(3, 19, 1, 3, 0, '    trial', '', '', '', ''),
-(4, 19, 3, 2, 0, '    trial', '', '', '', ''),
-(5, 20, 1, 3, 0, '    Hi', '', '', '', ''),
-(6, 20, 5, 2, 0, '    Hi', '', '', '', '');
+(7, 2, 1, 0, 0, '', '', '', '', ''),
+(9, 3, 2, 3, 0, '', '', '', '', ''),
+(10, 3, 1, 4, 0, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -160,9 +152,12 @@ CREATE TABLE `entities_supply_items` (
 --
 
 INSERT INTO `entities_supply_items` (`entities_supply_items_id`, `entity_id`, `item_id`, `description`, `quantity_requested`, `quantity_fulfilled`, `continuous_supply_status`, `fulfillment_status`, `time_in_1`, `time_out_1`, `time_in_2`, `time_out_2`, `time_in_3`, `time_out_3`) VALUES
-(1, 1, 4, '', 0, 0, '', '', '12:00 PM 5/10/2019', '01:00 PM 5/10/2019', '', '', '', ''),
-(4, 5, 1, '    Trial', 4, 0, '', '', '', '', '', '', '', ''),
-(5, 5, 4, '    Trial', 3, 0, '', '', '', '', '', '', '', '');
+(6, 23, 1, '   Trial', 2, 0, '', '', '', '', '', '', '', ''),
+(7, 23, 3, '   Trial', 2, 0, '', '', '', '', '', '', '', ''),
+(8, 24, 1, '    ', 3, 0, '', '', '', '', '', '', '', ''),
+(9, 24, 4, '    ', 1, 0, '', '', '', '', '', '', '', ''),
+(10, 3, 5, '', 3, 0, '', '', '', '', '', '', '', ''),
+(11, 3, 6, '', 2, 0, '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -220,13 +215,6 @@ CREATE TABLE `matches` (
   `entities_supply_items_id` int(11) NOT NULL,
   `fulfillment_status` varchar(3) NOT NULL COMMENT 'YES = fulfilled / NO = not fulfilled '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `matches`
---
-
-INSERT INTO `matches` (`match_id`, `entities_need_items_id`, `entities_supply_items_id`, `fulfillment_status`) VALUES
-(1, 1, 1, '');
 
 --
 -- Indexes for dumped tables
@@ -303,19 +291,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `entities`
 --
 ALTER TABLE `entities`
-  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `entity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `entities_need_items`
 --
 ALTER TABLE `entities_need_items`
-  MODIFY `entities_need_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `entities_need_items_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `entities_supply_items`
 --
 ALTER TABLE `entities_supply_items`
-  MODIFY `entities_supply_items_id` int(44) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `entities_supply_items_id` int(44) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `entity_types`
