@@ -56,7 +56,7 @@ ON `entities_need_items`.`item_id`=`items`.`item_id`""")
         return myc.fetchall()
 
 
-    def get_entitites_supply_items():
+    def get_entities_supply_items():
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
 SELECT
