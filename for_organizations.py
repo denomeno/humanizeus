@@ -36,6 +36,8 @@ def view_existing_organizations_data(email):
 
     #1.show filled in form of items needed selected before
     print('''<form method=POST >''')
+
+    #this form should also diplay all other items 
     for need_item in organizations_need: #dyamically generate options
 
         print('''<select name="quantity_requested: %s">
@@ -57,6 +59,7 @@ def view_existing_organizations_data(email):
              </form>''')
 
 
+
     #B. ORGANIZATIONS SUPPLY
     print('''
     <br>
@@ -68,6 +71,8 @@ def view_existing_organizations_data(email):
     <b>Resources Provided by your Organization:</b><br>
     ''')
     print('''<form method=POST >''')
+
+
     for supply_item in organizations_supply:
 
         print('''<select name="quantity_requested: %s">
