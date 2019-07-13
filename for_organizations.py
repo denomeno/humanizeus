@@ -88,8 +88,7 @@ def view_existing_organizations_data(email):
     print('''
     <b>Resources Provided at your Organization:</b><br>
     <p>
-    <table border=1>
-      <tr>
+
     ''')
 
     print('''<form method=POST >
@@ -110,18 +109,14 @@ def view_existing_organizations_data(email):
         if item_supplied is True:
 
             print('''
-                <th><input type="checkbox" value=%s checked >%s</th><br>
+                <input type="checkbox" value=%s checked >%s<br>
             '''%(item['name'],item['name']))
 
         elif item_supplied is False:
             print('''
-                <th><input type="checkbox" value=%s>%s</th><br>
+                <input type="checkbox" value=%s>%s<br>
                 '''%(item['name'],item['name']))
 
-    print('''
-        </tr>
-    </table>
-    ''')
     print('''<input type='submit' value='Update Provided Item List'>
              </form>''')
 
@@ -138,7 +133,7 @@ def view_add_organizations():
     <h3>Join the communnity.</h3>
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
     <form method=POST ><br>
-        Email (will be used for login later, so you can update your resources):<br>
+        <u>Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
         <input name="suppliername" type="text"><br>
