@@ -268,7 +268,7 @@ if __name__ == "__main__":
                     #update database
                     Database_requests.update_quantity_requested_of_entities_need_items(entities_need_items_id, quantity_requested)
 
-                except KeyError: 
+                except KeyError:
                     #if value error is present: this means there is no existing entry in entities_need_items for that organization and that item pair
                     #thus: insert new entry
 
@@ -279,6 +279,9 @@ if __name__ == "__main__":
 
                     description = "Updated"
 
+                    if int(quantity_requested) == 0:
+                        continue
+                        
                     #insert into database
                     Database_requests.insert_into_entities_need_items(entity_id, item['name'], description,  quantity_requested)
 
