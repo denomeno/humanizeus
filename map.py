@@ -110,12 +110,10 @@ def display_list_of_organizations():
             Resources Needed:
             </table>
             ''' % ((organization["name"]),
-                    (organization["address"]))
+                    (organization["address"])))
 
                     #(organization["entities_supply_items"])
                     #(organization["entities_need_items"])))
-
-
         print("html for bottom of table")
 
 
