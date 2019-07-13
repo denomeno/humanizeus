@@ -35,7 +35,8 @@ def view_existing_organizations_data(email):
     ''')
 
     #1.show filled in form of items needed selected before
-    print('''<form method=POST >''')
+    print('''<form method=POST >
+                <input type="hidden" name="form_name" value="updateNeeds"/>''')
 
     for item in items:
 
@@ -43,6 +44,8 @@ def view_existing_organizations_data(email):
 
         #form displays all items that can be chosen
         for need_item in organizations_need: #dyamically generate options
+
+        entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
 
             if item['name'] == need_item['item_name']:
 
@@ -64,7 +67,7 @@ def view_existing_organizations_data(email):
 
         print('''</select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                ''' %(item['name'],item['name']))
+                ''' %(item['name'],item['name']))#add organization need item id
 
 
 
@@ -82,13 +85,17 @@ def view_existing_organizations_data(email):
     print('''
     <b>Resources Provided by your Organization:</b><br>
     ''')
-    print('''<form method=POST >''')
+
+    print('''<form method=POST >
+                <input type="hidden" name="form_name" value="updateSupply"/>''')
 
     for item in items:
         #use boolean to store if matched
         item_supplied = False #set initially as not needed
 
         for supply_item in organizations_supply: #find if item amongst organizations's supply
+
+        entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
 
             if item['name'] == supply_item['item_name']:
 
@@ -121,7 +128,8 @@ def view_add_organizations():
     <h3>Join the communnity.</h3>
     <h5>Please add some necessary details about your organization so we can place you on our map for members to see. </h5>
     <table>
-    <form method=POST ><br>
+    <form method=POST><br>
+        <input type="hidden" name="form_name" value="newOrganization"/>
         Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
@@ -200,8 +208,9 @@ if __name__ == "__main__":
                 view_existing_organizations_data(email)
 
 
-        elif form['new_organization_email']: #IF NEW ORGZANITION FORM IS FILLED
+        elif form['form_name'].value == "newOrganization": #IF NEW ORGZANITION FORM IS FILLED
 
+            #get fields from the submitted form
             email = form['email'].value
             entity_name = form['entity_name'].value
             address = form['address'].value
@@ -210,24 +219,13 @@ if __name__ == "__main__":
             needed_item_names = form['needed_item_names'] #list of needed items names
             supplied_item_names = form['supplied_item_names'] #list of supplied items names
 
+            #assign organization type - because this form is only for organizations
             type = "Organization"
 
-            #1.a. if exists, view update option
-
-            #1.b. insert updated item data information into database
-
-
-        #---------------------------------
-        #2. IF NO FORM IS SUBMITTED, DO DEFAULT VIEW
-
-        else:
-            view_join_community_form()
-
-            #2.a. enter entity to system
+            #insert the organization into entities table
             Database_requests.insert_into_entities(email, entity_name, address, type)
 
-            #---------------------------------
-            #3. enter data about supplied and needed items
+
             for item in needed_item_names:
                 item_name = item.value
                 quantity_requested = form['quantity_requested: %s' %(item_name)].value
@@ -237,6 +235,22 @@ if __name__ == "__main__":
                 item_name = item.value
                 quantity_requested = form['quantity_requested: %s' %(item_name)].value
                 Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_requested)
+
+
+        elif form['form_name'].value == "updateNeeds":
+
+
+            all_items = Database_requests.get_all_items()
+
+            for item in all_items:
+                #get the fiels with the item name
+
+                #if number is not zero, create a new entry
+
+                #if number is zero, delete the previous entry - accorind to id s
+
+
+        elif form['form_name'].value == "updateSupply":
 
 
     print_bottom_of_page()
