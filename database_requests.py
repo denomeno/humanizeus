@@ -91,6 +91,7 @@ SELECT
     `items`.`name` AS `item_name`,
     `entity_types`.`description`,
     `entities_need_items`.`quantity_requested`,
+    `entities_need_items`.`quantity_fulfilled`,
     `entities`.`latitude`,
     `entities`.`longitude`,
     `entities_need_items`.`time_in_1`,
