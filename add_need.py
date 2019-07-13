@@ -67,6 +67,7 @@ def add_need():
 
     for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
+                      <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
