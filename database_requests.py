@@ -160,6 +160,7 @@ SELECT
     `entities`.`entity_id`,
     IFNULL(`entities`.`name`, '') AS `name`,
     IFNULL(`entities`.`address`,  '') AS `address`,
+    IFNULL(`entities`.`phone`, '') AS `phone`, 
     IFNULL(`entity_types`.`description`,  '') AS `entity_type`,
     IFNULL(`entities`.`latitude`, '') AS  `latitude`,
     IFNULL(`entities`.`longitude`,  '') AS  `longitude`
