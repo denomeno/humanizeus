@@ -39,9 +39,9 @@ def generate_map():
         #filter for organization
         if organization['entity_type'] == "Organization":
 
-            popup = '''<strong><u>Name: %s</u></strong><br>
-                    Address: %s<br>
-                    Phone: %s<br>
+            popup = '''<u>Name:</u> %s<br>
+                    <u>Address:</u> %s<br>
+                    <u>Phone:</u> %s<br>
                     ''' %(name, address, phone)
 
             #populate organzations
