@@ -39,15 +39,10 @@ def generate_map():
         #filter for organization
         if organization['entity_type'] == "Organization":
 
-            popup = '''
-            <table border=1>
-                <tr>
-                    <th><strong><b>%s</b></strong></th>
-                    <th>%s</th>
-                    <th>%s</th>
-                  </tr>
-            </table>
-            ''' %(name, address, phone)
+            popup = '''<strong><b>%s</b></strong>
+                    <br>%s
+                    <br>%s
+                    ''' %(name, address, phone)
 
             #populate organzations
             marker = folium.Marker(location=[latitude, longitude], #can also be folium.CircleMarker
