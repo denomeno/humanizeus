@@ -106,6 +106,7 @@ def display_list_of_organizations():
       <tr>
         <th><font size=+1"><b>Name</b></font></th>
         <th><font size=+1"><b>Address</b></font></th>
+        <th><font size=+1"><b>Phone</b></font></th>
         <th><font size=+1"><b>Provides</b></font></th>
         <th><font size=+1"><b>Needs</b></font></th>
       </tr>
@@ -130,17 +131,28 @@ def display_list_of_organizations():
             elif not organization["address"]:
                 address = "N/A"
 
+            if organization["phone"]:
+                phone = organization["phone"]
+            elif not organization["phone"]:
+                phone = "N/A"
+
             supply = ""
             for item in entities_supply_items:
                 if item['entity_name'] == organization['name']:
-                    supply = supply + item['item_name'] + "<br>"
+                    quantity_requested = item['quantity_requested']
+                    quantity_fulfilled = item['quantity_supplied']
+                    quantity = quantity_requested - quantity_fulfilled
+                    supply = supply + int(quantity) + item['item_name'] + "<br>"
 
             need = ""
             for item in entities_need_items:
                 if item['entity_name'] == organization['name']:
-                    need = need + item['item_name'] + "<br>"
+                    quantity_requested = item['quantity_requested']
+                    quantity_fulfilled = item['quantity_supplied']
+                    quantity = quantity_requested - quantity_fulfilled
+                    need = need + int(quantity) + item['item_name'] + "<br>"
 
-            display_list_row(name, address, supply, need)
+            display_list_row(name, address, phone, supply, need)
 
     print("""
     </table>
@@ -149,7 +161,7 @@ def display_list_of_organizations():
 
 #####################################################################################
 
-def display_list_row(name, address, supply, need):
+def display_list_row(name, address, phone, supply, need):
 
     # each iteration of this loop creates on record of output:
     #(name, address, supply, need) = organization
@@ -160,8 +172,9 @@ def display_list_row(name, address, supply, need):
     <td>%s</a></td>
     <td>%s</a></td>
     <td>%s</a></td>
+    <td>%s</a></td>
   </tr>
-    """ % (name, address, supply, need))
+    """ % (name, address, phone, supply, need))
 
 
 
