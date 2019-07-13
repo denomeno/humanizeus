@@ -18,7 +18,6 @@ def generate_map():
 
     #create map object
     map = folium.Map(location=[42.34372, -71.074181],
-                        Popup = max_width=450,
                         zoom_start=13,
                         tiles='Stamen Terrain')
 
@@ -40,15 +39,14 @@ def generate_map():
         #filter for organization
         if organization['entity_type'] == "Organization":
 
-            popup =
-                    '''<b>Name:</b> %s<br>
+            popup ='''<b>Name:</b> %s<br>
                     <b>Address:</b> %s<br>
                     <b>Phone:</b> %s<br>
                     ''' %(name, address, phone)
 
             #populate organzations
             marker = folium.Marker(location=[latitude, longitude], #can also be folium.CircleMarker
-                           popup = popup,
+                           popup = folium.Popup(popup, max_width=450)
                            tooltip = name)
 
             marker.add_to(map)
