@@ -179,8 +179,6 @@ ON `entity_types`.`type_id` = `entities`.`type_id`;""")
         return myc.fetchall()
 
 
-
-
     def get_entity_id_from_email(email):
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
@@ -227,10 +225,17 @@ WHERE `entities`.`email` = %s;""", (email, ))
     ON `entities_need_items`.`item_id` = `items`.`item_id`
 
     ;""")
-
-
         return myc.fetchall()
 
+
+    def get_admin_from_email(email):
+        myc = cnx.cursor(dictionary = True)
+        myc.execute("""
+SELECT
+    *
+FROM `admins`
+WHERE `admins`.`email`= %s; """, (email, ))
+        return myc.fetchall()
 
 
     #############################################################
