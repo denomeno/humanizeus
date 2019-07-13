@@ -6,7 +6,7 @@ import mysql.connector
 """
 cnx = mysql.connector.connect(user='root', password='',
                                 host='localhost',
-                                database='homeless_project')
+                                database='humanizemaster')
 """
 
 host = "humanize-us.c1xrcwz9rqrf.us-east-2.rds.amazonaws.com"
@@ -245,7 +245,7 @@ WHERE `admins`.`email`= %s; """, (email, ))
     def insert_into_entities(email, name, address, type):
         myc = cnx.cursor()
         myc.execute("""
-INSERT IGNORE INTO `homeless_project`.`entities`
+INSERT IGNORE INTO `humanizemaster`.`entities`
 
 (`email`, `name`, `address`, `type_id`)
 
@@ -259,7 +259,7 @@ VALUES (%s, %s, %s, (SELECT
     def insert_into_entities_need_items(entity_id, item_name, description, quantity_requested):
         myc = cnx.cursor()
         myc.execute("""
-INSERT INTO `homeless_project`.`entities_need_items`
+INSERT INTO `humanizemaster`.`entities_need_items`
 
 (`entity_id`, `item_id`, `description`, `quantity_requested`)
 
@@ -280,7 +280,7 @@ VALUES (%s,
     def insert_into_entities_supply_items(entity_id, item_name, description, quantity_requested, time_in_1):
         myc = cnx.cursor()
         myc.execute("""
-INSERT INTO `homeless_project`.`entities_supply_items`
+INSERT INTO `humanizemaster`.`entities_supply_items`
 
 (`entity_id`, `item_id`, `description`, `quantity_requested`)
 
