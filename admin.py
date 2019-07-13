@@ -157,6 +157,7 @@ def view_list_of_all_matches():
         item_name = item['item_name']
         in_need_name = need['in_need_name']
         supply_name = supply['supply_name']
+        fulfillment_status = status['fulfillment_status']
 
         #print each line for table
         print("""
@@ -165,9 +166,9 @@ def view_list_of_all_matches():
         <td>%s</td>
         <td>%s</td>
         <td>%s</td>
-        <td>yes or no</td>
+        <td>%s</td>
       </tr>
-        """ % (match_id,item_name, in_need_name, supply_name))
+        """ % (match_id,item_name, in_need_name, supply_name, fulfillment_status))
 
     #print('''''') end of table
     print("""
