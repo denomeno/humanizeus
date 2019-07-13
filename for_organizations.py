@@ -126,17 +126,18 @@ def view_add_organizations():
     print('''
     <h3>Join the communnity.</h3>
     <h5>Please add some necessary details about your organization so we can place you on our map for members to see. </h5>
-    <table>
     <form method=POST ><br>
-        Email (will be used for login later, so you can update your resources):<br>
-        <input name="new_organization_email" type="email"><br>
-        Organization Name:<br>
-        <input name="suppliername" type="text"><br>
-        Address:<br>
-        <input name="address" type="text"><br>
-        Phone:<br>
-        <input name="phone" type="text"><br>
-        Resources Provided at your Organization:<br>
+    <table border=1>
+      <tr>
+        <th>Email (will be used for login later, so you can update your resources):</th><br>
+        <td><input name="new_organization_email" type="email"></td><br>
+        <th>Organization Name:</th><br>
+        <td><input name="suppliername" type="text"></td><br>
+        <th>Address:</th><br>
+        <td><input name="address" type="text"></td><br>
+        <th>Phone:</th><br>
+        <td><input name="phone" type="text"></td><br>
+        <th>Resources Provided at your Organization:</th><br>
         ''')
 
     for item in items: #dyamically generate options
@@ -144,7 +145,7 @@ def view_add_organizations():
 
 
     print('''
-        Resources your Organization Needs at the moment:<br>
+        <th>Resources your Organization Needs at the moment:</th><br>
         ''')
 
     for item in items: #dyamically generate options
@@ -159,8 +160,10 @@ def view_add_organizations():
 
 
     print('''
-            <input type='submit' value='Submit Form'>
-        </form>
+    <input type='submit' value='Submit Form'>
+    </tr>
+    </table>
+    </form>
         <h4>Thank you for joining the community!<h/4>
         ''')
 
