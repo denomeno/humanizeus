@@ -48,7 +48,7 @@ def view_existing_organizations_data(email):
 
             print('''
                 <input type="hidden" name="entities_need_items_id: "%s value=%s/>
-                ''' %(need_item['name'], entities_need_items_id))
+                ''' %(need_item['item_name'], entities_need_items_id)) #make hidden fields to identify the unique organization_need_items_id
 
             if item['name'] == need_item['item_name']:
 
