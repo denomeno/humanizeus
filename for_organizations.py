@@ -47,15 +47,16 @@ def view_existing_organizations_data(email):
 
             entities_need_items_id = need_item['entities_need_items_id'] #unique if of organization_supply_items match
 
-            print('''
-                <input type="hidden" name="entities_need_items_id: "%s value=%s>
-                ''' %(need_item['item_name'], entities_need_items_id)) #make hidden fields to identify the unique organization_need_items_id
 
             if item['name'] == need_item['item_name']:
 
                 quantity_requested = need_item['quantity_requested']
                 quantity_fulfilled = need_item['quantity_fulfilled']
                 quantity = int(quantity_requested-quantity_fulfilled)
+
+                print('''
+                    <input type="hidden" name="entities_need_items_id: "%s" value=%s>
+                    ''' %(need_item['item_name'], entities_need_items_id)) #make hidden fields to identify the unique organization_need_items_id
 
 
         print('''<select name="quantity: %s">
