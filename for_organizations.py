@@ -51,22 +51,22 @@ def view_existing_organizations_data(email):
                 quantity = int(quantity_requested-quantity_fulfilled)
 
 
-            print('''<select name="quantity: %s">
-                     ''' %(need_item['item_name']))
+        print('''<select name="quantity: %s">
+                 ''' %(item['item_name']))
 
-            for i in range(0,5): #display the selection boxes
-                if quantity == i: #display the selected box if box number matches with requested quantity
-                    print('''<option value="%s" selected>%s</option>
-                            ''' %(i, i))
-                else:
-                    print('''<option value="%s">%s</option>
-                            ''' %(i, i))
+        for i in range(0,5): #display the selection boxes
+            if quantity == i: #display the selected box if box number matches with requested quantity
+                print('''<option value="%s" selected>%s</option>
+                        ''' %(i, i))
+            else:
+                print('''<option value="%s">%s</option>
+                        ''' %(i, i))
 
-            print('''</select>
-                    <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                    ''' %(need_item['item_name'],need_item['item_name']))
+        print('''</select>
+                <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
+                ''' %(item['item_name'],item['item_name']))
 
-            break #exit the loop 
+
 
     print('''<input type='submit' value='Update Needs'>
              </form>''')
