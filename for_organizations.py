@@ -130,14 +130,14 @@ def view_add_organizations():
     <table border=1>
       <tr>
         Email (will be used for login later, so you can update your resources):<br>
-        <td><input name="new_organization_email" type="email"><br></td>
-        <th>Organization Name:<br></th>
-        <input name="suppliername" type="text"><br>
-        <th>Address:<br></th>
-        <td><input name="address" type="text"><br></td>
-        <th>Phone:<br></th>
-        <td><input name="phone" type="text"><br></td>
-        <th>Resources Provided at your Organization:<br></th>
+        <input name="new_organization_email" type="email"><br>
+        Organization Name:<br>
+        <input name="suppliername" type="text">
+        Address:<br>
+        <input name="address" type="text"><br>
+        Phone:<br>
+        <input name="phone" type="text"><br>
+        Resources Provided at your Organization:<br>
         ''')
 
     for item in items: #dyamically generate options
