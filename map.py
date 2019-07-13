@@ -135,9 +135,10 @@ def display_list_of_organizations():
                 if item['entity_name'] == organization['name']:
                     supply = supply + item['item_name'] + "<br>"
 
-
-            #need = organization["entities_need_items"]
-            need = "trial"
+            need = ""
+            for item in entities_need_items:
+                if item['entity_name'] == organization['name']:
+                    need = need + item['item_name'] + "<br>"
 
             display_list_row(name, address, supply, need)
 
