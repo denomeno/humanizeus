@@ -199,7 +199,7 @@ WHERE `entities`.`email` = %s;""", (email, ))
 
         `matches`.`match_id`,
         `items`.`item_id`,
-        `items`.`name` AS `item_name`,
+        `items`.`name`,
         `need_entities`.`entity_id` AS `in_need_entity_id`,
         `need_entities`.`name` AS `in_need_name`,
         `supply_entities`.`entity_id` AS `supply_entity_id`,
@@ -236,7 +236,6 @@ SELECT
 FROM `admins`
 WHERE `admins`.`email`= %s; """, (email, ))
         return myc.fetchall()
-
 
     #############################################################
 
@@ -275,7 +274,6 @@ VALUES (%s,
         %s);
 
 """, (entity_id, item_name, description, quantity_requested))
-
         cnx.commit()
 
 
@@ -317,4 +315,4 @@ SET
 WHERE
     `entities_need_items_id` = %s
 """, (quantity_requested, entities_need_items_id))
-        cnx.commi
+        cnx.commit()
