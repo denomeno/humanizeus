@@ -140,7 +140,7 @@ def display_list_of_organizations():
             for item in entities_supply_items:
                 if item['entity_name'] == organization['name']:
                     quantity_requested = item['quantity_requested']
-                    quantity_fulfilled = item['quantity_supplied']
+                    quantity_fulfilled = item['quantity_fulfilled']
                     quantity = quantity_requested - quantity_fulfilled
                     supply = supply + int(quantity) + item['item_name'] + "<br>"
 
@@ -148,7 +148,7 @@ def display_list_of_organizations():
             for item in entities_need_items:
                 if item['entity_name'] == organization['name']:
                     quantity_requested = item['quantity_requested']
-                    quantity_fulfilled = item['quantity_supplied']
+                    quantity_fulfilled = item['quantity_fulfilled']
                     quantity = quantity_requested - quantity_fulfilled
                     need = need + int(quantity) + item['item_name'] + "<br>"
 
