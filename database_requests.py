@@ -205,7 +205,8 @@ WHERE `entities`.`email` = %s;""", (email, ))
         `need_entities`.`entity_id` AS `in_need_entity_id`,
         `need_entities`.`name` AS `in_need_name`,
         `supply_entities`.`entity_id` AS `supply_entity_id`,
-        `supply_entities`.`name` AS `supply_name`
+        `supply_entities`.`name` AS `supply_name`,
+        IFNULL(`matches`.`fulfillment_status`, 'N/A') AS `fulfillment_status`
 
 
     FROM `matches`
@@ -294,3 +295,21 @@ VALUES (%s,
 """, (entity_id, item_name, description, quantity_requested, time_in_1))
 
         cnx.commit()
+
+
+
+    #############################################################
+
+    #---------------3-UPDATE FUNCTIONS---------------------------
+
+    def update_quantity_requested_of_entities_need_items(entities_need_items_id, quantity_requested):
+        myc = cnx.cursor()
+        myc.execute("""
+UPDATE
+    `entities_need_items`
+SET
+    `quantity_requested` = %s
+WHERE
+    `entities_need_items_id` = %s
+""", (quantity_requested, entities_need_items_id))
+        cnx.commi
