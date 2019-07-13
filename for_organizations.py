@@ -4,7 +4,8 @@ from import_modules import *
 
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
 
-#####################################################################################
+#########################################
+############################################
 def view_existing_organizations_login():
 
     #display in browser
@@ -18,6 +19,7 @@ def view_existing_organizations_login():
 
 
 #####################################################################################
+
 def view_existing_organizations_data(email):
     #THIS FUNCTION SHOULD:
     #1. PULL THE NEEDED DATA FROM DATABASE
@@ -36,25 +38,14 @@ def view_existing_organizations_data(email):
     #1.show filled in form of items needed selected before
     print('''<form method=POST >''')
 
-    for item in items:
+    #this form should also diplay all other items
+    for need_item in organizations_need: #dyamically generate options
 
-        quantity = 0 #variable to store how many of each item an organization supplies
+        print('''<select name="quantity_requested: %s">
+                 ''' %(need_item['item_name']))
 
-        #form displays all items that can be chosen
-        for need_item in organizations_need: #dyamically generate options
-
-            if item['name'] == need_item['item_name']:
-
-                quantity_requested = need_item['quantity_requested']
-                quantity_fulfilled = need_item['quantity_fulfilled']
-                quantity = int(quantity_requested-quantity_fulfilled)
-
-
-        print('''<select name="quantity: %s">
-                 ''' %(item['name']))
-
-        for i in range(0,5): #display the selection boxes
-            if quantity == i: #display the selected box if box number matches with requested quantity
+        for i in range(1,5): #display the selection boxes
+            if int(need_item['quantity_requested']) == i: #display the selected box if box number matches with requested quantity
                 print('''<option value="%s" selected>%s</option>
                         ''' %(i, i))
             else:
@@ -63,9 +54,7 @@ def view_existing_organizations_data(email):
 
         print('''</select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
-                ''' %(item['name'],item['name']))
-
-
+                ''' %(need_item['item_name'],need_item['item_name']))
 
     print('''<input type='submit' value='Update Needs'>
              </form>''')
@@ -99,7 +88,7 @@ def view_existing_organizations_data(email):
                 <input type="checkbox" value=%s checked >%s<br>
             '''%(item['name'],item['name']))
 
-        elif item_supplied is False:
+        elif item_supplied is False: 
             print('''
                 <input type="checkbox" value=%s>%s<br>
             '''%(item['name'],item['name']))
@@ -133,7 +122,13 @@ def view_add_organizations():
         ''')
 
     for item in items: #dyamically generate options
-        print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
+        print('''<select name="quantity_requested: %s">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                <input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''
@@ -142,13 +137,12 @@ def view_add_organizations():
 
     for item in items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
-                      <option value="0">0</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                     </select>
-                <input name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
 
 
     print('''
@@ -188,7 +182,7 @@ if __name__ == "__main__":
 
     #decide which form to run
     if form:
-        if form['login_email']: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+        if form['login_email'].value: #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
 
             #run function for existing organizations
             email = form['login_email'].value
@@ -199,7 +193,7 @@ if __name__ == "__main__":
                 view_existing_organizations_data(email)
 
 
-        elif form['new_organization_email']: #IF NEW ORGZANITION FORM IS FILLED
+        elif form['new_organization_email'].value: #IF NEW ORGZANITION FORM IS FILLED
 
             email = form['email'].value
             entity_name = form['entity_name'].value
