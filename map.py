@@ -46,7 +46,7 @@ def generate_map():
 
             #populate organzations
             marker = folium.Marker(location=[latitude, longitude], #can also be folium.CircleMarker
-                           popup = folium.Popup(popup, max_width=450)
+                           popup = folium.Popup(popup, max_width=450),
                            tooltip = name)
 
             marker.add_to(map)
