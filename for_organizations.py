@@ -44,7 +44,7 @@ def view_existing_organizations_data(email):
         #form displays all items that can be chosen
         for need_item in organizations_need: #dyamically generate options
 
-        entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
+            entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
 
             if item['name'] == need_item['item_name']:
 
@@ -97,7 +97,7 @@ def view_existing_organizations_data(email):
 
         for supply_item in organizations_supply: #find if item amongst organizations's supply
 
-        entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
+            entities_supply_items_id = supply_item['entities_supply_items_id'] #unique if of organization_supply_items match
 
             if item['name'] == supply_item['item_name']:
 
@@ -253,6 +253,7 @@ if __name__ == "__main__":
             all_items = Database_requests.get_all_items()
 
             for item in all_items:
+                trial = 1 
                 #get the fiels with the item name
 
                 #if number is not zero, create a new entry
@@ -261,6 +262,8 @@ if __name__ == "__main__":
 
 
         elif form['form_name'].value == "updateSupply":
+
+            all_items = Database_requests.get_all_items()
 
 
     print_bottom_of_page()
