@@ -1,0 +1,16 @@
+
+To connect to humanizeus AWS database: 
+
+Copy paste the below block to phpmyadmin>config.inc.php
+
+$i++;
+$cfg['Servers'][$i]['verbose'] = 'AWS - Humanize-Us';
+$cfg['Servers'][$i]['host'] = 'humanize-us.c1xrcwz9rqrf.us-east-2.rds.amazonaws.com';
+$cfg['Servers'][$i]['port'] = '3306';
+$cfg['Servers'][$i]['socket'] = '';
+$cfg['Servers'][$i]['connect_type'] = 'tcp';
+$cfg['Servers'][$i]['extension'] = 'mysqli';
+$cfg['Servers'][$i]['compress'] = TRUE;
+$cfg['Servers'][$i]['auth_type'] = 'config';
+$cfg['Servers'][$i]['user'] = 'humanizeusmaster';
+$cfg['Servers'][$i]['password'] = 'humanproject';
