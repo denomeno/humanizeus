@@ -24,6 +24,9 @@ def view_existing_organizations_data(email):
     #1. PULL THE NEEDED DATA FROM DATABASE
     #2. DISPLAY: A. ORGANIZATIONS NEEDS, B. ORGANIZATIONS SUPPLY
 
+    entity_id = Database_requests.get_entity_id_from_email(email)
+    entity_id = entity_id[0]['entity_id']
+
     organizations_supply = Database_requests.get_organizations_supply_items(email)
     organizations_need = Database_requests.get_organizations_need_items(email)
     items = Database_requests.get_all_items()
@@ -36,7 +39,8 @@ def view_existing_organizations_data(email):
 
     #1.show filled in form of items needed selected before
     print('''<form method=POST >
-                <input type="hidden" name="form_name" value="updateNeeds"/>''')
+                <input type="hidden" name="form_name" value="updateNeeds"/>
+                <input type="hidden" name="entity_id" value=%s>''' %(entity_id))
 
     for item in items:
 
@@ -252,8 +256,30 @@ if __name__ == "__main__":
             all_items = Database_requests.get_all_items()
 
             for item in all_items:
-                trial = 1
+
                 #get the fiels with the item name
+                try:
+                    #get entities_need_items_id
+                    entities_need_items_id = form['entities_need_items_id: %s' %(item['name'])].value
+
+                    #get quantity
+                    quantity_requested = form['quantity: %s' %(item['name'])].value
+
+                    #update database
+                    Database_requests.update_quantity_requested_of_entities_need_items(entities_need_items_id, quantity_requested)
+
+                except ValueError:
+                    #if value error is present: this means there is no existing entry in entities_need_items for that organization and that item pair
+                    #thus: insert new entry
+
+                     #get quantity
+                     quantity_requested = form['quantity: %s' %(item['name'])].value
+
+
+
+
+                #get entities_need_items_id
+                #get quantity
 
                 #if number is not zero, create a new entry
 
