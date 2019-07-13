@@ -111,15 +111,15 @@ def view_add_organizations():
     <form method=POST ><br>
     <table border=1>
       <tr>
-        <th>Email (will be used for login later, so you can update your resources):</th><br>
-        <td><input name="new_organization_email" type="email"></td><br>
-        <th>Organization Name:</th><br>
-        <td><input name="suppliername" type="text"></td><br>
-        <th>Address:</th><br>
-        <td><input name="address" type="text"></td><br>
-        <th>Phone:</th><br>
-        <td><input name="phone" type="text"></td><br>
-        <th>Resources Provided at your Organization:</th><br>
+        <th>Email (will be used for login later, so you can update your resources):<br></th>
+        <td><input name="new_organization_email" type="email"><br></td>
+        <th>Organization Name:<br></th>
+        <td><input name="suppliername" type="text"><br></td>
+        <th>Address:<br></th>
+        <td><input name="address" type="text"><br></td>
+        <th>Phone:<br></th>
+        <td><input name="phone" type="text"><br></td>
+        <th>Resources Provided at your Organization:<br></th>
         ''')
 
     for item in items: #dyamically generate options
@@ -133,7 +133,7 @@ def view_add_organizations():
 
 
     print('''
-        <th>Resources your Organization Needs at the moment:</th><br>
+        Resources your Organization Needs at the moment:<br>
         ''')
 
     for item in items: #dyamically generate options
