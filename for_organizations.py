@@ -134,9 +134,6 @@ def view_add_organizations():
     <h3>Join the communnity.</h3>
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
     <form method=POST ><br>
-    <input type="hidden" name="form_name" value="newOrganization"/>
-    <table border=1>
-      <tr>
         Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
@@ -170,8 +167,6 @@ def view_add_organizations():
 
     print('''
     <input type='submit' value='Submit Form'>
-    </tr>
-    </table>
     </form>
         <h4>Thank you for joining the community!<h/4>
         ''')
