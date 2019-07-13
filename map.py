@@ -87,37 +87,66 @@ def display_map():
 
 
 
-def display_list_of_organizations():
+#####################################################################################
+def get_list_of_organizations():
+    """Middleware function to get all organization from the entities table.
+    Returns a list of tuples of (organization_id, name, address)."""
 
     #pull all data
     all_entities = Database_requests.get_all_entities()
 
+    for organization in all_entities:
+
+        #get variables needed for table
+        name = organization['name']
+        address = organization["address"]
+        supply = organization["entities_supply_items"]
+        need = organization["entities_need_items"]
+
+
+#####################################################################################
+
+def display_list_of_organizations():
+
+    ## create an HTML table for output:
+    print("""
+    <h2> All Organizations</h2>
+    <p>
+
+    <table border=1>
+      <tr>
+        <th><font size=+1"><b>Name</b></font></th>
+        <th><font size=+1"><b>Address</b></font></th>
+        <th><font size=+1"><b>Provides</b></font></th>
+        <th><font size=+1"><b>Needs</b></font></th>
+      </tr>
+    """)
+
+    #filter for organization
+    #if organization['entity_type'] == "Organization":
 
     #generate the table lines
     for organization in all_entities:
 
-        print("top of tmml table")
+        # each iteration of this loop creates on record of output:
+        (name, address, supply, need) = organization
 
-        #filter for organization
-        if organization['entity_type'] == "Organization":
-
-            print('''
-            <table border=1>
-                <tr>
-                    <th>Organization Name: <strong>%s</strong></th>
-                    <th>Address: %s</th>
-                    <th>Phone: 000-000-000</th>
-                    <th>Resources Provided:</th>
-                    <th>Resources Needed:</th>
-                </tr>
-            ''' % ((organization["name"]),
-                    (organization["address"])))
-
-                    #(organization["entities_supply_items"])
-                    #(organization["entities_need_items"])))
+        print("""
+      <tr>
+        <td>%s</a></td>
+        <td>%s</a></td>
+        <td>%s</a></td>
+        <td>%s</a></td>
+      </tr>
+        """ % (name, address,
+                entities_supply_items,
+                entities_need_items))
 
 
-            #print("html for bottom of table")
+    print("""
+    </table>
+    """)
+
 
 
 #####################################################################################
