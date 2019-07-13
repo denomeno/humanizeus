@@ -47,8 +47,8 @@ def view_existing_organizations_data(email):
             if item['name'] == need_item['item_name']:
 
                 quantity_requested = need_item['quantity_requested']
-                quantity_supplied = need_item['quantity_supplied']
-                quantity = int(quantity_requested-quantity_supplied)
+                quantity_fulfilled = need_item['quantity_fulfilled']
+                quantity = int(quantity_requested-quantity_fulfilled)
 
 
         print('''<select name="quantity: %s">
