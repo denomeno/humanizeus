@@ -55,7 +55,7 @@ def view_existing_organizations_data(email):
                 quantity = int(quantity_requested-quantity_fulfilled)
 
                 print('''
-                    <input type="hidden" name="entities_need_items_id: "%s" value=%s>
+                    <input type="hidden" name="entities_need_items_id: %s" value=%s>
                     ''' %(need_item['item_name'], entities_need_items_id)) #make hidden fields to identify the unique organization_need_items_id
 
 
@@ -246,8 +246,8 @@ if __name__ == "__main__":
                 Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_requested)
 
 
-        elif form['form_name'].value == "updateNeeds":
 
+        elif form['form_name'].value == "updateNeeds":
 
             all_items = Database_requests.get_all_items()
 
