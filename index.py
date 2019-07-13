@@ -124,7 +124,7 @@ def print_bottom_of_page():
      print('''
  <hr>
  This page was generated at %s.<br>
- Return to the <a href="/humanizeus/index.py">main page</a>.
+ Return to the <a href="/humanizeus/index.py">main page</a>.<br>
  Enter <a href="/humanizeus/admin.py">admin portal</a>.
  </body>
  </html>
@@ -136,7 +136,7 @@ def print_bottom_of_page():
 
 if __name__ == "__main__":
 
-     #print_headers()
-     print_top_of_page()
-     print_menu()
-     print_bottom_of_page()
+    #print_headers()
+    print_top_of_page()
+    print_menu()
+    print_bottom_of_page()

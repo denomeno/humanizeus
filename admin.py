@@ -124,7 +124,8 @@ def view_admin_login():
     print('''
     HumanizeUs member?<br>
     <form method=POST >
-        <input name="login_email" type="email">
+        <input type="hidden" name="form_name" value="adminLogin">
+        <input name="admin_email" type="email">
         <input type='submit' value='Login'>
     </form>
     ''')
@@ -197,14 +198,21 @@ def print_bottom_of_page():
 
 if __name__ == "__main__":
 
-     #print_headers()
-     print_top_of_page()
-     print_menu()
-     #-----------
+    #print_headers()
+    print_top_of_page()
+    print_menu()
+    #-----------
 
-     #-----------
-     view_admin_login()
-     view_list_of_all_matches()
-     #-----------
+    #-----------
+    view_admin_login()
 
-     print_bottom_of_page()
+    #decide which form to run
+    if form:
+        if form['form_name'].value == 'adminLogin': #IF LOGIN TO EXISTING ORGANIZATION FORM FILLE
+
+            #run function for existing organizations
+            email = form['admin_email'].value
+            view_list_of_all_matches()
+    #-----------
+
+    print_bottom_of_page()
