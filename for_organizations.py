@@ -44,10 +44,10 @@ def view_existing_organizations_data(email):
         #form displays all items that can be chosen
         for need_item in organizations_need: #dyamically generate options
 
-            if item['name'] == neeed_item['item_name']:
+            if item['name'] == need_item['item_name']:
 
-                quantity_requested = neeed_item['quantity_requested']
-                quantity_supplied = neeed_item['quantity_supplied']
+                quantity_requested = need_item['quantity_requested']
+                quantity_supplied = need_item['quantity_supplied']
                 quantity = int(quantity_requested-quantity_supplied)
 
 
