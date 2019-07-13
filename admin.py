@@ -212,7 +212,14 @@ if __name__ == "__main__":
 
             #run function for existing organizations
             email = form['admin_email'].value
-            view_list_of_all_matches()
+
+            admin_exists = Database_requests.get_admin_from_email(email)#list of matching admins
+
+            if len(admin_exists) > 0:
+
+                view_list_of_all_matches()
+            
+
     #-----------
 
     print_bottom_of_page()
