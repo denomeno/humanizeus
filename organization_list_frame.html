@@ -1,66 +1,68 @@
 <!DOCTYPE html>
-#pull all data
-all_entities = Database_requests.get_all_entities()
-entities_need_items = Database_requests.get_entities_need_items()
-entities_supply_items = Database_requests.get_entities_supply_items()
 
-## create an HTML table for output:
-print("""
-<h2> List of All Organizations</h2>
-<p>
+def generate_organization_list_table():
 
-<iframe style = "width: 600px; height: 550px;" scrolling="yes">
-    <table border=1 align="right">
-        <tr>
-            <th><font size=+1"><b>Name</b></font></th>
-            <th><font size=+1"><b>Address</b></font></th>
-            <th><font size=+1"><b>Phone</b></font></th>
-            <th><font size=+1"><b>Provides</b></font></th>
-            <th><font size=+1"><b>Needs</b></font></th>
-        </tr>
-""")
+  #pull all data
+  all_entities = Database_requests.get_all_entities()
+  entities_need_items = Database_requests.get_entities_need_items()
+  entities_supply_items = Database_requests.get_entities_supply_items()
 
-#generate the table lines
-#for organization in all_entities:
+  ## create an HTML table for output:
+  print("""
+  <h2> List of All Organizations</h2>
+  <p>
 
-for organization in all_entities:
 
-    #filter for organization
-    if organization['entity_type'] == "Organization":
+      <table border=1 align="right">
+          <tr>
+              <th><font size=+1"><b>Name</b></font></th>
+              <th><font size=+1"><b>Address</b></font></th>
+              <th><font size=+1"><b>Phone</b></font></th>
+              <th><font size=+1"><b>Provides</b></font></th>
+              <th><font size=+1"><b>Needs</b></font></th>
+          </tr>
+  """)
 
-        #get variables needed for table
-        if organization['name']:
-            name = organization['name']
-        elif not organization['name']:
-            name = "N/A"
+  #generate the table lines
+  #for organization in all_entities:
 
-        if organization["address"]:
-            address = organization["address"]
-        elif not organization["address"]:
-            address = "N/A"
+  for organization in all_entities:
 
-        if organization["phone"]:
-            phone = organization["phone"]
-        elif not organization["phone"]:
-            phone = "N/A"
+      #filter for organization
+      if organization['entity_type'] == "Organization":
 
-        supply = ""
-        for item in entities_supply_items: #iterate supplied items list,
-            if item['entity_name'] == organization['name']: #for matching organization names, add the supplied item name
-                supply = supply + item['item_name'] + "<br>"
+          #get variables needed for table
+          if organization['name']:
+              name = organization['name']
+          elif not organization['name']:
+              name = "N/A"
 
-        need = ""
-        for item in entities_need_items:
-            if item['entity_name'] == organization['name']:
-                quantity_requested = item['quantity_requested']
-                quantity_fulfilled = item['quantity_fulfilled']
-                quantity = int(quantity_requested - quantity_fulfilled)
-                need = need + str(quantity) + " - " + item['item_name'] + "<br>"
+          if organization["address"]:
+              address = organization["address"]
+          elif not organization["address"]:
+              address = "N/A"
 
-        display_list_row(name, address, phone, supply, need)
+          if organization["phone"]:
+              phone = organization["phone"]
+          elif not organization["phone"]:
+              phone = "N/A"
 
-print("""
-    </table>
-</iframe>
-<br>
-""")
+          supply = ""
+          for item in entities_supply_items: #iterate supplied items list,
+              if item['entity_name'] == organization['name']: #for matching organization names, add the supplied item name
+                  supply = supply + item['item_name'] + "<br>"
+
+          need = ""
+          for item in entities_need_items:
+              if item['entity_name'] == organization['name']:
+                  quantity_requested = item['quantity_requested']
+                  quantity_fulfilled = item['quantity_fulfilled']
+                  quantity = int(quantity_requested - quantity_fulfilled)
+                  need = need + str(quantity) + " - " + item['item_name'] + "<br>"
+
+          display_list_row(name, address, phone, supply, need)
+
+  print("""
+      </table>
+  <br>
+  """)
