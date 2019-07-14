@@ -40,6 +40,7 @@ SELECT
 
     `entities`.`entity_id`,
     IFNULL(`entities`.`name`, '') AS `entity_name`,
+    `entity_types`.`description` AS `type_description`,
     IFNULL(`entities`.`latitude`, '') AS `latitude`,
     IFNULL(`entities`.`longitude`, '') AS `longitude`,
     `items`.`name` AS `item_name`,
@@ -54,7 +55,10 @@ JOIN `entities`
 ON `entities_need_items`.`entity_id` = `entities`.`entity_id`
 
 JOIN `items`
-ON `entities_need_items`.`item_id`=`items`.`item_id`""")
+ON `entities_need_items`.`item_id`=`items`.`item_id`
+
+JOIN `entity_types`
+ON `entities`.`type_id` = `entity_types`.`type_id`""")
         return myc.fetchall()
 
 
