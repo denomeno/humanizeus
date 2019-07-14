@@ -24,10 +24,10 @@ def view_existing_organization_profile(email):
     org_profile = Database_requests.get_entity_from_email(email)
 
     #assign variables
-    name = org_profile['name']
-    address = org_profile['address']
-    phone = org_profile['phone']
-    website = org_profile['website']
+    name = org_profile[0]['name']
+    address = org_profile[0]['address']
+    phone = org_profile[0]['phone']
+    website = org_profile[0]['website']
 
     #display on page - preinserted into html form text inpput fields
 
