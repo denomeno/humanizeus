@@ -33,6 +33,7 @@ def print_headers():
 
 #####################################################################################
 def print_top_of_page():
+<<<<<<< HEAD
       '''Print the top of the HTML page.'''
       '''<meta name="viewport" content="width=device-width, initial-scale=1.0">'''
 
@@ -66,6 +67,41 @@ def print_top_of_page():
       </head>
       <body>
       """)
+=======
+    '''Print the top of the HTML page.'''
+
+    print("""
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanizeUs</title>
+    <h1>HumanizeUs</h1>
+    <h3>A Neighborly Exchange</h3>
+    <style>
+
+    h1 {
+    color: red
+    font-family: "Garamound";
+    }
+
+    body {
+    background-color: white;
+    zoom: 100%;
+    }
+
+    footer {
+    border-top: 4px solid black
+    color: black;
+    text-align: left;
+    padding: 2px 10px 0px 0px;
+    clear: both
+    }
+
+    </style>
+    </head>
+    <body>
+    """)
+>>>>>>> boray
 
       #text-align: center;
 
@@ -132,16 +168,25 @@ li a:hover {
 #####################################################################################
 
 def print_bottom_of_page():
+<<<<<<< HEAD
      '''Print the bottom of the HTML page.'''
+=======
+    '''Print the bottom of the HTML page.'''
+>>>>>>> boray
 
     print('''
     <br>
     <br>
     <br>
     <hr>
+<<<<<<< HEAD
     <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
     <u>©humanizeus</u>
     This page was generated at %s.<br>
+=======
+    <footer>
+    <p>This page was generated at %s.<br>
+>>>>>>> boray
     Return to the <a href="/humanizeus/index.py">main page</a>.<br>
     Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
     </footer>
@@ -155,7 +200,7 @@ def print_bottom_of_page():
 
 if __name__ == "__main__":
 
-    #print_headers()
+    print_headers()
     print_top_of_page()
     print_menu()
     print_bottom_of_page()
