@@ -22,6 +22,11 @@ if __name__ == "__main__":
     print_top_of_page()
     print_menu()
     #-----------
+
+
+    form = cgi.FieldStorage()
+    print_form_data(form)
+    #-----------
     home_page_display()
 
 
