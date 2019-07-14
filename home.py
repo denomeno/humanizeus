@@ -3,29 +3,6 @@
 from import_modules import *
 
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
-#####################################################################################
-#GENERRIC HEADER FUNCTIONS - USED IN ALL PAGES
-#####################################################################################
-def print_form_data(form):
-    '''Display the form data for debugging purposes.
-    '''
-    # print out the form data (for debugging purposes)
-    print('Form data:<br>')
-
-    print('<table>')
-    keys = list(form.keys())
-    keys.sort()
-    # go through all keys:
-    for k in keys:
-
-        print('''<tr>
-                    <td>%s</td>
-                    <td>%s</td>
-                </tr>''' % (k, form[k]))
-
-
-    print('</table><hr>')
-
 
 #####################################################################################
 def home_page_display():
