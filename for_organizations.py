@@ -155,7 +155,7 @@ def view_add_organizations():
                 class="form-control"
                 id="inputCity"
                 placeholder="City">
-          
+
             <input type="state"
                 class="form-control"
                 id="inputState"
