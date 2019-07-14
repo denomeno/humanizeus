@@ -88,8 +88,6 @@ def display_map():
 
     print('''
     <iframe src="map_main.html" height="600" width="900">
-    <hr>
-    <p>Your browser does not support iframes.</p>
     </iframe>
 ''')
 
