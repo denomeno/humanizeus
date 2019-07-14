@@ -1,5 +1,5 @@
 #!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
-
+print("Content-type:text/html\r\n\r\n")
 from import_modules import *
 
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
