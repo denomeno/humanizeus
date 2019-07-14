@@ -228,10 +228,7 @@ if __name__ == "__main__":
             entity_name = form['entity_name'].value
             address = form['address'].value
             phone = form['phone'].value
-
-            needed_item_names = form['needed_item_names'] #list of needed items names
             supplied_item_names = form['supplied_item_names'] #list of supplied items names
-
             #assign organization type - because this form is only for organizations
             type = "Organization"
 
