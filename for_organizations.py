@@ -141,31 +141,16 @@ def view_add_organizations():
     <form method=POST ><br>
         <input type="hidden" name="form_name" value="newOrganization"/>
         <u>Email (will be used for login later, so you can update your resources):</u><br>
-        <input name="new_organization_email" type="email"><br>
+        <input name="new_organization_email" type="email" required><br>
         Organization Name:<br>
-        <input name="entity_name" type="text"><br>
+        <input name="entity_name" type="text" required><br>
         Address:<br>
         <div class="form-group">
-            <input type="street"
-                class="form-control"
-                id="autocomplete"
-                placeholder="Street">
-
-            <input type="city"
-                class="form-control"
-                id="inputCity"
-                placeholder="City">
+            <input type="street" name="street" placeholder="Street" required>
+            <input type="city" name="city" placeholder="City" required>
             <br>
-            <input type="state"
-                class="form-control"
-                id="inputState"
-                placeholder="State">
-
-            <input type="zip"
-                class="form-control"
-                id="inputZip"
-                placeholder="Zip">
-
+            <input type="state" name="state" placeholder="State" required>
+            <input type="zip" name="zip" placeholder="Zip" required>
         </div>
         <br>
         Phone:<br>
@@ -248,10 +233,14 @@ if __name__ == "__main__":
             #get fields from the submitted form
             email = form['new_organization_email'].value
             entity_name = form['entity_name'].value
-            address = form['address'].value
+            address_street = form['street'].value
+            address_city = form['city'].value
+            address_state = form['state'].value
+            address_zip = form['zip'].value
             phone = form['phone'].value
 
             #assign organization type - because this form is only for organizations
+            address = address_street + address_city + address_state + address_zip 
             type = "Organization"
             description = "--no description for organizations--"
 
