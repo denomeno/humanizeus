@@ -69,6 +69,7 @@ def print_top_of_page():
 
       #text-align: center;
 
+
 #####################################################################################
 def print_menu():
 
@@ -133,19 +134,19 @@ li a:hover {
 def print_bottom_of_page():
      '''Print the bottom of the HTML page.'''
 
-     print('''
- <br>
- <br>
- <br>
- <hr>
- <footer>
-     <p>This page was generated at %s.<br>
-     Return to the <a href="/humanizeus/index.py">main page</a>.<br>
-     Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
- </footer>
- </body>
- </html>
- ''' % time.ctime())
+    print('''
+    <br>
+    <br>
+    <br>
+    <hr>
+    <footer>
+    This page was generated at %s.<br>
+    Return to the <a href="/humanizeus/index.py">main page</a>.<br>
+    Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
+    </footer>
+    </body>
+    </html>
+    ''' % time.ctime())
 
 
  #####################################################################################
