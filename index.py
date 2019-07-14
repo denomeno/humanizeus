@@ -1,5 +1,5 @@
 #!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
-print("Content-type:text/html\r\n\r\n")
+
 from import_modules import *
 
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
@@ -74,14 +74,14 @@ def print_top_of_page():
 #####################################################################################
 def print_menu():
 
-"""
-<head>
-   <link rel="stylesheet" href="styles.css">
-   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-   <script src="script.js"></script>
-   <title>CSS MenuMaker</title>
-</head>
-"""
+    """
+    <head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <title>CSS MenuMaker</title>
+    </head>
+    """
 
     print('''
 <style>
