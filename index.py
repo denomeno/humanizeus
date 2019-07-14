@@ -50,8 +50,18 @@ def print_top_of_page():
 
       body {
       background-color: white;
-      zoom: 50%;
+      zoom: 90%;
       }
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 80%;
+        background-color: gray;
+        color: white;
+        text-align: center;
+        }
 
       </style>
       </head>
@@ -119,6 +129,8 @@ li a:hover {
 ''')
 
 
+#####################################################################################
+
 def print_bottom_of_page():
      '''Print the bottom of the HTML page.'''
 
@@ -127,9 +139,11 @@ def print_bottom_of_page():
  <br>
  <br>
  <hr>
+ <div class="footer">
  This page was generated at %s.<br>
  Return to the <a href="/humanizeus/index.py">main page</a>.<br>
  Enter <a href="/humanizeus/admin.py">admin portal</a>.
+ </div>
  </body>
  </html>
  ''' % time.ctime())
