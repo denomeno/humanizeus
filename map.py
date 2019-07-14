@@ -95,10 +95,8 @@ def display_map():
 
 #####################################################################################
 def display_list_of_organizations():
-    """Middleware function to get all organization from the entities table.
-    Returns a list of tuples of (organization_id, name, address)."""
 
-    print('''<iframe src="organization_list_frame.py" style = "width: 650px; height: 600px;" alight="right" scrolling="yes">
+    print('''<iframe src="organization_list_frame.py" style = "width: 650px; height: 600px;" align="right" scrolling="yes">
     </iframe>''')
 
 
