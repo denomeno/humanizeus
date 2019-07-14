@@ -9,7 +9,7 @@ def view_existing_organizations_login():
 
     #display in browser
     print('''
-    <h5>Existing member?</h5>
+    <h3>Existing member?</h3><br>
     <form method=POST >
         <input type="hidden" name="form_name" value="existingMemberLogin"/>
         <input name="login_email" type="email">
@@ -142,10 +142,8 @@ def view_add_organizations():
         <input type="hidden" name="form_name" value="newOrganization"/>
         <u>Email (will be used for login later, so you can update your resources):</u><br>
         <input name="new_organization_email" type="email"><br>
-        <br>
         Organization Name:<br>
         <input name="entity_name" type="text"><br>
-        <br>
         Address:<br>
         <div class="form-group">
             <input type="street"
