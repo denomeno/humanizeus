@@ -62,7 +62,7 @@ def add_need():
     <input name="entity_name" type="text"><br>
     Address:<br>
     <input name="address" type="text"><br>
-    Select need:<br>
+    Please select need. If what you need is not on the list, let us know in the box below:<br>
     ''')
 
     for item in items: #dyamically generate options
