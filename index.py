@@ -54,8 +54,7 @@ def print_top_of_page():
       zoom: 100%;
       }
 
-      .footer {
-      border-top: 4px solid black
+      footer {
       color: black;
       text-align: left;
       padding: 2px 10px 0px 0px;
