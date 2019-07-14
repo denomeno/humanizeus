@@ -28,39 +28,36 @@ def print_form_data(form):
 
 #####################################################################################
 def print_headers():
-    print("Content-type:text/html\r\n\r\n")
-    print()
+ print("Content-type:text/html\r\n\r\n")
+ print()
 
 #####################################################################################
 def print_top_of_page():
+      '''Print the top of the HTML page.'''
 
-    '''Print the top of the HTML page.'''
+      print("""
+      <html>
+      <head>
+      <title>HumanizeUs</title>
+      <h1>HumanizeUs</h1>
+      <h3>A Neighborly Exchange</h3>
+      <style>
 
-    print_headers()
+      h1 {
+      color: red
+      font-family: "Garamound";
+      }
 
-    print("""
-    <html>
-    <head>
-    <title>HumanizeUs</title>
-    <h1>HumanizeUs</h1>
-    <h3>A Neighborly Exchange</h3>
-    <style>
+      body {
+      background-color: white;
+      }
 
-    h1 {
-    color: red
-    font-family: "Garamound";
-    }
+      </style>
+      </head>
+      <body>
+      """)
 
-    body {
-    background-color: white;
-    }
-
-    </style>
-    </head>
-    <body>
-    """)
-
-    #text-align: center;
+      #text-align: center;
 
 #####################################################################################
 def print_menu():
@@ -125,6 +122,9 @@ def print_bottom_of_page():
      '''Print the bottom of the HTML page.'''
 
      print('''
+ <br>
+ <br>
+ <br>
  <hr>
  This page was generated at %s.<br>
  Return to the <a href="/humanizeus/index.py">main page</a>.<br>

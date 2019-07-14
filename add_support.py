@@ -68,7 +68,7 @@ def add_support():
     <input name="entity_name" type="text"><br>
     Address:<br>
     <input name="address" type="text"><br>
-    Please select the item you are donating:<br>
+    Please select the item you are donating. The items below are the ones needed right now, please make sure the item you are donating is needed currently:<br>
     ''')
 
     for item in items: #dyamically generate options
