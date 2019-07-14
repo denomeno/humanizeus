@@ -17,6 +17,22 @@ def view_existing_organizations_login():
     </form>
     ''')
 
+#####################################################################################
+def view_existing_organization_profile(email):
+
+    #get profile data of organization
+    org_profile = Database_requests.get_entity_from_email(email)
+
+    #assign variables
+    name = org_profile['name']
+    address = org_profile['address']
+    phone = org_profile['phone']
+    website = org_profile['website']
+
+    #display on page - preinserted into html form text inpput fields
+
+    
+
 
 #####################################################################################
 def view_existing_organizations_data(email):

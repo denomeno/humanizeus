@@ -195,6 +195,16 @@ WHERE `entities`.`email` = %s;""", (email, ))
         return myc.fetchall()
 
 
+    def get_entity_from_email(email):
+        myc = cnx.cursor(dictionary = True)
+        myc.execute("""
+SELECT
+    *
+FROM `entities`
+WHERE `entities`.`email` = %s;""", (email, ))
+        return myc.fetchall()
+
+
     def get_all_matches():
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
