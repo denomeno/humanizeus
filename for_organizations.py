@@ -9,13 +9,12 @@ def view_existing_organizations_login():
 
     #display in browser
     print('''
-    <h3>Existing member?</h3>
+    <h3>Existing member?</h3><br>
     <form method=POST >
         <input type="hidden" name="form_name" value="existingMemberLogin"/>
         <input name="login_email" type="email">
         <input type='submit' value='Login'>
     </form>
-    <hr>
     ''')
 
 
@@ -139,39 +138,25 @@ def view_add_organizations():
     print('''
     <h3>Join the communnity.</h3>
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
-    <form method=POST >
+    <form method=POST ><br>
         <input type="hidden" name="form_name" value="newOrganization"/>
-        <b>Email</b> (will be used for login later, so you can update your resources):<br>
-        <input name="new_organization_email" type="email"><br>
-        <b>Organization Name:</b><br>
-        <input name="entity_name" type="text"><br>
-        <b>Address:</b><br>
+        <u>Email (will be used for login later, so you can update your resources):</u><br>
+        <input name="new_organization_email" type="email" required><br>
+        Organization Name:<br>
+        <input name="entity_name" type="text" required><br>
+        Address:<br>
         <div class="form-group">
-            <input type="street"
-                class="form-control"
-                id="autocomplete"
-                placeholder="Street">
-
-            <input type="city"
-                class="form-control"
-                id="inputCity"
-                placeholder="City">
+            <input type="street" name="street" placeholder="Street" required>
+            <input type="city" name="city" placeholder="City" required>
             <br>
-            <input type="state"
-                class="form-control"
-                id="inputState"
-                placeholder="State">
-
-            <input type="zip"
-                class="form-control"
-                id="inputZip"
-                placeholder="Zip">
-
+            <input type="state" name="state" placeholder="State" required>
+            <input type="zip" name="zip" placeholder="Zip" required>
         </div>
-        <b>Phone:</b><br>
+        <br>
+        Phone:<br>
         <input name="phone" type="text"><br>
         <hr>
-        <b>Resources Provided at your Organization:</b><br>
+        Resources Provided at your Organization:<br>
         ''')
 
     #list of items provided
@@ -179,8 +164,8 @@ def view_add_organizations():
         print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
-    print('''<br>
-        <b>Resources your Organization Needs at the moment:</b><br>
+    print('''
+        Resources your Organization Needs at the moment:<br>
         ''')
 
     #list of items needed
@@ -196,8 +181,7 @@ def view_add_organizations():
 
 
     print('''
-    <br>
-    <input style="font-size : 20px; width: 100%; height: 100px;" type='submit' value='Join'>
+    <input type='submit' value='Submit Form'>
     </form>
         <h4>Thank you for joining the community!<h/4>
         ''')
@@ -249,10 +233,14 @@ if __name__ == "__main__":
             #get fields from the submitted form
             email = form['new_organization_email'].value
             entity_name = form['entity_name'].value
-            address = form['address'].value
+            address_street = form['street'].value
+            address_city = form['city'].value
+            address_state = form['state'].value
+            address_zip = form['zip'].value
             phone = form['phone'].value
 
             #assign organization type - because this form is only for organizations
+            address = address_street + address_city + address_state + address_zip
             type = "Organization"
             description = "--no description for organizations--"
 
