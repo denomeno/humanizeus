@@ -28,39 +28,39 @@ def print_form_data(form):
 
 #####################################################################################
 def print_headers():
- print("Content-type:text/html\r\n\r\n")
- print()
+    print("Content-type:text/html\r\n\r\n")
+    print()
 
 #####################################################################################
 def print_top_of_page():
 
-      '''Print the top of the HTML page.'''
+    '''Print the top of the HTML page.'''
 
-      print_header() 
+    print_header()
 
-      print("""
-      <html>
-      <head>
-      <title>HumanizeUs</title>
-      <h1>HumanizeUs</h1>
-      <h3>A Neighborly Exchange</h3>
-      <style>
+    print("""
+    <html>
+    <head>
+    <title>HumanizeUs</title>
+    <h1>HumanizeUs</h1>
+    <h3>A Neighborly Exchange</h3>
+    <style>
 
-      h1 {
-      color: red
-      font-family: "Garamound";
-      }
+    h1 {
+    color: red
+    font-family: "Garamound";
+    }
 
-      body {
-      background-color: white;
-      }
+    body {
+    background-color: white;
+    }
 
-      </style>
-      </head>
-      <body>
-      """)
+    </style>
+    </head>
+    <body>
+    """)
 
-      #text-align: center;
+    #text-align: center;
 
 #####################################################################################
 def print_menu():
