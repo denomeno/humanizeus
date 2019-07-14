@@ -109,13 +109,14 @@ def display_list_of_organizations():
     <p>
 
     <table border=1 align="right">
-      <tr>
-        <th><font size=+1"><b>Name</b></font></th>
-        <th><font size=+1"><b>Address</b></font></th>
-        <th><font size=+1"><b>Phone</b></font></th>
-        <th><font size=+1"><b>Provides</b></font></th>
-        <th><font size=+1"><b>Needs</b></font></th>
-      </tr>
+        <iframe>
+        <tr>
+            <th><font size=+1"><b>Name</b></font></th>
+            <th><font size=+1"><b>Address</b></font></th>
+            <th><font size=+1"><b>Phone</b></font></th>
+            <th><font size=+1"><b>Provides</b></font></th>
+            <th><font size=+1"><b>Needs</b></font></th>
+        </tr>
     """)
 
     #generate the table lines
@@ -158,6 +159,7 @@ def display_list_of_organizations():
             display_list_row(name, address, phone, supply, need)
 
     print("""
+        </iframe>
     </table>
     <br>
     """)
