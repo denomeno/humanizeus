@@ -108,7 +108,7 @@ def display_list_of_organizations():
     <h2> All Organizations</h2>
     <p>
 
-    <iframe style = "width: 200px; height: 200px;">
+    <iframe style = "width: 200px; height: 600px;" scrolling="yes">
     <table border=1 align="right">
         <tr>
             <th><font size=+1"><b>Name</b></font></th>
