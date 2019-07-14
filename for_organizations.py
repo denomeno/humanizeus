@@ -143,7 +143,7 @@ def view_add_organizations():
         <u>Email (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
-        <input name="suppliername" type="text"><br>
+        <input name="entity_name" type="text"><br>
         Address:<br>
         <input name="address" type="text"><br>
         Phone:<br>
@@ -224,7 +224,7 @@ if __name__ == "__main__":
         elif form['form_name'].value == "newOrganization": #IF NEW ORGZANITION FORM IS FILLED
 
             #get fields from the submitted form
-            email = form['email'].value
+            email = form['new_organization_email'].value
             entity_name = form['entity_name'].value
             address = form['address'].value
             phone = form['phone'].value
@@ -235,8 +235,12 @@ if __name__ == "__main__":
             #assign organization type - because this form is only for organizations
             type = "Organization"
 
+            #use this to check for item
+            all_items = Database_requests.get_all_items()
+
             #get gocodeing of address
             geocode = Google_requests.get_geocode(address)
+
 
             #insert the organization into entities table
             database_entity_id = Database_requests.insert_into_entities(email, entity_name, address, type)#new entry is made, and entity id is returned
@@ -245,15 +249,16 @@ if __name__ == "__main__":
             Database_requests.update_geocode_of_entity(database_entity_id, geocode['formatted_address'], geocode['latitude'], geocode['longitude'])
 
 
-            for item in needed_item_names:
-                item_name = item.value
-                quantity_requested = form['quantity_requested: %s' %(item_name)].value
-                Database_requests.insert_into_entities_need_items(entity_id, item_name, quantity_requested)
+            for item in all_items: #iterate all availeble items, and match from the form accorgin to their names
+                quantity_requested = form['quantity_requested: %s' %(item['name'])].value
+                if quantity_requested != "0": #if quantity_requested is 0, skip the item
+                    Database_requests.insert_into_entities_need_items(database_entity_id, item['name'], quantity_requested)
 
             for item in supplied_item_names:
                 item_name = item.value
-                quantity_requested = form['quantity_requested: %s' %(item_name)].value
-                Database_requests.insert_into_entities_supply_items(entity_id, item_name, quantity_requested)
+                quantity_requested = "0"
+                Database_requests.insert_into_entities_supply_items(database_entity_id, item['name'], quantity_requested)
+
 
 
 
