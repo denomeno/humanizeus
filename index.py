@@ -48,7 +48,7 @@ def print_top_of_page():
 
           h1 {
             color: red
-              font-family: "Garamound";
+              font-family: "Bookman";
           }
 
           body {
@@ -64,7 +64,7 @@ def print_top_of_page():
 
         </style>
       </head>
-      <body style="font-family:Verdana;color:black;">
+      <body style="font-family:Bookman;color:black;">
     """)
 
 
