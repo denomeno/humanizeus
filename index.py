@@ -35,7 +35,7 @@ def print_headers():
 def print_top_of_page():
     '''Print the top of the HTML page.'''
 
-    print_header()
+    print_headers()
 
     print("""
     <html>
