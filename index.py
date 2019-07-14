@@ -33,39 +33,39 @@ def print_headers():
 
 #####################################################################################
 def print_top_of_page():
-    '''Print the top of the HTML page.'''
+      '''Print the top of the HTML page.'''
+      '''<meta name="viewport" content="width=device-width, initial-scale=1.0">'''
 
-    print("""
-    <html>
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HumanizeUs</title>
-    <h1>HumanizeUs</h1>
-    <h3>A Neighborly Exchange</h3>
-    <style>
+      print("""
+      <html>
+      <head>
+      <title>HumanizeUs</title>
+      <h1>HumanizeUs</h1>
+      <h3>A Neighborly Exchange</h3>
+      <style>
 
-    h1 {
-    color: red
-    font-family: "Garamound";
-    }
+      h1 {
+      color: red
+      font-family: "Garamound";
+      }
 
-    body {
-    background-color: white;
-    zoom: 100%;
-    }
+      body {
+      background-color: white;
+      zoom: 100%;
+      }
 
-    footer {
-    border-top: 4px solid black
-    color: black;
-    text-align: left;
-    padding: 2px 10px 0px 0px;
-    clear: both
-    }
+      .footer {
+      border-top: 4px solid black
+      color: black;
+      text-align: left;
+      padding: 2px 10px 0px 0px;
+      clear: both
+      }
 
-    </style>
-    </head>
-    <body>
-    """)
+      </style>
+      </head>
+      <body>
+      """)
 
       #text-align: center;
 
@@ -139,7 +139,8 @@ def print_bottom_of_page():
     <br>
     <br>
     <hr>
-    <footer>
+    <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+    <u>©humanizeus</u>
     This page was generated at %s.<br>
     Return to the <a href="/humanizeus/index.py">main page</a>.<br>
     Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
