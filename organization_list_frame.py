@@ -5,6 +5,27 @@ from import_modules import *
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
 
 
+#####################################################################################
+
+def display_list_row(name, address, phone, supply, need):
+
+    # each iteration of this loop creates on record of output:
+    #(name, address, supply, need) = organization
+
+    print("""
+  <tr>
+    <td>%s</a></td>
+    <td>%s</a></td>
+    <td>%s</a></td>
+    <td>%s</a></td>
+    <td>%s</a></td>
+  </tr>
+    """ % (name, address, phone, supply, need))
+
+
+#####################################################################################
+
+
 def generate_organization_list_table():
 
     #pull all data
