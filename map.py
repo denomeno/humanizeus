@@ -87,7 +87,7 @@ def generate_map():
 def display_map():
 
     print('''
-    <iframe src="map_main.html" height="600" width="900">
+    <iframe src="map_main.html" height="600" width="900" align="left">
     </iframe>
 ''')
 
@@ -108,7 +108,7 @@ def display_list_of_organizations():
     <h2> All Organizations</h2>
     <p>
 
-    <table border=1>
+    <table border=1 align="right">
       <tr>
         <th><font size=+1"><b>Name</b></font></th>
         <th><font size=+1"><b>Address</b></font></th>
