@@ -15,6 +15,7 @@ def view_existing_organizations_login():
         <input name="login_email" type="email">
         <input type='submit' value='Login'>
     </form>
+    <hr>
     ''')
 
 
@@ -140,13 +141,11 @@ def view_add_organizations():
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
     <form method=POST >
         <input type="hidden" name="form_name" value="newOrganization"/>
-        <u>Email</u> (will be used for login later, so you can update your resources):<br>
+        <b>Email</b> (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
-        <br>
-        Organization Name:<br>
+        <b>Organization Name:</b><br>
         <input name="entity_name" type="text"><br>
-        <br>
-        Address:<br>
+        <b>Address:</b><br>
         <div class="form-group">
             <input type="street"
                 class="form-control"
@@ -169,11 +168,10 @@ def view_add_organizations():
                 placeholder="Zip">
 
         </div>
-        <br>
-        Phone:<br>
+        <b>Phone:</b><br>
         <input name="phone" type="text"><br>
         <hr>
-        Resources Provided at your Organization:<br>
+        <b>Resources Provided at your Organization:</b><br>
         ''')
 
     #list of items provided
@@ -182,7 +180,7 @@ def view_add_organizations():
 
 
     print('''<br>
-        Resources your Organization Needs at the moment:<br>
+        <b>Resources your Organization Needs at the moment:</b><br>
         ''')
 
     #list of items needed
