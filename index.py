@@ -53,14 +53,15 @@ def print_top_of_page():
       zoom: 90%;
       }
 
-      .footer {
+      footer {
         position: fixed;
         left: 0;
         bottom: 0;
-        width: 80%;
-        background-color: gray;
-        color: white;
-        text-align: center;
+        width: 100%;
+        height: 40%
+        color: black;
+        background-color: white;
+        text-align: left;
         }
 
       </style>
