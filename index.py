@@ -103,7 +103,7 @@ li a:hover {
 <body>
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='/humanizeus/index.py'><span>Home</span></a></li>
+   <li class='active'><a href='/humanizeus/home.py'><span>Home</span></a></li>
    <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
    <li class='last'><a href='/humanizeus/map.py'><span>Map</span></a></li>
    <li><a href='/humanizeus/add_need.py'><span>Add Need</span></a></li>
