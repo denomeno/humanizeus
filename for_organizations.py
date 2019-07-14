@@ -155,7 +155,7 @@ def view_add_organizations():
                 class="form-control"
                 id="inputCity"
                 placeholder="City">
-
+            <br>
             <input type="state"
                 class="form-control"
                 id="inputState"
@@ -166,15 +166,6 @@ def view_add_organizations():
                 id="inputZip"
                 placeholder="Zip">
 
-            <input type="county"
-                class="form-control"
-                id="inputCounty"
-                placeholder="County">
-
-            <input type="country"
-                class="form-control"
-                id="inputCountry"
-                placeholder="Country">
         </div>
         Phone:<br>
         <input name="phone" type="text"><br>
