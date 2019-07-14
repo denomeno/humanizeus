@@ -35,8 +35,6 @@ def print_headers():
 def print_top_of_page():
     '''Print the top of the HTML page.'''
 
-    print_header()
-
     print("""
     <html>
     <head>
@@ -133,21 +131,21 @@ li a:hover {
 #####################################################################################
 
 def print_bottom_of_page():
-     '''Print the bottom of the HTML page.'''
+    '''Print the bottom of the HTML page.'''
 
-     print('''
- <br>
- <br>
- <br>
- <hr>
- <footer>
-     <p>This page was generated at %s.<br>
-     Return to the <a href="/humanizeus/index.py">main page</a>.<br>
-     Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
- </footer>
- </body>
- </html>
- ''' % time.ctime())
+    print('''
+    <br>
+    <br>
+    <br>
+    <hr>
+    <footer>
+    <p>This page was generated at %s.<br>
+    Return to the <a href="/humanizeus/index.py">main page</a>.<br>
+    Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
+    </footer>
+    </body>
+    </html>
+    ''' % time.ctime())
 
 
  #####################################################################################
@@ -155,7 +153,7 @@ def print_bottom_of_page():
 
 if __name__ == "__main__":
 
-    #print_headers()
+    print_headers()
     print_top_of_page()
     print_menu()
     print_bottom_of_page()
