@@ -50,7 +50,6 @@ def print_top_of_page():
 
       body {
       background-color: white;
-      font­size: 28px
       zoom: 100%;
       }
 
@@ -139,9 +138,9 @@ def print_bottom_of_page():
  <br>
  <hr>
  <footer>
-     This page was generated at %s.<br>
+     <p>This page was generated at %s.<br>
      Return to the <a href="/humanizeus/index.py">main page</a>.<br>
-     Enter <a href="/humanizeus/admin.py">admin portal</a>.
+     Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
  </footer>
  </body>
  </html>
