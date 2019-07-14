@@ -140,7 +140,7 @@ def view_add_organizations():
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
     <form method=POST ><br>
         <input type="hidden" name="form_name" value="newOrganization"/>
-        <u>Email (will be used for login later, so you can update your resources):<br>
+        <u>Email (will be used for login later, so you can update your resources):</u><br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
         <input name="suppliername" type="text"><br>
@@ -281,7 +281,7 @@ if __name__ == "__main__":
 
                     if int(quantity_requested) == 0:
                         continue
-                        
+
                     #insert into database
                     Database_requests.insert_into_entities_need_items(entity_id, item['name'], description,  quantity_requested)
 
