@@ -50,15 +50,16 @@ def print_top_of_page():
 
       body {
       background-color: white;
-      zoom: 90%;
+      font­size: 28px
+      zoom: 100%;
       }
 
       footer {
-        position: bottom
-        padding: 10px;
-        width: 100%;
+        border-top: 4px solid black
         color: black;
         text-align: left;
+        padding: 2px 10px 0px 0px;
+        clear: both
         }
 
       </style>
