@@ -108,15 +108,15 @@ def display_list_of_organizations():
     <h2> All Organizations</h2>
     <p>
 
-    <iframe style = "width: 200px; height: 600px;" scrolling="yes">
-    <table border=1 align="right">
-        <tr>
-            <th><font size=+1"><b>Name</b></font></th>
-            <th><font size=+1"><b>Address</b></font></th>
-            <th><font size=+1"><b>Phone</b></font></th>
-            <th><font size=+1"><b>Provides</b></font></th>
-            <th><font size=+1"><b>Needs</b></font></th>
-        </tr>
+    <iframe style = "width: 500px; height: 500px;" scrolling="yes">
+        <table border=1 align="right">
+            <tr>
+                <th><font size=+1"><b>Name</b></font></th>
+                <th><font size=+1"><b>Address</b></font></th>
+                <th><font size=+1"><b>Phone</b></font></th>
+                <th><font size=+1"><b>Provides</b></font></th>
+                <th><font size=+1"><b>Needs</b></font></th>
+            </tr>
     """)
 
     #generate the table lines
