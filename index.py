@@ -50,7 +50,7 @@ def print_top_of_page():
 
       body {
       background-color: white;
-      zoom: 50%;
+      zoom: 90%;
       }
 
       </style>
