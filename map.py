@@ -98,30 +98,8 @@ def display_list_of_organizations():
     """Middleware function to get all organization from the entities table.
     Returns a list of tuples of (organization_id, name, address)."""
 
-    print('''<iframe src="organization_list_frame.py" style = "width: 650px; height: 600px;" scrolling="yes">
+    print('''<iframe src="organization_list_frame.py" style = "width: 650px; height: 600px;" alight="right" scrolling="yes">
     </iframe>''')
-
-
-#####################################################################################
-
-def display_list_row(name, address, phone, supply, need):
-
-    # each iteration of this loop creates on record of output:
-    #(name, address, supply, need) = organization
-
-    print("""
-  <tr>
-    <td>%s</a></td>
-    <td>%s</a></td>
-    <td>%s</a></td>
-    <td>%s</a></td>
-    <td>%s</a></td>
-  </tr>
-    """ % (name, address, phone, supply, need))
-
-
-
-
 
 
 #####################################################################################

@@ -14,13 +14,13 @@ def display_list_row(name, address, phone, supply, need):
 
     print("""
   <tr>
-    <td><a href="?marker_id=%s">%s</a></td>
+    <td>%s</a></td>
     <td>%s</a></td>
     <td>%s</a></td>
     <td>%s</a></td>
     <td>%s</a></td>
   </tr>
-    """ % (marker_id, name, address, phone, supply, need))
+    """ % (name, address, phone, supply, need))
 
 
 #####################################################################################

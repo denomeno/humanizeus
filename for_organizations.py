@@ -138,9 +138,9 @@ def view_add_organizations():
     print('''
     <h3>Join the communnity.</h3>
     <h4>Please add some necessary details about your organization so we can place you on our map for members to see. </h4>
-    <form method=POST ><br>
+    <form method=POST >
         <input type="hidden" name="form_name" value="newOrganization"/>
-        <u>Email (will be used for login later, so you can update your resources):</u><br>
+        <u>Email</u> (will be used for login later, so you can update your resources):<br>
         <input name="new_organization_email" type="email"><br>
         Organization Name:<br>
         <input name="entity_name" type="text"><br>
@@ -157,7 +157,7 @@ def view_add_organizations():
         print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
-    print('''
+    print('''<br>
         Resources your Organization Needs at the moment:<br>
         ''')
 
@@ -174,7 +174,7 @@ def view_add_organizations():
 
 
     print('''
-    <input type='submit' value='Submit Form'>
+    <input type='submit' value='Join'>
     </form>
         <h4>Thank you for joining the community!<h/4>
         ''')
