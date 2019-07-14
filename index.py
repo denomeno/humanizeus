@@ -59,8 +59,8 @@ def print_top_of_page():
         bottom: 0;
         width: 100%;
         height: 40%
-        color: black;
-        background-color: white;
+        color: white;
+        background-color: black;
         text-align: left;
         }
 
@@ -141,9 +141,9 @@ def print_bottom_of_page():
  <br>
  <hr>
  <div class="footer">
- This page was generated at %s.<br>
- Return to the <a href="/humanizeus/index.py">main page</a>.<br>
- Enter <a href="/humanizeus/admin.py">admin portal</a>.
+     This page was generated at %s.<br>
+     Return to the <a href="/humanizeus/index.py">main page</a>.<br>
+     Enter <a href="/humanizeus/admin.py">admin portal</a>.
  </div>
  </body>
  </html>
