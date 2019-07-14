@@ -231,6 +231,7 @@ if __name__ == "__main__":
             supplied_item_names = form['supplied_item_names'] #list of supplied items names
             #assign organization type - because this form is only for organizations
             type = "Organization"
+            description = "--no description for organizations--"
 
             #use this to check for item
             all_items = Database_requests.get_all_items()
@@ -249,12 +250,12 @@ if __name__ == "__main__":
             for item in all_items: #iterate all availeble items, and match from the form accorgin to their names
                 quantity_requested = form['quantity_requested: %s' %(item['name'])].value
                 if quantity_requested != "0": #if quantity_requested is 0, skip the item
-                    Database_requests.insert_into_entities_need_items(database_entity_id, item['name'], quantity_requested)
+                    Database_requests.insert_into_entities_need_items(database_entity_id, item['name'], description, quantity_requested)
 
             for item in supplied_item_names:
                 item_name = item.value
                 quantity_requested = "0"
-                Database_requests.insert_into_entities_supply_items(database_entity_id, item['name'], quantity_requested)
+                Database_requests.insert_into_entities_supply_items(database_entity_id, item['name'], description, quantity_requested)
 
 
 
