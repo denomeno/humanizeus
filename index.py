@@ -152,7 +152,7 @@ def print_bottom_of_page():
 
 if __name__ == "__main__":
 
-    #print_headers()
+    print_headers()
     print_top_of_page()
     print_menu()
 
