@@ -34,11 +34,11 @@ def print_headers():
 #####################################################################################
 def print_top_of_page():
       '''Print the top of the HTML page.'''
+      '''<meta name="viewport" content="width=device-width, initial-scale=1.0">'''
 
       print("""
       <html>
       <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>HumanizeUs</title>
       <h1>HumanizeUs</h1>
       <h3>A Neighborly Exchange</h3>
@@ -54,7 +54,7 @@ def print_top_of_page():
       zoom: 100%;
       }
 
-      footer {
+      .footer {
       border-top: 4px solid black
       color: black;
       text-align: left;
@@ -139,7 +139,8 @@ def print_bottom_of_page():
     <br>
     <br>
     <hr>
-    <footer>
+    <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+    <u>©humanizeus</u>
     This page was generated at %s.<br>
     Return to the <a href="/humanizeus/index.py">main page</a>.<br>
     Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
