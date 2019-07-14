@@ -38,6 +38,7 @@ def print_top_of_page():
       print("""
       <html>
       <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>HumanizeUs</title>
       <h1>HumanizeUs</h1>
       <h3>A Neighborly Exchange</h3>
