@@ -155,10 +155,7 @@ AND `entities`.`email` = %s
         myc = cnx.cursor(dictionary = True)
         myc.execute("""
 SELECT
-
-    `items`.`name`,
-    `items`.`description`
-
+    *
 FROM `items`;""")
         return myc.fetchall()
 
