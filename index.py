@@ -32,7 +32,8 @@ def print_headers():
     print("""
     <title>HumanizeUs</title>
     <h1>HumanizeUs</h1>
-    <h3>A Neighborly Exchange</h3>""")
+    <h3>A Neighborly Exchange</h3>
+    <body>""")
 
 #####################################################################################
 def print_top_of_page():
@@ -63,7 +64,7 @@ def print_top_of_page():
 
     </style>
     </head>
-    <body>""")
+    """)
 
 
 #####################################################################################
