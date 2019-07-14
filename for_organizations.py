@@ -247,6 +247,11 @@ if __name__ == "__main__":
             try:#attempt to retrieve supplied item, if not retrieved, move on
                 supplied_item_names = form['supplied_item_names'] #list of supplied items names
                 are_there_supplied_items = True
+                if type(supplied_item_names) is a list is True: #check if there are muclitple added items
+                    multiple_supplied_items = True
+                else:
+                    multiple_supplied_items = False
+
             except KeyError:
                 are_there_supplied_items = False
 
@@ -271,12 +276,16 @@ if __name__ == "__main__":
 
 
             if are_there_supplied_items is True: #only if there are supplied items, attempt to put them in the database
-                for item in supplied_item_names:
-                    item_name = item.value
+
+                if multiple_supplied_items is True:#if there are mutliple number, iterate through list
+                    for item in supplied_item_names:
+                        item_name = item.value
+                        quantity_requested = "0"
+                        Database_requests.insert_into_entities_supply_items(database_entity_id, item_name, description, quantity_requested)
+                elif multiple_supplied_items is False:#if not, use single element 
+                    item_name = supplied_item_names.value
                     quantity_requested = "0"
                     Database_requests.insert_into_entities_supply_items(database_entity_id, item_name, description, quantity_requested)
-
-
 
 
         elif form['form_name'].value == "updateNeeds":
