@@ -108,8 +108,8 @@ def display_list_of_organizations():
     <h2> All Organizations</h2>
     <p>
 
-    <table style = "width: 200px; height: 200px;" border=1 align="right">
-        <iframe>
+    <iframe style = "width: 200px; height: 200px;">
+    <table border=1 align="right">
         <tr>
             <th><font size=+1"><b>Name</b></font></th>
             <th><font size=+1"><b>Address</b></font></th>
@@ -159,8 +159,8 @@ def display_list_of_organizations():
             display_list_row(name, address, phone, supply, need)
 
     print("""
-        </iframe>
-    </table>
+        </table>
+    </iframe>
     <br>
     """)
 
