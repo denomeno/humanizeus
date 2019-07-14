@@ -93,4 +93,5 @@ def generate_organization_list_table():
     """)
 
 if __name__ == "__main__":
+    print_headers()
     generate_organization_list_table()
