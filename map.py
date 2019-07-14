@@ -65,6 +65,10 @@ def generate_map():
         if latitude == "" or longitude == "" or name == "":
             continue
 
+        #exclude organizations from map 
+        if in_need['type_description'] == "Organization":
+            continue
+
         #add to map only if they have longitude and latitude
         if in_need['latitude'] != None and in_need['longitude'] != None:
 
