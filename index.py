@@ -55,12 +55,12 @@ def print_top_of_page():
       }
 
       footer {
-        border-top: 4px solid black
-        color: black;
-        text-align: left;
-        padding: 2px 10px 0px 0px;
-        clear: both
-        }
+      border-top: 4px solid black
+      color: black;
+      text-align: left;
+      padding: 2px 10px 0px 0px;
+      clear: both
+      }
 
       </style>
       </head>
