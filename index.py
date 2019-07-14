@@ -29,7 +29,10 @@ def print_form_data(form):
 #####################################################################################
 def print_headers():
     print("Content-type:text/html\r\n\r\n")
-    print()
+    print("""
+    <title>HumanizeUs</title>
+    <h1>HumanizeUs</h1>
+    <h3>A Neighborly Exchange</h3>""")
 
 #####################################################################################
 def print_top_of_page():
@@ -39,9 +42,9 @@ def print_top_of_page():
       print("""
       <html>
       <head>
-      <title>HumanizeUs</title>
-      <h1>HumanizeUs</h1>
-      <h3>A Neighborly Exchange</h3>
+      <meta charset='utf-8'>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <style>
 
       h1 {
@@ -51,7 +54,6 @@ def print_top_of_page():
 
       body {
       background-color: white;
-      zoom: 100%;
       }
 
       footer {
@@ -72,17 +74,16 @@ def print_top_of_page():
 #####################################################################################
 def print_menu():
 
-    print('''
+"""
 <head>
-   <meta charset='utf-8'>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="styles.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="script.js"></script>
    <title>CSS MenuMaker</title>
 </head>
+"""
 
+    print('''
 <style>
 ul {
   list-style-type: none;
@@ -108,7 +109,6 @@ li a:hover {
   background-color: #111;
 }
 </style>
-</head>
 
 <body>
 <div id='cssmenu'>
