@@ -38,7 +38,7 @@ def generate_organization_list_table():
     <h2><center>List of All Organizations</center></h2>
     <p>
 
-      <table border=1 align="right">
+      <table border=1>
           <tr>
               <th><font size=+1"><b>Name</b></font></th>
               <th><font size=+1"><b>Address</b></font></th>
