@@ -134,23 +134,17 @@ li a:hover {
 def print_bottom_of_page():
     '''Print the bottom of the HTML page.'''
 
-     print('''
-     <br>
-     <br>
-     <br>
-     <hr>
-     <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+    print('''
+    <br>
+    <br>
+    <br>
+    <hr>
+    <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
      <u>©humanizeus</u>
      This page was generated at %s.<br>
      Return to the <a href="/humanizeus/index.py">main page</a>.<br>
      Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
-     </footer>
-     </body>
-     </html>
-     ''' % time.ctime())
-    Return to the <a href="/humanizeus/index.py">main page</a>.<br>
-    Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
-    </footer>
+    </div>
     </body>
     </html>
     ''' % time.ctime())
