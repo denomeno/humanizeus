@@ -159,6 +159,7 @@ def display_list_of_organizations():
 
     print("""
     </table>
+    <br>
     """)
 
 
