@@ -108,7 +108,7 @@ def display_list_of_organizations():
     <h2> All Organizations</h2>
     <p>
 
-    <table border=1 align="right">
+    <table style = "width: 200px; height: 200px;" border=1 align="right">
         <iframe>
         <tr>
             <th><font size=+1"><b>Name</b></font></th>
