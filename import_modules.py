@@ -1,6 +1,6 @@
 #!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
 
-print ("Content-type:text/html\r\n\r\n")
+#print ("Content-type:text/html\r\n\r\n")
 
 #import MySQLdb as db
 #import mysql.connector # `pip install mysql-connector-python` - NOT NEEDED, ALREADY EXISTS IN `Humanize-Us.py`
@@ -13,6 +13,10 @@ from flask import Flask
 import folium #used to generate maps
 
 from database_requests import *#dataabse MySQL request functions in a class
+from google_requests import *#google api request functions 
 import matching_functions #matching functions for needs and providers
+
+import requests #for post/get requests
+import json #to decode json
 
 from index import *

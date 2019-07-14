@@ -235,8 +235,14 @@ if __name__ == "__main__":
             #assign organization type - because this form is only for organizations
             type = "Organization"
 
+            #get gocodeing of address
+            geocode = Google_requests.get_geocode(address)
+
             #insert the organization into entities table
-            Database_requests.insert_into_entities(email, entity_name, address, type)
+            database_entity_id = Database_requests.insert_into_entities(email, entity_name, address, type)#new entry is made, and entity id is returned
+
+            #update address information of the entity
+            Database_requests.update_geocode_of_entity(database_entity_id, geocode['formatted_address'], geocode['latitude'], geocode['longitude'])
 
 
             for item in needed_item_names:
@@ -281,7 +287,7 @@ if __name__ == "__main__":
 
                     if int(quantity_requested) == 0:
                         continue
-                        
+
                     #insert into database
                     Database_requests.insert_into_entities_need_items(entity_id, item['name'], description,  quantity_requested)
 
