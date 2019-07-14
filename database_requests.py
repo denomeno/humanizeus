@@ -254,6 +254,7 @@ VALUES (%s, %s, %s, (SELECT
                         FROM `entity_types`
                         WHERE `entity_types`.`description` = %s));""", (email, name, address, type))
         cnx.commit()
+        return myc.lastrowid #returns last inserted rowa
 
 
     def insert_into_entities_need_items(entity_id, item_name, description, quantity_requested):
@@ -315,4 +316,18 @@ SET
 WHERE
     `entities_need_items_id` = %s
 """, (quantity_requested, entities_need_items_id))
+        cnx.commit()
+
+    def update_geocode_of_entity(entity_id, formatted_address, latitude, longitude):
+        myc = cnx.cursor()
+        myc.execute("""
+UPDATE
+    `entities`
+SET
+    `address` = %s,
+    `latitude` = %s,
+    `longitude` = %s
+WHERE
+    `entity_id` = %s
+""", (formatted_address, latitude, longitude, entity_id))
         cnx.commit()
