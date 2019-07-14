@@ -283,7 +283,7 @@ VALUES (%s,
         myc.execute("""
 INSERT INTO `humanizeusmaster`.`entities_supply_items`
 
-(`entity_id`, `item_id`, `description`, `quantity_requested`)
+(`entity_id`, `item_id`, `description`, `quantity_requested`, `time_in_1`)
 
 VALUES (%s,
 
