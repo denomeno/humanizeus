@@ -31,7 +31,7 @@ def view_existing_organization_profile(email):
 
     #display on page - preinserted into html form text inpput fields
 
-    
+
 
 
 #####################################################################################
@@ -60,6 +60,10 @@ def view_existing_organizations_data(email):
 
     for item in items:
 
+        #check if item should be shown
+        if item['show_in_need_options_of_organization'] == "No":
+            continue
+
         quantity = 0 #variable to store how many of each item an organization supplies
 
         #form displays all items that can be chosen
@@ -67,9 +71,7 @@ def view_existing_organizations_data(email):
 
             entities_need_items_id = need_item['entities_need_items_id'] #unique if of organization_supply_items match
 
-
             if item['name'] == need_item['item_name']:
-
                 quantity_requested = need_item['quantity_requested']
                 quantity_fulfilled = need_item['quantity_fulfilled']
                 quantity = int(quantity_requested-quantity_fulfilled)
@@ -77,7 +79,6 @@ def view_existing_organizations_data(email):
                 print('''
                     <input type="hidden" name="entities_need_items_id: %s" value=%s>
                     ''' %(need_item['item_name'], entities_need_items_id)) #make hidden fields to identify the unique organization_need_items_id
-
 
         print('''<select name="quantity: %s">
                  ''' %(item['name']))
@@ -93,8 +94,6 @@ def view_existing_organizations_data(email):
         print('''</select>
                 <output type="checkbox" name="organizations_supply_item_names" value="%s"> %s <br>
                 ''' %(item['name'],item['name']))#add organization need item id
-
-
 
     print('''<input type='submit' value='Update Needs'>
              </form>''')
@@ -117,6 +116,11 @@ def view_existing_organizations_data(email):
                 <input type="hidden" name="form_name" value="updateSupply"/>''')
 
     for item in items:
+
+        #check if item should be shown
+        if item['show_in_supply_options_of_organization'] == "No":
+            continue
+
         #use boolean to store if matched
         item_supplied = False #set initially as not needed
 
@@ -241,6 +245,7 @@ if __name__ == "__main__":
             #1. check if email exists in database
             entity_id = Database_requests.get_entity_id_from_email(email)
             if entity_id[0]['entity_id']: #if it exists, display need list
+                view_existing_organization_profile(email)
                 view_existing_organizations_data(email)
 
 
@@ -303,6 +308,7 @@ if __name__ == "__main__":
                     item_name = supplied_item_names.value
                     quantity_requested = "0"
                     Database_requests.insert_into_entities_supply_items(database_entity_id, item_name, description, quantity_requested, time_in_1)
+
 
 
         elif form['form_name'].value == "updateNeeds":
