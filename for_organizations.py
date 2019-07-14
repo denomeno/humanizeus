@@ -181,6 +181,10 @@ def view_add_organizations():
 
     #list of items provided
     for item in items: #dyamically generate options
+
+        #check if item should be shown
+        if item['show_in_supply_options_of_organization'] == "No":
+            continue
         print('''<input type="checkbox" name="supplied_item_names" value="%s"> %s <br>''' %(item['name'], item['name']))
 
 
@@ -190,6 +194,10 @@ def view_add_organizations():
 
     #list of items needed
     for item in items: #dyamically generate options
+
+        #check if item should be shown
+        if item['show_in_need_options_of_organization'] == "No":
+            continue
         print('''<select name="quantity_requested: %s">
                       <option value="0">0</option>
                       <option value="1">1</option>
