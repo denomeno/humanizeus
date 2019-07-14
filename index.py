@@ -54,13 +54,11 @@ def print_top_of_page():
       }
 
       footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
+        background-color: #777;
+        padding: 10px;
         width: 100%;
-        height: 40%
+        text-align: center;
         color: white;
-        background-color: black;
         text-align: left;
         }
 
@@ -140,11 +138,11 @@ def print_bottom_of_page():
  <br>
  <br>
  <hr>
- <div class="footer">
+ <footer>
      This page was generated at %s.<br>
      Return to the <a href="/humanizeus/index.py">main page</a>.<br>
      Enter <a href="/humanizeus/admin.py">admin portal</a>.
- </div>
+ </footer>
  </body>
  </html>
  ''' % time.ctime())
