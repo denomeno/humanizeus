@@ -9,7 +9,7 @@ def view_existing_organizations_login():
 
     #display in browser
     print('''
-    <h5>Existing member?</h5>
+    <h3>Existing member?</h3>
     <form method=POST >
         <input type="hidden" name="form_name" value="existingMemberLogin"/>
         <input name="login_email" type="email">
@@ -198,7 +198,8 @@ def view_add_organizations():
 
 
     print('''
-    <input type='submit' value='Join'>
+    <br>
+    <input style="font-size : 20px; width: 100%; height: 100px;" type='submit' value='Join'>
     </form>
         <h4>Thank you for joining the community!<h/4>
         ''')
