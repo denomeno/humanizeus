@@ -36,8 +36,6 @@ def print_headers():
 
 #####################################################################################
 def print_top_of_page():
-      '''Print the top of the HTML page.'''
-      '''<meta name="viewport" content="width=device-width, initial-scale=1.0">'''
 
     print("""
     <html>
