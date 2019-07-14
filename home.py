@@ -156,7 +156,7 @@ if __name__ == "__main__":
     print_top_of_page()
     print_menu()
     #-----------
-
+    home_page_display()
 
 
     #-----------
