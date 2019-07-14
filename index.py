@@ -54,11 +54,10 @@ def print_top_of_page():
       }
 
       footer {
-        background-color: #777;
+        position: bottom
         padding: 10px;
         width: 100%;
-        text-align: center;
-        color: white;
+        color: black;
         text-align: left;
         }
 
