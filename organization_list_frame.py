@@ -35,9 +35,8 @@ def generate_organization_list_table():
 
     ## create an HTML table for output:
     print("""
-    <h2> List of All Organizations</h2>
+    <h2><center>List of All Organizations</center></h2>
     <p>
-
 
       <table border=1 align="right">
           <tr>
