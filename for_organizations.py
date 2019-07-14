@@ -355,7 +355,6 @@ if __name__ == "__main__":
 
 
 
-
                 #get entities_need_items_id
                 #get quantity
 
