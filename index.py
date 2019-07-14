@@ -28,44 +28,46 @@ def print_form_data(form):
 
 #####################################################################################
 def print_headers():
- print("Content-type:text/html\r\n\r\n")
- print()
+    print("Content-type:text/html\r\n\r\n")
+    print()
 
 #####################################################################################
 def print_top_of_page():
-      '''Print the top of the HTML page.'''
+    '''Print the top of the HTML page.'''
 
-      print("""
-      <html>
-      <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>HumanizeUs</title>
-      <h1>HumanizeUs</h1>
-      <h3>A Neighborly Exchange</h3>
-      <style>
+    print_header()
 
-      h1 {
-      color: red
-      font-family: "Garamound";
-      }
+    print("""
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumanizeUs</title>
+    <h1>HumanizeUs</h1>
+    <h3>A Neighborly Exchange</h3>
+    <style>
 
-      body {
-      background-color: white;
-      zoom: 100%;
-      }
+    h1 {
+    color: red
+    font-family: "Garamound";
+    }
 
-      footer {
-      border-top: 4px solid black
-      color: black;
-      text-align: left;
-      padding: 2px 10px 0px 0px;
-      clear: both
-      }
+    body {
+    background-color: white;
+    zoom: 100%;
+    }
 
-      </style>
-      </head>
-      <body>
-      """)
+    footer {
+    border-top: 4px solid black
+    color: black;
+    text-align: left;
+    padding: 2px 10px 0px 0px;
+    clear: both
+    }
+
+    </style>
+    </head>
+    <body>
+    """)
 
       #text-align: center;
 

@@ -28,8 +28,8 @@ def print_form_data(form):
 
 #####################################################################################
 def print_headers():
- print("Content-type:text/html\r\n\r\n")
- print()
+    print("Content-type:text/html\r\n\r\n")
+    print()
 
 #####################################################################################
 def print_top_of_page():
