@@ -199,7 +199,7 @@ WHERE `entities`.`email` = %s;""", (email, ))
 
         `matches`.`match_id`,
         `items`.`item_id`,
-        `items`.`name`,
+        `items`.`name` AS `item_name`,
         `need_entities`.`entity_id` AS `in_need_entity_id`,
         `need_entities`.`name` AS `in_need_name`,
         `supply_entities`.`entity_id` AS `supply_entity_id`,
