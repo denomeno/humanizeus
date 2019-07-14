@@ -65,7 +65,7 @@ def generate_map():
         if latitude == "" or longitude == "" or name == "":
             continue
 
-        #exclude organizations from map 
+        #exclude organizations from map
         if in_need['type_description'] == "Organization":
             continue
 
@@ -117,7 +117,7 @@ def display_list_of_organizations():
 
 if __name__ == "__main__":
 
-     #print_headers()
+     print_headers()
      print_top_of_page()
      print_menu()
      #-----------

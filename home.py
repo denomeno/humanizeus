@@ -18,7 +18,7 @@ def home_page_display():
 
 if __name__ == "__main__":
 
-    #print_headers()
+    print_headers()
     print_top_of_page()
     print_menu()
     #-----------
