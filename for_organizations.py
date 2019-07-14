@@ -274,7 +274,7 @@ if __name__ == "__main__":
                 for item in supplied_item_names:
                     item_name = item.value
                     quantity_requested = "0"
-                    Database_requests.insert_into_entities_supply_items(database_entity_id, item['name'], description, quantity_requested)
+                    Database_requests.insert_into_entities_supply_items(database_entity_id, item_name, description, quantity_requested)
 
 
 
