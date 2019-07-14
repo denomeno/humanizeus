@@ -228,10 +228,16 @@ if __name__ == "__main__":
             entity_name = form['entity_name'].value
             address = form['address'].value
             phone = form['phone'].value
-            supplied_item_names = form['supplied_item_names'] #list of supplied items names
+
             #assign organization type - because this form is only for organizations
             type = "Organization"
             description = "--no description for organizations--"
+
+            try:#attempt to retrieve supplied item, if not retrieved, move on
+                supplied_item_names = form['supplied_item_names'] #list of supplied items names
+                are_there_supplied_items = True
+            except KeyError:
+                are_there_supplied_items = False
 
             #use this to check for item
             all_items = Database_requests.get_all_items()
@@ -252,10 +258,12 @@ if __name__ == "__main__":
                 if quantity_requested != "0": #if quantity_requested is 0, skip the item
                     Database_requests.insert_into_entities_need_items(database_entity_id, item['name'], description, quantity_requested)
 
-            for item in supplied_item_names:
-                item_name = item.value
-                quantity_requested = "0"
-                Database_requests.insert_into_entities_supply_items(database_entity_id, item['name'], description, quantity_requested)
+
+            if are_there_supplied_items is True: #only if there are supplied items, attempt to put them in the database
+                for item in supplied_item_names:
+                    item_name = item.value
+                    quantity_requested = "0"
+                    Database_requests.insert_into_entities_supply_items(database_entity_id, item['name'], description, quantity_requested)
 
 
 
