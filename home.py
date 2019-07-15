@@ -13,7 +13,14 @@ def home_page_display():
     <button type="button" style="font-size: 30px height:200px;width:200px" align="center"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
     <button type="button" style="font-size: 30px height:200px;width:200px" align="right"><a href='/humanizeus/for_organizations.py'><b>I am an organization</b></a></button>
 
+<<<<<<< Updated upstream
     ''')
+=======
+    <br>
+    <br>
+    <h3>We have proudly supported __ newly housed people so far!</h3>
+    ''') #ADD MATCH COMPLETE COUNT
+>>>>>>> Stashed changes
 
  #####################################################################################
 
