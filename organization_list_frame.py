@@ -7,7 +7,7 @@ from import_modules import *
 
 
 def print__specific_headers():
-    print("Content-type:text/html\r\n\r\n")
+    print()
 #####################################################################################
 
 def display_list_row(name, address, phone, supply, need):
