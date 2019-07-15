@@ -35,6 +35,22 @@ def view_existing_organization_profile(email):
     <b>Welcome back %s!</b><br>
     ''' %org_profile['name'])
 
+    #1.show filled in form of information entered before
+    print('''<form method=POST >
+                <input type="hidden" name="form_name" value="updateProfile"/>
+                <input type="hidden" name="org_profile" value=%s>''' %(org_profile))
+
+    for org_profile in organization:
+
+        print('''
+            Name:
+            Address:
+            Phone:
+        ''')
+
+    print('''<input type='submit' value='Update Organization Information'>
+             </form>''')
+
 
 
 #####################################################################################
