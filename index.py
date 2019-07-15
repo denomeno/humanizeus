@@ -53,6 +53,7 @@ def print_top_of_page():
 
           body {
             background-color: white;
+            clear: both
           }
 
           footer {
