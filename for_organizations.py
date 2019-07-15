@@ -57,7 +57,7 @@ def view_existing_organization_profile(email):
                 </tr>
                 <tr>
                     <td><label><b>Phone:</b></label></td>
-                    <td><center><input type="text" name="material"></center></td>
+                    <td><center><input type="text" name="phone" value='%s'></center></td>
                 </tr>
                 <tr>
                     <td><label>Website:</label></td>
