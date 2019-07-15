@@ -30,7 +30,10 @@ def view_existing_organization_profile(email):
     website = org_profile[0]['website']
 
     #display on page - preinserted into html form text inpput fields
-
+    #Organization name
+    print('''
+    <b>Welcome back %s!</b><br>
+    ''' %org_profile['name'])
 
 
 
