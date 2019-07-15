@@ -73,8 +73,6 @@ def view_list_of_all_needs():
 
     print("""
     <h3> All Needs</h3>
-    <p>
-
     <table border=1>
       <tr>
         <th><font size=+1"><b>Need Id</b></font></th>
@@ -84,7 +82,7 @@ def view_list_of_all_needs():
       </tr>
     """)
 
-    for need in entities:
+    for need in entity_name: #entities doesn't work
 
         entity_id = need['entity_id']
         entity_name = need['entity_name']
