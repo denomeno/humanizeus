@@ -63,13 +63,11 @@ def view_existing_organization_profile(email):
                     <td><label>Website:</label></td>
                     <td><center><input type="text" name="website" value='%s'></center></td>
                 </tr>
-                <tr>
-                    <th></th>
-                    <input type="submit" name="profile_form" value="Update Profile"><td>
-                </tr>
             </table>
         '''% (name, address, phone, website))
 
+        print('''<input type='submit' name="profile_form" value='Update Profile'>
+                 </form>''')
 
 
 
