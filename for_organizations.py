@@ -46,12 +46,9 @@ def view_existing_organization_profile(email):
 
         print('''
             Name: %s
-            Address: %s %s %s %s
+            Address: %s
             Phone: %s
-        '''(org_profile['name'],
-            org_profile['address_street'], org_profile['address_city'],
-            org_profile['address_state'],org_profile['address_zip'],
-            org_profile['phone']))
+        '''(name, address, phone)
 
     print('''<input type='submit' value='Update Organization Information'>
              </form>''')
