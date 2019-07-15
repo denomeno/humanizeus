@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 #!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
 
 from import_modules import *
@@ -35,7 +36,7 @@ def generate_organization_list_table():
 
     ## create an HTML table for output:
     print("""
-    print("Content-type:text/html\r\n\r\n")
+    print("Content-type:text/html")
     <h2><center>List of All Organizations</center></h2>
     <p>
 
