@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 #!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
 
 from import_modules import *
@@ -12,7 +11,7 @@ def display_list_row(name, address, phone, supply, need):
 
     # each iteration of this loop creates on record of output:
     #(name, address, supply, need) = organization
-
+<!DOCTYPE html>
     print("""
   <tr>
     <td>%s</a></td>
