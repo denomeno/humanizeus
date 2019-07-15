@@ -6,7 +6,7 @@ from import_modules import *
 
 
 
-def print__specific_headers():
+def print_specific_headers():
     print("Content-type:text/html")
 #####################################################################################
 
@@ -95,5 +95,5 @@ def generate_organization_list_table():
     """)
 
 if __name__ == "__main__":
-    print__specific_headers()
+    print_specific_headers()
     generate_organization_list_table()
