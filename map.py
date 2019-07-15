@@ -102,7 +102,7 @@ def display_map():
 def display_list_of_organizations():
 
     print('''
-        <iframe id="right_frame" src="organization_list_frame.py" style = "width: 650px; height: 600px;" scrolling="yes"></iframe>
+        <iframe id="right_frame" src="organization_list_frame.py" style = "width: 750px; height: 600px;" scrolling="yes"></iframe>
     </div>
     ''')
 
