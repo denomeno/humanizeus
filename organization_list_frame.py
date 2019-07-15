@@ -7,7 +7,7 @@ from import_modules import *
 
 
 def print__specific_headers():
-    print()
+    print("Content-type:text/html")
 #####################################################################################
 
 def display_list_row(name, address, phone, supply, need):
@@ -37,7 +37,6 @@ def generate_organization_list_table():
 
     ## create an HTML table for output:
     print("""
-    print("Content-type:text/html")
     <h2><center>List of All Organizations</center></h2>
     <p>
 
