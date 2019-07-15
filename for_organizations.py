@@ -34,7 +34,7 @@ def view_existing_organization_profile(email):
 
     #1.show filled in form of information entered before
     print('''<form method=POST >
-                <input type="hidden" name="form_name" value="updateProfile"/>
+                <input type="hidden" name="profile_form" value="updateProfile"/>
                 <input type="hidden" name="org_profile" value=%s>''' %(org_profile))
 
     #2. Organization name
@@ -50,8 +50,8 @@ def view_existing_organization_profile(email):
             Phone: %s
         '''(name, address, phone))
 
-    print('''<input type='submit' value='updateProfile'>
-             </form>''')
+    print('''<input type='submit' name="profile_form" value='Update Profile'>
+            </form>''')
 
 
 
