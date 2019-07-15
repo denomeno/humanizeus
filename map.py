@@ -91,11 +91,10 @@ def generate_map():
 def display_map():
 
     print('''
-    <div class="left">
+    <div id="main_block">
         <h3>Resource Map</h3>
-        <iframe src="map_main.html" height="600" width="750" align="left">
+        <iframe id="left_frame" src="map_main.html" height="600" width="750" align="left">
         </iframe>
-    </div>
     ''')
 
 
@@ -104,9 +103,8 @@ def display_map():
 def display_list_of_organizations():
 
     print('''
-    <div class="left">
         <h3>All Organizations</h3>
-        <p><iframe src="organization_list_frame.py" style = "width: 650px; height: 600px;" align="center" scrolling="yes">
+        <p><iframe id="right_frame" src="organization_list_frame.py" style = "width: 650px; height: 600px;" align="right" scrolling="yes">
         </p></iframe>
         <br>
     </div>
