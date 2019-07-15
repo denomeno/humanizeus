@@ -5,13 +5,15 @@ from import_modules import *
 #THE ABOVE SECTION SHOULD EXIST AT THE TOP OF EVERY PAGE
 
 
+
+def print__specific_headers():
+    print("Content-type:text/html\r\n\r\n")
 #####################################################################################
 
 def display_list_row(name, address, phone, supply, need):
 
     # each iteration of this loop creates on record of output:
     #(name, address, supply, need) = organization
-<!DOCTYPE html>
     print("""
   <tr>
     <td>%s</a></td>
@@ -94,4 +96,5 @@ def generate_organization_list_table():
     """)
 
 if __name__ == "__main__":
+    print__specific_headers()
     generate_organization_list_table()
