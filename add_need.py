@@ -57,11 +57,11 @@ def add_need():
 <p>Tell us your needs, and we will match you with a neighbor who might have exactly what you need right now.</p>
 <form method = "POST">
     Email:<br>
-    <input name="email" type="email"><br>
+    <input name="email" type="email" required><br>
     Name:<br>
-    <input name="entity_name" type="text"><br>
+    <input name="entity_name" type="text" required><br>
     Address:<br>
-    <input name="address" type="text"><br>
+    <input name="address" type="text" required><br>
     Please select need. If what you need is not on the list, let us know in the box below:<br>
     ''')
 

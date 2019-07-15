@@ -63,6 +63,47 @@ def view_list_of_all_matches():
     </table>
     """)
 
+#####################################################################################
+def view_list_of_all_needs():
+    #THIS FUNCTION SHOULD:
+    #1. PULL THE NEEDED DATA FROM DATABASE
+    #2. NEEDS
+
+    needs = Database_requests.get_entities_need_items()
+
+    print("""
+    <h3> All Needs</h3>
+    <p>
+
+    <table border=1>
+      <tr>
+        <th><font size=+1"><b>Need Id</b></font></th>
+        <th><font size=+1"><b>In Need Name</b></font></th>
+        <th><font size=+1"><b>Item Name</b></font></th>
+
+      </tr>
+    """)
+
+    for need in entities:
+
+        entity_id = need['entity_id']
+        entity_name = need['entity_name']
+        item_name = need['item_name']
+
+        #print each line for table
+        print("""
+      <tr>
+        <td>%s</td>
+        <td>%s</td>
+        <td>%s</td>
+      </tr>
+        """ % (entity_id, entity_name, item_name))
+
+    #print('''''') end of table
+    print("""
+    </table>
+    """)
+
 
 
  #####################################################################################
@@ -93,6 +134,7 @@ if __name__ == "__main__":
             if len(admin_exists) > 0:
 
                 view_list_of_all_matches()
+                view_list_of_all_needs()
 
 
     #-----------
