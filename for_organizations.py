@@ -40,7 +40,7 @@ def view_existing_organization_profile(email):
     #2. Organization name
     print('''
     <b>Welcome back %s!</b><br>
-    ''' %org_profile['name'])
+    ''' % name)
 
     for org_profile in organization:
 
