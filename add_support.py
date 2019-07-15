@@ -63,11 +63,11 @@ def add_support():
 <p>Please fill out the form below to inform us about the resource you would like to provide, so we can match it with someone who needs exactly that. We will appreciate it if you can let us know when we can pick it up too.</p>
 <form method=POST>
     Email:<br>
-    <input name="email" type="email"><br>
+    <input name="email" type="email" required><br>
     Name:<br>
-    <input name="entity_name" type="text"><br>
+    <input name="entity_name" type="text" required><br>
     Address:<br>
-    <input name="address" type="text"><br>
+    <input name="address" type="text" required><br>
     Please select the item you are donating. The items below are the ones needed right now, please make sure the item you are donating is needed currently:<br>
     ''')
 
