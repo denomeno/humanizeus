@@ -30,23 +30,28 @@ def view_existing_organization_profile(email):
     website = org_profile[0]['website']
 
     #display on page - preinserted into html form text inpput fields
-    #Organization name
-    print('''
-    <b>Welcome back %s!</b><br>
-    ''' %org_profile['name'])
+
 
     #1.show filled in form of information entered before
     print('''<form method=POST >
                 <input type="hidden" name="form_name" value="updateProfile"/>
                 <input type="hidden" name="org_profile" value=%s>''' %(org_profile))
 
+    #2. Organization name
+    print('''
+    <b>Welcome back %s!</b><br>
+    ''' %org_profile['name'])
+
     for org_profile in organization:
 
         print('''
-            Name:
-            Address:
-            Phone:
-        ''')
+            Name: %s
+            Address: %s %s %s %s
+            Phone: %s
+        '''(org_profile['name'],
+            org_profile['address_street'], org_profile['address_city'],
+            org_profile['address_state'],org_profile['address_zip'],
+            org_profile['phone']))
 
     print('''<input type='submit' value='Update Organization Information'>
              </form>''')
