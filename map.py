@@ -94,7 +94,6 @@ def display_map():
     <div id="main_block">
         <iframe id="left_frame" src="map_main.html" height="600" width="750">
         </iframe>
-        <hr>
     ''')
 
 
@@ -104,7 +103,6 @@ def display_list_of_organizations():
 
     print('''
         <iframe id="right_frame" src="organization_list_frame.py" style = "width: 650px; height: 600px;" scrolling="yes"></iframe>
-        <hr>
     </div>
     ''')
 
