@@ -181,7 +181,7 @@ def view_existing_organizations_data(email):
                 '''%(item['name'],item['name']))
 
     print('''<input type='submit' value='Update Provided Item List'>
-             </form>''')
+             </form>''') #ADD REGISTERED NOTIFICATION
 
 
 #####################################################################################
