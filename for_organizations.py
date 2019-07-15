@@ -48,7 +48,7 @@ def view_existing_organization_profile(email):
             Name: %s
             Address: %s
             Phone: %s
-        '''(name, address, phone))
+        '''% (name, address, phone))
 
     print('''<input type='submit' name="profile_form" value='Update Profile'>
             </form>''')
