@@ -135,7 +135,7 @@ def print_bottom_of_page():
     <br>
     <hr>
     <div class="b_footer" style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
-        <u>©humanizeus</u>
+        <u><b>HumanizeUs</b></u><br>
         This page was generated at %s.<br>
         Return to the <a href="/humanizeus/index.py">main page</a>.<br>
         Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
