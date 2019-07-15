@@ -92,12 +92,8 @@ def display_map():
 
     print('''
     <div id="main_block">
-        <h3>Resource Map</h3>
-        <iframe id="left_frame" src="map_main.html" height="600" width="750" align="left"></iframe>
-        <h3>All Organizations</h3>
-        <iframe id="right_frame" src="organization_list_frame.py" style = "width: 650px; height: 600px;" align="right" scrolling="yes"></iframe>
-        <br>
-    </div>
+        <iframe id="left_frame" src="map_main.html" height="600" width="750" align="left">
+        </iframe>
     ''')
 
 
@@ -106,7 +102,9 @@ def display_map():
 def display_list_of_organizations():
 
     print('''
-
+        <iframe id="right_frame" src="organization_list_frame.py" style = "width: 650px; height: 600px;" align="right" scrolling="yes"></iframe>
+        <br>
+    </div>
     ''')
 
 
@@ -124,7 +122,7 @@ if __name__ == "__main__":
      display_map()
 
      #only for organizations list/table
-     #display_list_of_organizations()
+     display_list_of_organizations()
 
      #-----------
      print_bottom_of_page()
