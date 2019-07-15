@@ -9,9 +9,9 @@ def home_page_display():
 
     print('''
     <h2>Building a community starts here!</h2>
-    <button type="button">I need support align="left"</button>
-    <button type="button">I want to donate align="center"</button>
-    <button type="button">I am an organization align="right"</button>
+    <button type="button" style="height:200px;width:200px" align="left">I need support </button>
+    <button type="button" style="height:200px;width:200px" align="center">I want to donate </button>
+    <button type="button" style="height:200px;width:200px" align="right">I am an organization </button>
 
     ''')
 
