@@ -45,12 +45,13 @@ def view_existing_organization_profile(email):
     for org_profile in entity_id:
 
         print('''
-            <b>Name:</b> %s <br>
-            <b>Address:</b> %s <br>
-            <b>Phone:</b> %s <br>
-        '''% (name, address, phone))
+            <b>Name:</b> <input type="text" name="name" value='%s'> <br>
+            <b>Address:</b> <input type="text" name="address" value='%s'> <br>
+            <b>Phone:</b> <input type="text" name="phone" value='%s'> <br>
+            <b>Website:</b> <input type="text" name="website" value='%s'> <br>
+        '''% (name, address, phone, website))
 
-    print('''<input type='submit' name="profile_form" value='Update Profile'>
+    print('''<p><input type='submit' name="profile_form" value='Update Profile'></p>
             </form>''')
 
 
