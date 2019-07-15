@@ -39,15 +39,15 @@ def view_existing_organization_profile(email):
 
     #2. Organization name
     print('''
-    <b>Welcome back %s!</b><br>
+    <h3><b>Welcome Back %s!</b><br></h3>
     ''' % name)
 
     for org_profile in entity_id:
 
         print('''
-            Name: %s
-            Address: %s
-            Phone: %s
+            <b>Name:</b> %s <br>
+            <b>Address:</b> %s <br>
+            <b>Phone:</b> %s <br>
         '''% (name, address, phone))
 
     print('''<input type='submit' name="profile_form" value='Update Profile'>
