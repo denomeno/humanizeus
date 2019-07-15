@@ -124,4 +124,4 @@ if __name__ == "__main__":
      display_list_of_organizations()
 
      #-----------
-     #print_bottom_of_page()
+     print_bottom_of_page()
