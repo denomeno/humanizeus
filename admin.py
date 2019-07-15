@@ -84,7 +84,7 @@ def view_list_of_all_needs():
       </tr>
     """)
 
-    for need in entities_need_items:
+    for need in entities:
 
         entity_id = need['entity_id']
         entity_name = need['entity_name']
