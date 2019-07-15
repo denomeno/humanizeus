@@ -42,7 +42,7 @@ def view_existing_organization_profile(email):
     <b>Welcome back %s!</b><br>
     ''' % name)
 
-    for org_profile in entities:
+    for org_profile in entity_id:
 
         print('''
             Name: %s
