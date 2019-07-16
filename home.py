@@ -11,7 +11,7 @@ def home_page_display():
 
     for match in matches:
 
-        total_mathces = matches['total_mathces']
+        fulfilled_mathces = matches['fulfilled_mathces']
 
     print('''
     <h2>Building a community starts here!</h2>
@@ -22,7 +22,7 @@ def home_page_display():
     <br>
     <br>
     <h3>We have proudly supported %s newly housed people so far!</h3>
-    ''' % total_mathces ) #ADD MATCH COMPLETE COUNT -- len(match_id)
+    ''' % fulfilled_mathces ) #ADD MATCH COMPLETE COUNT -- len(match_id)
 
 
  #####################################################################################
