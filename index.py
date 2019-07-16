@@ -145,7 +145,7 @@ def print_bottom_of_page():
     </div>
     </body>
     </html>
-    ''' now_time.strftime(fmt))
+    ''' %now_time.strftime(fmt))
     #% time.strftime("%a, %d %b %Y %H:%M:%S"))
 
 
