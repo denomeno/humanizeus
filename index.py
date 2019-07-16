@@ -142,7 +142,7 @@ def print_bottom_of_page():
     </div>
     </body>
     </html>
-    ''' % time.localtime())
+    ''' % time.localtime([secs]))
 
 
  #####################################################################################
