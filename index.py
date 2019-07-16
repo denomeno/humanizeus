@@ -31,7 +31,7 @@ def print_headers():
     print("Content-type:text/html\r\n\r\n")
     print("""
     <title>HumanizeUs</title>
-    <img src="humanizelogo.png" alt="HumanizeUs" style="width:320px;height:150px;">
+    <img src="humanizelogo.png" alt="HumanizeUs" style="width:320px;height:200px;">
     <h1>HumanizeUs</h1>
     <h3>A Neighborly Exchange</h3>
     """)
