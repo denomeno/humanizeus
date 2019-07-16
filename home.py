@@ -9,7 +9,7 @@ def home_page_display():
 
     matches = Database_requests.get_number_of_matches()
 
-    for match in matches:
+    for fulfilled_mathces in matches:
 
         fulfilled_mathces = matches['fulfilled_mathces']
 
