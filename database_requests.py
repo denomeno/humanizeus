@@ -263,6 +263,19 @@ FROM `admins`
 WHERE `admins`.`email`= %s; """, (email, ))
         return myc.fetchall()
 
+
+    def get_number_of_matches():
+        myc = cnx.cursor(dictionary = True)
+        myc.execute("""
+SELECT
+	COUNT(`matches`.`match_id`) AS `total_mathces`,
+    SUM(IF(`matches`.`fulfillment_status` = "YES" ,1 ,0)) AS `fulfilled_mathces`,
+    SUM(IF(`matches`.`fulfillment_status` = "NO" ,1 ,0)) AS `not_fulfilled_mathces`
+
+FROM `matches`""")
+        return myc.fetchall()
+
+
     #############################################################
 
     #---------------2-INSERT FUNCTIONS---------------------------
