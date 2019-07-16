@@ -13,7 +13,7 @@ def home_page_display():
 
         fulfilled_mathces = matches[0]['fulfilled_mathces']
 
-    print('''
+    print('''<center>
     <h2>Building a community starts here!</h2>
     <button type="button" style="height:200px;width:200px" align="left"><a href='/humanizeus/add_need.py'><b>I need support</b></a></button>
     <button type="button" style="height:200px;width:200px" align="center"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
@@ -21,7 +21,7 @@ def home_page_display():
 
     <br>
     <br>
-    <h3>We have proudly supported %s newly housed people so far!</h3>
+    <h3>We have proudly supported %s newly housed people so far!</h3></center>
     ''' % fulfilled_mathces ) #ADD MATCH COMPLETE COUNT -- len(match_id)
 
 
