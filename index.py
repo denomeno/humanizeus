@@ -142,7 +142,8 @@ def print_bottom_of_page():
     </div>
     </body>
     </html>
-    ''' % time.strftime("%a, %d %b %Y %H:%M:%S"))
+    ''' time.tzname('EST'))
+    #% time.strftime("%a, %d %b %Y %H:%M:%S"))
 
 
  #####################################################################################
