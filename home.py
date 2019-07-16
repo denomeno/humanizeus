@@ -7,11 +7,11 @@ from import_modules import *
 #####################################################################################
 def home_page_display():
 
-    matches = Database_requests.get_all_matches()
+    matches = Database_requests.get_number_of_matches()
 
     for match in matches:
 
-        match_id = matches['match_id']
+        total_mathces = matches['total_mathces']
 
     print('''
     <h2>Building a community starts here!</h2>
@@ -22,7 +22,7 @@ def home_page_display():
     <br>
     <br>
     <h3>We have proudly supported %s newly housed people so far!</h3>
-    ''' % match_id ) #ADD MATCH COMPLETE COUNT -- len(match_id)
+    ''' % total_mathces ) #ADD MATCH COMPLETE COUNT -- len(match_id)
 
 
  #####################################################################################
