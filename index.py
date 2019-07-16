@@ -142,7 +142,7 @@ def print_bottom_of_page():
     </div>
     </body>
     </html>
-    ''' time.tzname('EST'))
+    ''' time.gmtime('-4'))
     #% time.strftime("%a, %d %b %Y %H:%M:%S"))
 
 
