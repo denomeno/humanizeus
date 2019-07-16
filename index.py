@@ -129,7 +129,6 @@ li a:hover {
 def print_bottom_of_page():
     '''Print the bottom of the HTML page.'''
 
-    fmt = "%Y-%m-%d %H:%M:%S %Z%z"
     now_time = datetime.now(timezone('US/Eastern'))
 
     print('''
@@ -145,7 +144,7 @@ def print_bottom_of_page():
     </div>
     </body>
     </html>
-    ''' %now_time.strftime(fmt))
+    ''' % now_time.strftime("%Y-%m-%d %H:%M:%S %Z%z"))
     #% time.strftime("%a, %d %b %Y %H:%M:%S"))
 
 
