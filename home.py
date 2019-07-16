@@ -7,20 +7,23 @@ from import_modules import *
 #####################################################################################
 def home_page_display():
 
+    matches = Database_requests.get_all_matches()
+
+    for match in matches:
+
+        match_id = match['match_id']
+
     print('''
     <h2>Building a community starts here!</h2>
-    <button type="button" style="font-size: 30px height:200px;width:200px" align="left"><a href='/humanizeus/add_need.py'><b>I need support</b></a></button>
-    <button type="button" style="font-size: 30px height:200px;width:200px" align="center"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
-    <button type="button" style="font-size: 30px height:200px;width:200px" align="right"><a href='/humanizeus/for_organizations.py'><b>I am an organization</b></a></button>
+    <button type="button" style="height:200px;width:200px" align="left"><a href='/humanizeus/add_need.py'><b>I need support</b></a></button>
+    <button type="button" style="height:200px;width:200px" align="center"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
+    <button type="button" style="height:200px;width:200px" align="right"><a href='/humanizeus/for_organizations.py'><b>I am an organization</b></a></button>
 
-<<<<<<< Updated upstream
-    ''')
-=======
     <br>
     <br>
     <h3>We have proudly supported __ newly housed people so far!</h3>
-    ''') #ADD MATCH COMPLETE COUNT
->>>>>>> Stashed changes
+    '''% len(match_id)) #ADD MATCH COMPLETE COUNT
+
 
  #####################################################################################
 
