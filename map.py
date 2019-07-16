@@ -19,7 +19,7 @@ def generate_map():
     #create map object
     map = folium.Map(location=[42.34372, -71.074181],
                         zoom_start=13,
-                        tiles='Stamen Terrain')
+                        tiles='openstreetmap')
 
     #2. populate map
 
