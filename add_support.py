@@ -54,8 +54,9 @@ def upload_add_support_form_to_database(form):
 def add_support():
 
     #pull all needed data
-    items = Database_requests.get_all_items() #list of dictionaries of all item types
+    #items = Database_requests.get_all_items() #list of dictionaries of all item types
 
+    needed_items = Database_requests.get_only_needed_items()
 
     #display in browser
     print('''
@@ -71,7 +72,7 @@ def add_support():
     Please select the item you are donating. The items below are the ones needed right now, please make sure the item you are donating is needed currently:<br>
     ''')
 
-    for item in items: #dyamically generate options
+    for item in needed_items: #dyamically generate options
         print('''<select name="quantity_requested: %s">
                       <option value="0">0</option>
                       <option value="1">1</option>

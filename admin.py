@@ -75,7 +75,7 @@ def view_list_of_all_needs():
     <h3> All Needs</h3>
     <table border=1>
       <tr>
-        <th><font size=+1"><b>Need Id</b></font></th>
+        <th><font size=+1"><b>Entity Id</b></font></th>
         <th><font size=+1"><b>In Need Name</b></font></th>
         <th><font size=+1"><b>Item Name</b></font></th>
 

@@ -39,6 +39,7 @@ class Database_requests:
 SELECT
 
     `entities`.`entity_id`,
+    `items`.`item_id`,
     IFNULL(`entities`.`name`, '') AS `entity_name`,
     `entity_types`.`description` AS `type_description`,
     IFNULL(`entities`.`latitude`, '') AS `latitude`,
@@ -156,6 +157,21 @@ AND `entities`.`email` = %s
         myc.execute("""
 SELECT *
 FROM `items`;""")
+        return myc.fetchall()
+
+
+    def get_only_needed_items():
+        myc = cnx.cursor(dictionary = True)
+        myc.execute("""
+SELECT DISTINCT
+
+	`entities_need_items`.`item_id`,
+    `items`.`name`
+
+FROM `entities_need_items`
+
+JOIN `items`
+ON `entities_need_items`.`item_id` = `items`.`item_id`""")
         return myc.fetchall()
 
 
