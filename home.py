@@ -22,7 +22,7 @@ def home_page_display():
     <br>
     <br>
     <h3>We have proudly supported __ newly housed people so far!</h3>
-    '''% len(match_id)) #ADD MATCH COMPLETE COUNT
+    '''% len(int(match_id))) #ADD MATCH COMPLETE COUNT
 
 
  #####################################################################################
