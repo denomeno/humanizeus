@@ -11,7 +11,7 @@ def home_page_display():
 
     for fulfilled_mathces in matches:
 
-        fulfilled_mathces = matches['fulfilled_mathces']
+        fulfilled_mathces = matches[0]['fulfilled_mathces']
 
     print('''
     <h2>Building a community starts here!</h2>
