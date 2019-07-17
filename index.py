@@ -51,6 +51,27 @@ def print_top_of_page():
               font-family: "Bookman";
           }
 
+          .navigation-bar {
+          width: 100%;
+          height: 80px;
+          background-color: black;
+          }
+
+          .logo {
+          display: inline-block;
+          vertical-align: top;
+          width: 50px;
+          height: 50px;
+          margin-right: 20px;
+          }
+
+          .navigation-bar > a {
+          display: inline-block;
+          vertical-align: top;
+          margin-right: 20px;
+          height: 80px;
+          }
+
           body {
             background-color: white;
             font-size:1.3vw
@@ -83,7 +104,6 @@ def print_menu():
     </head>
     """
 
-    print('''
 <style>
 ul {
   list-style-type: none;
@@ -110,22 +130,20 @@ li a:hover {
 }
 </style>
 
-<body>
-<div id='cssmenu'>
-<ul>
-   <li class='active'><a href='/humanizeus/home.py'><span>Home</span></a></li>
-   <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
-   <li class='last'><a href='/humanizeus/map.py'><span>Map</span></a></li>
-   <li><a href='/humanizeus/add_need.py'><span>Add Need</span></a></li>
-   <li><a href='/humanizeus/add_support.py'><span>Add Support</span></a></li>
-   <li><a href='/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
-   <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
-</ul>
-</div>
-</body>
-<br>
 
-''')
+    print('''
+        <nav class="navigation-bar"
+            <img class="logo" src="humanizelogo.png">
+            <li><a href='/humanizeus/home.py'><span>Home</span></a></li>
+            <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
+            <li><a href='/humanizeus/map.py'><span>Map</span></a></li>
+            <li><a href='/humanizeus/add_need.py'><span>Add Need</span></a></li>
+            <li><a href='/humanizeus/add_support.py'><span>Add Support</span></a></li>
+            <li><a href='/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
+            <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
+       </nav>
+       <br>
+       ''')
 
 
 #####################################################################################
