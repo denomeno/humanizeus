@@ -15,9 +15,9 @@ def home_page_display():
 
     print('''<center>
     <h2>Building a community starts here!</h2>
-    <button type="button" style="height:150px;width:200px" align="left"><a href='/humanizeus/add_need.py'><b>I need support</b></a></button>
-    <button type="button" style="height:150px;width:200px" align="center"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
-    <button type="button" style="height:150px;width:200px" align="right"><a href='/humanizeus/for_organizations.py'><b>I am an organization</b></a></button>
+    <button type="home_button" style="height:200px;width:200px" align="left"><a href='/humanizeus/add_need.py'><b>I need support</b></a></button>
+    <button type="home_button" style="height:200px;width:200px" align="center"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
+    <button type="home_button" style="height:200px;width:200px" align="right"><a href='/humanizeus/for_organizations.py'><b>I am an organization</b></a></button>
 
     <br>
     <br>
