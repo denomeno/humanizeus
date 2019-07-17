@@ -61,7 +61,7 @@ def print_top_of_page():
         font-size: 1.5vw
         }
 
-        button[type=submit] {
+        button[type=submit_button] {
         color: #C0C0C0;
         background-color: gray;
         border: 5px solid #000000;
