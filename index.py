@@ -65,11 +65,10 @@ def print_top_of_page():
           button {
           color: red;
           background-color: transparent;
-          border: 5px solid #red;
+          border: 5px solid black;
           border-radius: 15px;
           text-transform: uppercase;
-          padding: 2px 10px 0px 0px
-          font-size: 110%
+          font-size: 100%
           }
 
         </style>
