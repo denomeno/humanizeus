@@ -62,13 +62,13 @@ def print_top_of_page():
           padding: 2px 10px 0px 0px;
           }
 
-          wpforms-form button[type=button] {
+          button {
           color: #0099CC;
           background-color: transparent;
           border: 2px solid #0099CC;
           border-radius: 5px;
           text-transform: uppercase;
-          font-size: 10px
+          font-size: 110%
           }
 
         </style>
