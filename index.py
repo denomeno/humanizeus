@@ -67,7 +67,7 @@ def print_top_of_page():
           background-color: transparent;
           border: 5px solid black;
           border-radius: 15px;
-          text-transform: uppercase;
+          text-transform: TitleCase;
           font-size: 100%
           }
 
