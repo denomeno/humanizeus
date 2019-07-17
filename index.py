@@ -138,13 +138,14 @@ def print_bottom_of_page():
     <hr>
     <div class="b_footer" style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
         <u><b>HumanizeUs</b></u><br>
-        This page was generated at %s.<br>
         Return to the <a href="/humanizeus/home.py">home page</a>.<br>
         Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
     </div>
     </body>
     </html>
-    ''' % datetime)
+    ''')
+    #% datetime)
+    #        This page was generated at %s.<br>
     #now_time.strftime("%Y-%m-%d %H:%M:%S %Z%z"))
     #% time.strftime("%a, %d %b %Y %H:%M:%S"))
 
