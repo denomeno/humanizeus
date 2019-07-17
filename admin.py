@@ -35,7 +35,10 @@ def view_list_of_all_matches():
         <th><font size=+1"><b>Item Name</b></font></th>
         <th><font size=+1"><b>In Need Name</b></font></th>
         <th><font size=+1"><b>Supplier Name</b></font></th>
+        <th><font size=+1"><b>Time</b></font></th>
         <th><font size=+1"><b>Status</b></font></th>
+        <th><font size=+1"><b>Approve</b></font></th>
+        <th><font size=+1"><b>Deny</b></font></th>
       </tr>
     """)
 
@@ -54,7 +57,10 @@ def view_list_of_all_matches():
         <td>%s</td>
         <td>%s</td>
         <td>%s</td>
+        <td>#add time#</td>
         <td>%s</td>
+        <td><input type="checkbox" name="approve"></td>
+        <td><input type="checkbox" name="deny"></td>
       </tr>
         """ % (match_id,item_name, in_need_name, supply_name, fulfillment_status))
 
