@@ -72,8 +72,7 @@ def add_need():
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
-                    </select>
-                <input type="checkbox" name="needed_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                    </select> %s <br>''' %(item['name'], item['name']))
 
     print('''
     Please inform us about your need(s) a little more:<br>
