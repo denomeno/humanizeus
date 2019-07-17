@@ -47,48 +47,22 @@ def print_top_of_page():
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
 
-          h1 {
-            color: red
-              font-family: "Bookman";
-          }
 
-          ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-            }
 
-        li {
-        float: left;
+
+        body {
+        background-color: white;
+        font-size:1.3vw
         }
 
-        li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+        button[type=home_button] {
+        color: #0099CC;
+        background-color: transparent;
+        border: 2px solid #0099CC;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-size: 10px
         }
-
-        li a:hover {
-        background-color: #111;
-        }
-
-          body {
-            background-color: white;
-            font-size:1.3vw
-          }
-
-          button[type=home_button] {
-          color: #0099CC;
-          background-color: transparent;
-          border: 2px solid #0099CC;
-          border-radius: 5px;
-          text-transform: uppercase;
-          font-size: 10px
-          }
 
         </style>
       </head>
@@ -100,7 +74,36 @@ def print_top_of_page():
 def print_menu():
 
     print('''
-    <nav class="navigation_bar"
+    <style>
+
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    }
+
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    </style>
+    ''')
+
+
+    print('''
     <ul>
         <li><a href='/humanizeus/home.py'><span>Home</span></a></li>
         <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
@@ -110,7 +113,6 @@ def print_menu():
         <li><a href='/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
         <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
     </ul>
-    </nav>
     <br>
     ''')
 
