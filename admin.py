@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
                 view_list_of_all_matches()
                 view_list_of_all_needs()
-                #view_list_of_all_supplied() #TO DO
+                view_list_of_all_supplies()
 
 
     #-----------
