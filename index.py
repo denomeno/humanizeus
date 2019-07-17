@@ -68,6 +68,7 @@ def print_top_of_page():
           border: 2px solid #0099CC;
           border-radius: 5px;
           text-transform: uppercase;
+          font-size: 10px
           }
 
         </style>
