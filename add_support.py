@@ -54,7 +54,7 @@ def upload_add_support_form_to_database(form):
 def add_support():
 
     #pull all needed data
-    needed_items = Database_requests.get_only_needed_items()#list of dictionaries of item types that are needed by others 
+    needed_items = Database_requests.get_only_needed_items()#list of dictionaries of item types that are needed by others
 
     #display in browser
     print('''
@@ -78,8 +78,7 @@ def add_support():
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
-                    </select>
-                <input type="checkbox" name="supply_item_names" value="%s"> %s <br>''' %(item['name'], item['name'], item['name']))
+                    </select> %s <br>''' %(item['name'], item['name']))
 
     print('''
     Please inform us about your donation(s) a little more:<br>
