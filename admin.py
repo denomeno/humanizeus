@@ -121,11 +121,11 @@ def view_list_of_all_supplies():
       </tr>
     """)
 
-    for need in needs:
+    for supply in supplies:
 
-        entity_id = need['entity_id']
-        entity_name = need['entity_name']
-        item_name = need['item_name']
+        entity_id = supply['entity_id']
+        entity_name = supply['entity_name']
+        item_name = supply['item_name']
 
         #print each line for table
         print("""
