@@ -58,7 +58,7 @@ def print_top_of_page():
         border: 5px solid #FF0000;
         border-radius: 15px;
         text-transform: uppercase;
-        font-size: 2vw
+        font-size: 1.5vw
         }
 
         button[type=submit] {
