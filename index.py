@@ -53,7 +53,7 @@ def print_top_of_page():
 
           body {
             background-color: white;
-            font-size:5vw
+            font-size:1vw
           }
 
           footer {
