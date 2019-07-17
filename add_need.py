@@ -62,7 +62,7 @@ def add_need():
     <input name="entity_name" type="text" required><br>
     Address:<br>
     <input name="address" type="text" required><br>
-    Please select need. If what you need is not on the list, let us know in the box below:<br>
+    <br>Please select need. If what you need is not on the list, let us know in the box below:<br>
     ''')
 
     for item in items: #dyamically generate options
@@ -75,7 +75,7 @@ def add_need():
                     </select> %s <br>''' %(item['name'], item['name']))
 
     print('''
-    Please inform us about your need(s) a little more:<br>
+    <br>Please inform us about your need(s) a little more:<br>
     <textarea name="message" rows="10" cols="30">
     </textarea><br>
     <input type='submit' value='Submit Form'>
