@@ -47,6 +47,8 @@ def print_top_of_page():
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
 
+        .a { color: #ffffff; } 
+
         body {
         background-color: white;
         font-size:1.3vw
@@ -59,10 +61,6 @@ def print_top_of_page():
         border-radius: 15px;
         text-transform: uppercase;
         font-size: 1.5vw
-        }
-
-        input[type=submit_button] {
-        font-size: 15px
         }
 
         </style>
