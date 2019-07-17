@@ -53,16 +53,16 @@ def add_need():
 
     #display in browser
     print('''
-<h3>We are here to support you.</h3>
-<p>Tell us your needs, and we will match you with a neighbor who might have exactly what you need right now.</p>
-<form method = "POST">
-    Email:<br>
-    <input name="email" type="email" required><br>
-    Name:<br>
-    <input name="entity_name" type="text" required><br>
-    Address:<br>
-    <input name="address" type="text" required><br>
-    <br>Please select need. If what you need is not on the list, let us know in the box below:<br>
+    <h3>We are here to support you.</h3>
+    <p>Tell us your needs, and we will match you with a neighbor who might have exactly what you need right now.</p>
+    <form method = "POST">
+        Email:<br>
+        <input name="email" type="email" required><br>
+        Name:<br>
+        <input name="entity_name" type="text" required><br>
+        Address:<br>
+        <input name="address" type="text" required><br>
+        <br>Please select need. If what you need is not on the list, let us know in the box below:<br>
     ''')
 
     for item in items: #dyamically generate options
@@ -75,14 +75,14 @@ def add_need():
                     </select> %s <br>''' %(item['name'], item['name']))
 
     print('''
-    <br>Please inform us about your need(s) a little more:<br>
-    <textarea name="message" rows="10" cols="30">
-    </textarea><br>
-    <input type='submit' value='Submit Form'>
-</form>
-<h4>Thank you for believing in your community. We will contact you when we find a match.<h/4><br>
+        <br>Please inform us about your need(s) a little more:<br>
+        <textarea name="message" rows="10" cols="30">
+        </textarea><br>
+        <input type='submit_button' value='Submit Form' style="height:10px;width:15px">
+    </form>
+    <h4>Thank you for believing in your community. We will contact you when we find a match.<h/4><br>
 
-''')
+    ''')
 
 
 #####################################################################################
