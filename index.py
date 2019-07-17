@@ -61,7 +61,7 @@ def print_top_of_page():
         font-size: 1.5vw
         }
 
-        button[type=submit_button] {
+        input[type=submit_button] {
     	float: left;
     	min-width: 150px;
     	max-width: 250px;
