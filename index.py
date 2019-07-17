@@ -61,6 +61,14 @@ def print_top_of_page():
         font-size: 2vw
         }
 
+        button[type=submit] {
+        color: #C0C0C0;
+        background-color: gray;
+        border: 5px solid #000000;
+        border-radius: 15px;
+        font-size: 150px
+        }
+
         </style>
       </head>
       <body style="font-family:Bookman;color:black;">
