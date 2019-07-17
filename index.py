@@ -62,11 +62,18 @@ def print_top_of_page():
         }
 
         button[type=submit_button] {
-        color: #C0C0C0;
-        background-color: gray;
-        border: 5px solid #000000;
-        border-radius: 15px;
-        font-size: 150px
+    	float: left;
+    	min-width: 150px;
+    	max-width: 250px;
+    	display: block;
+    	margin: 1em;
+    	padding: 1em 2em;
+    	border: none;
+    	background: none;
+    	color: inherit;
+    	vertical-align: middle;
+    	position: relative;
+    	z-index: 1;
         }
 
         </style>
