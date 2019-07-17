@@ -62,14 +62,7 @@ def print_top_of_page():
         }
 
         input[type=submit_button] {
-    	float: left;
-    	min-width: 150px;
-    	max-width: 250px;
-    	display: block;
-    	margin: 1em;
-    	padding: 1em 2em;
-    	border: none;
-        background-color: black;
+        font-size: 15px
         }
 
         </style>
