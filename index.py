@@ -69,11 +69,7 @@ def print_top_of_page():
     	margin: 1em;
     	padding: 1em 2em;
     	border: none;
-    	background: none;
-    	color: inherit;
-    	vertical-align: middle;
-    	position: relative;
-    	z-index: 1;
+        background-color: black;
         }
 
         </style>
