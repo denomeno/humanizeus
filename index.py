@@ -31,7 +31,8 @@ def print_headers():
     print("Content-type:text/html\r\n\r\n")
     print("""
     <title>HumanizeUs</title>
-    <img src="humanizelogo.png" alt="HumanizeUs" style="width:320px;height:200px;">
+    <img src="humanizelogo.png" alt="HumanizeUs" style="width:320px;height:200px; display: inline-block;
+    vertical-align: top;">
     """)
 
 
@@ -51,18 +52,12 @@ def print_top_of_page():
               font-family: "Bookman";
           }
 
-          navigation-bar {
-          width: 100%;
-          height: 80px;
-          background-color: black;
-          }
-
-          logo {
-          display: inline-block;
-          vertical-align: top;
-          width: 50px;
-          height: 50px;
-          margin-right: 20px;
+          navigation_bar {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
           }
 
 
@@ -90,7 +85,7 @@ def print_top_of_page():
 def print_menu():
 
     print('''
-    <nav class="navigation-bar"
+    <nav class="navigation_bar"
         <img class="logo" src="humanizelogo.png">
         <li><a href='/humanizeus/home.py'><span>Home</span></a></li>
         <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
