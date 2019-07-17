@@ -47,9 +47,6 @@ def print_top_of_page():
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
 
-
-
-
         body {
         background-color: white;
         font-size:1.3vw
@@ -58,7 +55,7 @@ def print_top_of_page():
         button[type=home_button] {
         color: #0099CC;
         background-color: transparent;
-        border: 2px solid #0099CC;
+        border: 2px solid #FF0000;
         border-radius: 5px;
         text-transform: uppercase;
         font-size: 10px
