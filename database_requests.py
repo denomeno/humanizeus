@@ -68,6 +68,7 @@ ON `entities`.`type_id` = `entity_types`.`type_id`""")
         myc.execute("""
 SELECT
 
+    `entities`.`entity_id`,
     `entities`.`name` AS `entity_name`,
     `items`.`name` AS `item_name`,
     IFNULL(`entities`.`latitude`, '') AS `latitude`,
