@@ -51,13 +51,13 @@ def print_top_of_page():
               font-family: "Bookman";
           }
 
-          .navigation-bar {
+          navigation-bar {
           width: 100%;
           height: 80px;
           background-color: black;
           }
 
-          .logo {
+          logo {
           display: inline-block;
           vertical-align: top;
           width: 50px;
@@ -65,12 +65,6 @@ def print_top_of_page():
           margin-right: 20px;
           }
 
-          .navigation-bar > a {
-          display: inline-block;
-          vertical-align: top;
-          margin-right: 20px;
-          height: 80px;
-          }
 
           body {
             background-color: white;
@@ -94,34 +88,6 @@ def print_top_of_page():
 
 #####################################################################################
 def print_menu():
-
-'''
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111;
-}
-</style>'''
-
 
     print('''
     <nav class="navigation-bar"
