@@ -67,6 +67,7 @@ def view_list_of_all_matches():
     #print('''''') end of table
     print("""
     </table>
+    <input type='submit' name="admin_portal" value='Update'>
     """)
 
 #####################################################################################
