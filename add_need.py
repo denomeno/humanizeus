@@ -76,9 +76,9 @@ def add_need():
 
     print('''
         <br>Please inform us about your need(s) a little more:<br>
-        <textarea name="message" rows="10" cols="30">
+        <textarea name="message" rows="5" cols="40">
         </textarea><br>
-        <input type='submit_button' value='Submit Form' style="height:10px;width:15px">
+        <input type='submit_button' value='Submit Form' style="height:30px;width:100px">
     </form>
     <h4>Thank you for believing in your community. We will contact you when we find a match.<h/4><br>
 
