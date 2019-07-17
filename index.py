@@ -53,12 +53,12 @@ def print_top_of_page():
         }
 
         button[type=home_button] {
-        color: #0099CC;
+        color: #C0C0C0;
         background-color: transparent;
-        border: 2px solid #FF0000;
-        border-radius: 5px;
+        border: 5px solid #FF0000;
+        border-radius: 15px;
         text-transform: uppercase;
-        font-size: 10px
+        font-size: 1.5vw
         }
 
         </style>
