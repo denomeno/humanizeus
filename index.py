@@ -56,13 +56,7 @@ def print_top_of_page():
             font-size:1.3vw
           }
 
-          footer {
-          color: black;
-          text-align: left;
-          padding: 2px 10px 0px 0px;
-          }
-
-          wpforms-form button[type=button] {
+          button[type=home_button] {
           color: #0099CC;
           background-color: transparent;
           border: 2px solid #0099CC;
@@ -146,7 +140,7 @@ def print_bottom_of_page():
     <br>
     <br>
     <hr>
-    <div class="b_footer" style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">
+    <div class="b_footer" style="background-color:#e5e5e5;text-align:left;padding:10px;margin-top:7px;">
         <u><b>HumanizeUs</b></u><br>
         Return to the <a href="/humanizeus/home.py">home page</a>.<br>
         Enter <a href="/humanizeus/admin.py">admin portal</a>.</p>
