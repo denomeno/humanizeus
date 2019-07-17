@@ -78,7 +78,7 @@ def add_need():
         <br>Please inform us about your need(s) a little more:<br>
         <textarea name="message" rows="5" cols="40">
         </textarea><br>
-        <input type='submit_button' value='Submit Form' style="height:30px;width:100px">
+        <input type='submit_button' value='Submit Form'>
     </form>
     <h4>Thank you for believing in your community. We will contact you when we find a match.<h/4><br>
 
