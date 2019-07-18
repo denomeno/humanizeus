@@ -17,14 +17,19 @@ def upload_add_support_form_to_database(form):
         address = form['address'].value
         message = form['message'].value
 
-        time_in_1 = form['time'].value
-
-        supply_item_names = form['supply_item_names'] #list of needed items names
+        if form['time'].value:
+            time_in_1 = form['time'].value
+        else:
+            time_in_1 = 0
 
         type = "Donor"
 
-        #RETRIEVE QUANTITY OF EACH ITEM
 
+        #get list of available item options
+        needed_items = Database_requests.get_only_needed_items()
+
+
+        #RETRIEVE QUANTITY OF EACH ITEM
 
         #1. enter entity to system
 
@@ -36,16 +41,18 @@ def upload_add_support_form_to_database(form):
         entity_id = entity_id[0]['entity_id']
 
 
-        for item in supply_item_names:
+        for item in needed_items:
 
             #3 match entity with item in entity_need_items
-            item_name = item.value
+            item_name = item['name']
 
             quantity_supplied = form['quantity_requested: %s' %(item_name)].value
 
             #quantity_supplied = 1 #CHANGE WHEN ENTERED FROM THE FORM
 
-            Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied, time)
+            if quantity_supplied != '0':
+
+                Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied, time)
 
             #4-NEED TO ADD TIME AVAILABLE FOR PICKUP
 
