@@ -15,9 +15,11 @@ def upload_add_need_form_to_database(form):
         address = form['address'].value
         message = form['message'].value
 
-        needed_item_names = form['needed_item_names'] #list of needed items names
+        #needed_item_names = form['needed_item_names'] #list of needed items names
 
         type = "In Need"
+
+        items = Database_requests.get_all_items()
 
         #RETRIEVE QUANTITY OF EACH ITEM
 
@@ -32,16 +34,16 @@ def upload_add_need_form_to_database(form):
         entity_id = entity_id[0]['entity_id']
 
 
-        for item in needed_item_names:
+        for item in items:
 
             #3 match entity with item in entite_need_items
-            item_name = item.value
+            item_name = item['name']
 
             quantity_requested = form['quantity_requested: %s' %(item_name)].value
 
-            #quantity_requested = 1 #CHANGE WHEN ENTERED FROM THE FORM
+            if quantity_requested != '0':
 
-            Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_requested)
+                Database_requests.insert_into_entities_need_items(entity_id, item_name, message, quantity_requested)
 
 
 
