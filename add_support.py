@@ -18,7 +18,7 @@ def upload_add_support_form_to_database(form):
         message = form['message'].value
 
         if form['time'].value:
-            time_in_1 = form['time'].value
+            time_in_1 = str(form['time'].value)
         else:
             time_in_1 = 0
 
@@ -52,7 +52,7 @@ def upload_add_support_form_to_database(form):
 
             if quantity_supplied != '0':
 
-                Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied, time)
+                Database_requests.insert_into_entities_supply_items(entity_id, item_name, message, quantity_supplied, time_in_1)
 
             #4-NEED TO ADD TIME AVAILABLE FOR PICKUP
 
