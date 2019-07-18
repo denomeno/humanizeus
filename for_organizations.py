@@ -34,7 +34,7 @@ def view_existing_organization_profile(email):
 
     #1.show filled in form of information entered before
     print('''<form method=POST >
-                <input type="hidden" name="profile_form" value="updateProfile"/>
+                <input type="hidden" name="form_name" value="updateProfile"/>
                 <input type="hidden" name="org_profile" value=%s>''' %(org_profile))
 
     #2. Organization name
@@ -404,6 +404,15 @@ if __name__ == "__main__":
 
             all_items = Database_requests.get_all_items()
 
+        elif form['form_name'].value == "updateProfile":
+
+            #get values from the form
+
+            address = form['address'].value
+            name = form['name'].value
+
+
+            #update database
 
     print_bottom_of_page()
 
