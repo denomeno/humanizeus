@@ -17,7 +17,7 @@ def upload_add_support_form_to_database(form):
         address = form['address'].value
         message = form['message'].value
 
-        if form['time'].value:
+        if form['time']:
             time_in_1 = str(form['time'].value)
         else:
             time_in_1 = 0
