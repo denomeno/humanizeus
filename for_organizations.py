@@ -413,7 +413,7 @@ if __name__ == "__main__":
             org_profile = Database_requests.get_entity_from_email(email)
 
             #assign variables
-            entity_id = org[0]['entity_id']
+            entity_id = org_profile[0]['entity_id']
             name = org_profile[0]['name']
             address = org_profile[0]['address']
             phone = org_profile[0]['phone']
