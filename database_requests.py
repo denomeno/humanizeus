@@ -381,3 +381,18 @@ WHERE
     `entity_id` = %s
 """, (formatted_address, latitude, longitude, entity_id))
         cnx.commit()
+
+    def update_entity_profile(entity_id, name, phone, website):
+        myc = cnx.cursor()
+        myc.execute("""
+
+UPDATE `entities`
+
+SET
+    `name` = %s,
+    `phone` = %s,
+    `website` = %s
+
+WHERE
+    `entity_id` = %s
+    """, (name, phone, website, entity_id))

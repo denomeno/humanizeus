@@ -35,7 +35,8 @@ def view_existing_organization_profile(email):
     #1.show filled in form of information entered before
     print('''<form method=POST >
                 <input type="hidden" name="form_name" value="updateProfile"/>
-                <input type="hidden" name="org_profile" value=%s>''' %(org_profile))
+                <input type="hidden" name="org_email" value=%s>
+                <input type="hidden" name="org_profile" value=%s>''' %(email, org_profile))
 
     #2. Organization name
     print('''
@@ -406,13 +407,49 @@ if __name__ == "__main__":
 
         elif form['form_name'].value == "updateProfile":
 
-            #get values from the form
+            email = form['org_email'].value
 
-            address = form['address'].value
-            name = form['name'].value
+            #get profile data of organization
+            org_profile = Database_requests.get_entity_from_email(email)
+
+            #assign variables
+            entity_id = org[0]['entity_id']
+            name = org_profile[0]['name']
+            address = org_profile[0]['address']
+            phone = org_profile[0]['phone']
+            website = org_profile[0]['website']
+
+            #get values from the form
+            try:
+                name = form['name'].value
+            except KeyError:
+                name = name
+
+            try:
+                address = form['address'].value
+
+                #get gocodeing of address - for proper address
+                geocode = Google_requests.get_geocode(address)
+            except KeyError:
+                address = address
+
+            try:
+                phone = form['phone'].value
+            except KeyError:
+                phone = phone
+
+            try:
+                website = form['website'].value
+            except KeyError:
+                website = website
 
 
             #update database
+            Database_requests.update_entity_profile(entity_id, name, phone, website)
+
+            #update address information of the entity
+            Database_requests.update_geocode_of_entity(entity_id, geocode['formatted_address'], geocode['latitude'], geocode['longitude'])
+
 
     print_bottom_of_page()
 
