@@ -10,10 +10,26 @@ from import_modules import *
 def upload_add_need_form_to_database(form):
     #this functions gets data from the form, enter into database
     if form:
-        email = form['email'].value
-        entity_name = form['entity_name'].value
-        address = form['address'].value
-        message = form['message'].value
+
+        try:
+            email = form['email'].value
+        except KeyError:
+            email = "Not entered."
+
+        try:
+            entity_name = form['entity_name'].value
+        except KeyError:
+            entity_name = "Not entered."
+
+        try:
+            address = form['address'].value
+        except KeryError:
+            address = "Not entered."
+
+        try:
+            message = form['message'].value
+        except KeyError:
+            message = "Not entered."
 
         #needed_item_names = form['needed_item_names'] #list of needed items names
 
