@@ -11,6 +11,15 @@ import cgitb; cgitb.enable()  # web debugging package
 from flask import request, redirect #to get the submitted form data, and redirect browser
 from flask import Flask
 import folium #used to generate maps
+import email
+import smtplib #used in `email_requests.py`
+
+#required in `email_requests.py`
+from string import Template
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+from email.mime.application import MIMEApplication
 
 import requests #for post/get requests
 import json #to decode json
@@ -20,6 +29,6 @@ import json #to decode json
 from database_requests import *#dataabse MySQL request functions in a class
 from google_requests import *#google api request functions
 import matching_functions #matching functions for needs and providers
-
+from email_requests import * #for emailing functionality from any page
 
 from index import *

@@ -340,7 +340,17 @@ VALUES (%s,
 
         cnx.commit()
 
+    def insert_into_contact_us(name, email_to, message):
+        myc = cnx.cursor()
+        myc.execute("""
+ INSERT INTO `humanizeusmaster`.`contact_us`
 
+ (`name`, `email`, `message`)
+
+ VALUES (%s,
+         %s,
+         %s)
+""", (name, email_to, message))
 
     #############################################################
 
