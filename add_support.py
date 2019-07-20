@@ -12,16 +12,33 @@ def upload_add_support_form_to_database(form):
 
     #check if form exists
     if form:
-        email = form['email'].value
-        entity_name = form['entity_name'].value
-        address = form['address'].value
-        message = form['message'].value
 
-        if form['time']:
+        try:
+            email = form['email'].value
+        except KeyError:
+            email = "Not entered. "
+
+        try:
+            entity_name = form['entity_name'].value
+        except KeyError:
+            entity_name = "Not entered."
+
+        try:
+            address = form['address'].value
+        except KeyError:
+            address = "Not entered."
+
+        try:
+            message = form['message'].value
+        except KeyError:
+            message = "Not entered."
+
+        try:
             time_in_1 = str(form['time'].value)
-        else:
-            time_in_1 = 0
+        except KeyError:
+            time_in_1 = "Not entered."
 
+            
         type = "Donor"
 
 
