@@ -15,15 +15,23 @@ def home_page_display():
 
     print('''<center>
     <h2>Building a community starts here!</h2>
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-group-lg btn-secondary"><a href='/humanizeus/add_need.py'><b>I need support</b></a></button>
-      <button type="button" class="btn btn-group-lg btn-secondary"><a href='/humanizeus/add_support.py'><b>I want to donate</b></a></button>
-      <button type="button" class="btn btn-group-lg btn-secondary"><a href='/humanizeus/for_organizations.py'><b>I am an organization</b></a></button>
+    <div class="jumbotron">
+        <h1 class="display-4">Building a community starts here!</h1>
+        <p class="lead">We connect those who need with those who have.</p>
+        <hr class="my-4">
+        <p>How can we best help you?</p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-group-lg btn-secondary" href="/humanizeus/add_need.py" role="button">I need support</a>
+            <a class="btn btn-group-lg btn-secondary" href="/humanizeus/add_support.py" role="button">I want to donate</a>
+            <a class="btn btn-group-lg btn-secondary" href="/humanizeus/for_organizations.py" role="button">I am an organization</a>
+        </div>
     </div>
     <br>
     <br>
     <h3>We have proudly supported %s newly housed people so far!</h3></center>
     ''' % fulfilled_mathces ) #ADD MATCH COMPLETE COUNT -- len(match_id)
+
+
 
 
  #####################################################################################

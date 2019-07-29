@@ -80,7 +80,7 @@ def print_menu():
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div class="nav justify-content-end">
           <a class="nav-item nav-link active" href="/humanizeus/mission.py">Mission<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="/humanizeus/map.py">Map</a>
           <a class="nav-item nav-link" href="/humanizeus/add_need.py">Add Need</a>
