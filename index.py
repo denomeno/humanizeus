@@ -61,15 +61,6 @@ def print_top_of_page():
         font-size:1.3vw
         }
 
-        button[type=home_button] {
-        color: #C0C0C0;
-        background-color: transparent;
-        border: 5px solid #FF0000;
-        border-radius: 15px;
-        text-transform: uppercase;
-        font-size: 1.5vw
-        }
-
         </style>
       </head>
       <body style="font-family:Bookman;color:black;">
