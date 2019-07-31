@@ -31,15 +31,9 @@ def print_headers():
     print("Content-type:text/html\r\n\r\n")
     print("""
     <title>HumanizeUs</title>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="humanizelogo.png" alt="HumanizeUs" width="30" height="30" class="d-inline-block align-top" alt="">
-        HumanizeUs
-      </a>
-    </nav>
+    <img src="humanizelogo.png" alt="HumanizeUs" style="width:320px;height:200px; display: inline-block;
+    vertical-align: top;">
     """)
-
-
 
 
 #####################################################################################
@@ -51,7 +45,6 @@ def print_top_of_page():
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
 
         .a { color: #ffffff; }
@@ -59,6 +52,15 @@ def print_top_of_page():
         body {
         background-color: white;
         font-size:1.3vw
+        }
+
+        button[type=home_button] {
+        color: #C0C0C0;
+        background-color: transparent;
+        border: 5px solid #FF0000;
+        border-radius: 15px;
+        text-transform: uppercase;
+        font-size: 1.5vw
         }
 
         </style>
@@ -70,27 +72,49 @@ def print_top_of_page():
 #####################################################################################
 def print_menu():
 
+    print('''
+    <style>
 
-    print("""
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/humanizeus/home.py">
-        <img src="humanizelogo.png" alt="HumanizeUs" width="30" height="30" class="d-inline-block align-top" alt="">
-        HumanizeUs</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="nav justify-content-end">
-          <a class="nav-item nav-link active" href="/humanizeus/mission.py">Mission<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="/humanizeus/map.py">Map</a>
-          <a class="nav-item nav-link" href="/humanizeus/add_need.py">Add Need</a>
-          <a class="nav-item nav-link" href="/humanizeus/add_support.py">Add Support</a>
-          <a class="nav-item nav-link" href="/humanizeus/for_organizations.py">For Organizations</a>
-          <a class="nav-item nav-link" href="/humanizeus/contact.py">Contact Us</a>
-        </div>
-      </div>
-    </nav>
-    """)
+    ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    }
+
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: #111;
+    }
+    </style>
+    ''')
+
+
+    print('''
+    <ul>
+        <li><a href='/humanizeus/home.py'><span>Home</span></a></li>
+        <li><a href='/humanizeus/mission.py'><span>Our Mission</span></a></li>
+        <li><a href='/humanizeus/map.py'><span>Map</span></a></li>
+        <li><a href='/humanizeus/add_need.py'><span>Add Need</span></a></li>
+        <li><a href='/humanizeus/add_support.py'><span>Add Support</span></a></li>
+        <li><a href='/humanizeus/for_organizations.py'><span>For Organizations</span></a></li>
+        <li><a href='/humanizeus/contact.py'><span>Contact Us</span></a></li>
+    </ul>
+    <br>
+    ''')
+
 
 #####################################################################################
 

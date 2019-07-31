@@ -11,24 +11,11 @@ def view_admin_login():
     print('''
     HumanizeUs admin?<br>
     <form method=POST >
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="hidden" name="form_name" value="adminLogin"/>
-        <input name="admin_email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
+        <input type="hidden" name="form_name" value="adminLogin">
+        <input name="admin_email" type="email">
+        <input type='submit' value='Login'>
     </form>
     ''')
-
 
 #####################################################################################
 def view_list_of_all_matches():
