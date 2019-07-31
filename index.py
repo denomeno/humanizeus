@@ -1,4 +1,4 @@
-#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
+#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe
 
 from import_modules import *
 
@@ -47,7 +47,7 @@ def print_top_of_page():
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
 
-        .a { color: #ffffff; } 
+        .a { color: #ffffff; }
 
         body {
         background-color: white;

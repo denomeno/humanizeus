@@ -1,4 +1,4 @@
-#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
+#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe
 
 from import_modules import *
 
@@ -328,7 +328,6 @@ if __name__ == "__main__":
 
             #get gocodeing of address
             geocode = Google_requests.get_geocode(address)
-
 
             #insert the organization into entities table
             database_entity_id = Database_requests.insert_into_entities(email, entity_name, address, type)#new entry is made, and entity id is returned

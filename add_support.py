@@ -1,4 +1,4 @@
-#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37\python.exe
+#!C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe
 
 from import_modules import *
 
@@ -38,7 +38,7 @@ def upload_add_support_form_to_database(form):
         except KeyError:
             time_in_1 = "Not entered."
 
-            
+
         type = "Donor"
 
 
